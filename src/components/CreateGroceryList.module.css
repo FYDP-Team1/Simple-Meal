@@ -1,0 +1,1845 @@
+.frames,
+.july2023 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.july2023 {
+  height: 40.6px;
+  flex: 1;
+}
+.frames {
+  margin: 0;
+  height: 45px;
+  font-size: var(--font-size-11xl);
+  font-weight: 700;
+  font-family: inherit;
+  white-space: pre-wrap;
+}
+.july2023Parent {
+  width: 210px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: var(--gap-xl);
+}
+.groupIcon {
+  height: 21px;
+  width: 20px;
+  position: relative;
+}
+.createGroceryList1 {
+  position: relative;
+  font-size: var(--headings-h6-size);
+  font-weight: 600;
+  font-family: var(--notification-2);
+  color: var(--white);
+  text-align: center;
+}
+.loginButton,
+.text,
+.textWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.loginButton {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-2xs) var(--padding-base);
+  background-color: var(--color-goldenrod-100);
+  border-radius: var(--br-21xl);
+  overflow: hidden;
+  justify-content: flex-start;
+  gap: var(--gap-3xs);
+  white-space: nowrap;
+}
+.loginButton:hover {
+  background-color: var(--color-darkgoldenrod);
+}
+.text,
+.textWrapper {
+  max-width: 100%;
+}
+.text {
+  flex: 1;
+  justify-content: space-between;
+  gap: var(--gap-xl);
+}
+.textWrapper {
+  align-self: stretch;
+  justify-content: flex-start;
+  padding: 0 var(--padding-mini) 0 0;
+  box-sizing: border-box;
+}
+.sundayToMondayChild {
+  height: 589px;
+  width: 227px;
+  position: relative;
+  border-radius: var(--br-xl);
+  background-color: var(--color-dimgray-100);
+  display: none;
+}
+.sunday {
+  width: 114px;
+  position: relative;
+  font-weight: 500;
+  white-space: pre-wrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.weekdays {
+  width: 105px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0;
+  box-sizing: border-box;
+}
+.sundayToMonday {
+  align-self: stretch;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: var(--gap-52xl);
+}
+.rectangle,
+.rectangle1,
+.sundayToMonday {
+  display: flex;
+  align-items: center;
+}
+.rectangle1 {
+  height: 45px;
+  position: relative;
+}
+.rectangle {
+  flex-direction: row;
+  justify-content: center;
+  padding: 0 var(--padding-2xl) 0 var(--padding-lg);
+}
+.frame {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  margin: 0 !important;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: var(--br-xl);
+  background-color: var(--white);
+}
+.image10Icon {
+  height: 130px;
+  flex: 1;
+  position: relative;
+  border-radius: var(--br-3xs);
+  max-width: 100%;
+  overflow: hidden;
+  object-fit: cover;
+  z-index: 1;
+}
+.swapIcon {
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  margin: 0 !important;
+  top: 6px;
+  left: 6px;
+  cursor: pointer;
+  z-index: 2;
+}
+.cheesePizzaFrame {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+}
+.cheesePizza,
+.recipe {
+  position: relative;
+  font-weight: 600;
+  z-index: 1;
+}
+.recipe {
+  width: 101px;
+  font-weight: 500;
+  color: var(--primary-brown);
+  display: flex;
+  align-items: center;
+}
+.dishFrameGroup,
+.frameGroup,
+.imageSwapFrame {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.imageSwapFrame {
+  flex-direction: column;
+  gap: var(--gap-10xs);
+}
+.dishFrameGroup,
+.frameGroup {
+  align-self: stretch;
+  flex-direction: row;
+  padding: 0 var(--padding-11xs);
+}
+.frameGroup {
+  flex-direction: column;
+  align-items: center;
+  padding: var(--padding-xs) var(--padding-xs) var(--padding-lg);
+  position: relative;
+  gap: var(--gap-4xs);
+}
+.frameChild {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  margin: 0 !important;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: var(--br-xl);
+  background-color: var(--white);
+}
+.image9Icon {
+  height: 130px;
+  flex: 1;
+  position: relative;
+  border-radius: var(--br-3xs);
+  max-width: 100%;
+  overflow: hidden;
+  object-fit: cover;
+  z-index: 1;
+}
+.swapIcon1 {
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  margin: 0 !important;
+  top: 6px;
+  left: 6px;
+  z-index: 2;
+}
+.image9Parent {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+}
+.potatoSalad,
+.recipe1 {
+  position: relative;
+  font-weight: 600;
+  z-index: 1;
+}
+.recipe1 {
+  width: 102px;
+  font-weight: 500;
+  color: var(--primary-brown);
+  display: flex;
+  align-items: center;
+}
+.cheesePizzaFrameGroup,
+.dishFrameTriple {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.dishFrameTriple {
+  flex-direction: column;
+  gap: var(--gap-10xs);
+}
+.cheesePizzaFrameGroup {
+  align-self: stretch;
+  flex-direction: row;
+  padding: 0 var(--padding-11xs);
+}
+.frameParent,
+.group,
+.rectangleParent {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.rectangleParent {
+  align-self: stretch;
+  align-items: center;
+  padding: var(--padding-xs) var(--padding-xs) var(--padding-lg);
+  position: relative;
+  gap: var(--gap-4xs);
+}
+.frameParent,
+.group {
+  align-items: flex-start;
+}
+.frameParent {
+  align-self: stretch;
+  gap: var(--gap-xs);
+  font-size: var(--headings-h6-size);
+  color: var(--black);
+}
+.group {
+  flex: 1;
+  gap: var(--gap-8xs);
+}
+.groupWrapper {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 0 0 var(--padding-6xs);
+  text-align: left;
+  font-size: var(--font-size-11xl);
+  color: var(--starving-orange);
+}
+.sundayToMondayParent {
+  width: 218px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-9xs);
+}
+.frameItem {
+  height: 589px;
+  width: 227px;
+  position: relative;
+  border-radius: var(--br-xl);
+  background-color: var(--color-dimgray-100);
+  display: none;
+}
+.monday {
+  width: 119px;
+  position: relative;
+  font-weight: 500;
+  white-space: pre-wrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mondayWrapper {
+  width: 108px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0;
+  box-sizing: border-box;
+}
+.rectangleGroup {
+  align-self: stretch;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: var(--gap-52xl);
+}
+.b,
+.rectangleGroup,
+.wrapper {
+  display: flex;
+  align-items: center;
+}
+.b {
+  height: 45px;
+  position: relative;
+}
+.wrapper {
+  flex-direction: row;
+  justify-content: center;
+  padding: 0 var(--padding-2xl) 0 var(--padding-lg);
+}
+.frameInner {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  margin: 0 !important;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: var(--br-xl);
+  background-color: var(--white);
+}
+.image10Icon1 {
+  height: 130px;
+  flex: 1;
+  position: relative;
+  border-radius: var(--br-3xs);
+  max-width: 100%;
+  overflow: hidden;
+  object-fit: cover;
+  z-index: 1;
+}
+.swapIcon2 {
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  margin: 0 !important;
+  top: 6px;
+  left: 6px;
+  z-index: 2;
+}
+.image10Parent {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+}
+.butterChickenRice,
+.recipe2 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+}
+.butterChickenRice {
+  height: 24px;
+  font-weight: 600;
+}
+.recipe2 {
+  width: 102px;
+  font-weight: 500;
+  color: var(--primary-brown);
+}
+.butterChickenRiceParent,
+.frameWrapper1,
+.rectangleContainer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.butterChickenRiceParent {
+  flex: 1;
+  flex-direction: column;
+  gap: var(--gap-10xs);
+}
+.frameWrapper1,
+.rectangleContainer {
+  align-self: stretch;
+  flex-direction: row;
+  padding: 0 var(--padding-12xl) 0 var(--padding-11xs);
+}
+.rectangleContainer {
+  flex-direction: column;
+  align-items: center;
+  padding: var(--padding-xs) var(--padding-xs) var(--padding-lg);
+  position: relative;
+  gap: var(--gap-4xs);
+}
+.singleRecipeBox {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  margin: 0 !important;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: var(--br-xl);
+  background-color: var(--white);
+}
+.image8Icon {
+  height: 130px;
+  flex: 1;
+  position: relative;
+  border-radius: var(--br-3xs);
+  max-width: 100%;
+  overflow: hidden;
+  object-fit: cover;
+  z-index: 1;
+}
+.swapIcon3 {
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  margin: 0 !important;
+  top: 6px;
+  left: 6px;
+  z-index: 2;
+}
+.image8Parent {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+}
+.mushroomSoup,
+.recipe3 {
+  position: relative;
+  font-weight: 600;
+  z-index: 1;
+}
+.recipe3 {
+  width: 102px;
+  font-weight: 500;
+  color: var(--primary-brown);
+  display: flex;
+  align-items: center;
+}
+.recipeFrameSingle,
+.recipeFrameSingleWrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.recipeFrameSingle {
+  flex-direction: column;
+  gap: var(--gap-10xs);
+}
+.recipeFrameSingleWrapper {
+  align-self: stretch;
+  flex-direction: row;
+  padding: 0 var(--padding-11xs);
+}
+.singleRecipeBoxParent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: var(--padding-xs) var(--padding-xs) var(--padding-lg);
+  position: relative;
+  gap: var(--gap-4xs);
+}
+.frameWrapper2 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.frameDiv,
+.frameParent1 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.frameParent1 {
+  align-self: stretch;
+  gap: var(--gap-xs);
+  font-size: var(--headings-h6-size);
+  color: var(--black);
+}
+.frameDiv {
+  flex: 1;
+  gap: var(--gap-8xs);
+}
+.frameWrapper {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 0 0 var(--padding-6xs);
+  text-align: left;
+  font-size: var(--font-size-11xl);
+  color: var(--starving-orange);
+}
+.frameContainer {
+  width: 218px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-9xs);
+}
+.rectangleDiv {
+  position: absolute;
+  top: -20px;
+  left: 0;
+  border-radius: var(--br-xl);
+  background-color: var(--color-dimgray-100);
+  width: 227px;
+  height: 589px;
+  display: none;
+}
+.tuesday {
+  position: absolute;
+  top: 0;
+  left: -13px;
+  font-weight: 500;
+  white-space: pre-wrap;
+}
+.rectangleParent1 {
+  align-self: stretch;
+  height: 30px;
+  position: relative;
+}
+.b1,
+.container {
+  display: flex;
+  align-items: center;
+}
+.b1 {
+  height: 45px;
+  position: relative;
+}
+.container {
+  flex-direction: row;
+  justify-content: center;
+  padding: 0 var(--padding-2xl) 0 var(--padding-lg);
+}
+.vegetableContainer {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  margin: 0 !important;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: var(--br-xl);
+  background-color: var(--white);
+}
+.image10Icon2 {
+  height: 130px;
+  flex: 1;
+  position: relative;
+  border-radius: var(--br-3xs);
+  max-width: 100%;
+  overflow: hidden;
+  object-fit: cover;
+  z-index: 1;
+}
+.swapIcon4 {
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  margin: 0 !important;
+  top: 6px;
+  left: 6px;
+  z-index: 2;
+}
+.image10Group {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+}
+.recipe4,
+.vegetarianBurger {
+  position: relative;
+  font-weight: 600;
+  z-index: 1;
+}
+.recipe4 {
+  width: 102px;
+  font-weight: 500;
+  color: var(--primary-brown);
+  display: flex;
+  align-items: center;
+}
+.mushroomSoupFrame {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-10xs);
+}
+.vegetableContainerParent,
+.vegetarianBurgerFrame {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 var(--padding-16xl) 0 var(--padding-11xs);
+}
+.vegetableContainerParent {
+  flex-direction: column;
+  align-items: center;
+  padding: var(--padding-xs) var(--padding-xs) var(--padding-lg);
+  position: relative;
+  gap: var(--gap-4xs);
+}
+.frameChild1 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  margin: 0 !important;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: var(--br-xl);
+  background-color: var(--white);
+}
+.image16Icon {
+  height: 130px;
+  flex: 1;
+  position: relative;
+  border-radius: var(--br-3xs);
+  max-width: 100%;
+  overflow: hidden;
+  object-fit: cover;
+  z-index: 1;
+}
+.swapIcon5 {
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  margin: 0 !important;
+  top: 6px;
+  left: 7px;
+  z-index: 2;
+}
+.image16Parent {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+}
+.cheesePizza1,
+.recipe5 {
+  position: relative;
+  font-weight: 600;
+  z-index: 1;
+}
+.recipe5 {
+  width: 101px;
+  font-weight: 500;
+  color: var(--primary-brown);
+  display: flex;
+  align-items: center;
+}
+.cheesePizzaFrame1 {
+  flex: 1;
+  flex-direction: column;
+  gap: var(--gap-10xs);
+}
+.cheesePizzaFrame1,
+.frameParent4,
+.groupDiv,
+.groupFrame {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.groupFrame {
+  align-self: stretch;
+  flex-direction: row;
+  padding: 0 var(--padding-9xs);
+}
+.frameParent4,
+.groupDiv {
+  flex-direction: column;
+}
+.groupDiv {
+  align-self: stretch;
+  padding: var(--padding-xs) var(--padding-smi) var(--padding-lg)
+    var(--padding-2xs);
+  position: relative;
+  gap: var(--gap-4xs);
+}
+.frameParent4 {
+  flex: 1;
+  gap: var(--gap-xs);
+}
+.frameWrapper4 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--headings-h6-size);
+  color: var(--black);
+}
+.frameParent3 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-8xs);
+}
+.frameWrapper3 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 0 0 var(--padding-6xs);
+  text-align: left;
+  font-size: var(--font-size-11xl);
+  color: var(--starving-orange);
+}
+.frameParent2 {
+  width: 218px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-9xs);
+}
+.frameChild2 {
+  position: absolute;
+  top: -20px;
+  left: 0;
+  border-radius: var(--br-xl);
+  background-color: var(--color-dimgray-100);
+  width: 227px;
+  height: 589px;
+  display: none;
+}
+.wednesday {
+  position: absolute;
+  top: 0;
+  left: -49px;
+  font-weight: 500;
+  white-space: pre-wrap;
+}
+.rectangleParent2 {
+  align-self: stretch;
+  height: 30px;
+  position: relative;
+}
+.b2,
+.wrapper1 {
+  display: flex;
+  align-items: center;
+}
+.b2 {
+  height: 45px;
+  position: relative;
+}
+.wrapper1 {
+  flex-direction: row;
+  justify-content: center;
+  padding: 0 var(--padding-2xl) 0 var(--padding-lg);
+}
+.potatoRectangle {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  margin: 0 !important;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: var(--br-xl);
+  background-color: var(--white);
+}
+.image9Icon1 {
+  height: 130px;
+  flex: 1;
+  position: relative;
+  border-radius: var(--br-3xs);
+  max-width: 100%;
+  overflow: hidden;
+  object-fit: cover;
+  z-index: 1;
+}
+.swapIcon6 {
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  margin: 0 !important;
+  top: 6px;
+  left: 6px;
+  z-index: 2;
+}
+.swapImageFrame {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+}
+.potatoSalad1,
+.recipe6 {
+  position: relative;
+  font-weight: 600;
+  z-index: 1;
+}
+.recipe6 {
+  width: 102px;
+  font-weight: 500;
+  color: var(--primary-brown);
+  display: flex;
+  align-items: center;
+}
+.butterChickenRiceFrame,
+.potatoRectangleParent,
+.recipeFrame {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.recipeFrame {
+  flex-direction: column;
+  gap: var(--gap-10xs);
+}
+.butterChickenRiceFrame,
+.potatoRectangleParent {
+  align-self: stretch;
+  flex-direction: row;
+  padding: 0 var(--padding-11xs);
+}
+.potatoRectangleParent {
+  flex-direction: column;
+  align-items: center;
+  padding: var(--padding-xs) var(--padding-xs) var(--padding-lg);
+  position: relative;
+  gap: var(--gap-4xs);
+}
+.frameChild3 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  margin: 0 !important;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: var(--br-xl);
+  background-color: var(--white);
+}
+.image10Icon3 {
+  height: 130px;
+  flex: 1;
+  position: relative;
+  border-radius: var(--br-3xs);
+  max-width: 100%;
+  overflow: hidden;
+  object-fit: cover;
+  z-index: 1;
+}
+.swapIcon7 {
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  margin: 0 !important;
+  top: 6px;
+  left: 6px;
+  z-index: 2;
+}
+.image10Container {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+}
+.butterChickenRice1,
+.recipe7 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+}
+.butterChickenRice1 {
+  height: 24px;
+  font-weight: 600;
+}
+.recipe7 {
+  width: 102px;
+  font-weight: 500;
+  color: var(--primary-brown);
+}
+.butterChickenRiceGroup,
+.frameWrapper8 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.butterChickenRiceGroup {
+  flex: 1;
+  flex-direction: column;
+  gap: var(--gap-10xs);
+}
+.frameWrapper8 {
+  align-self: stretch;
+  flex-direction: row;
+  padding: 0 var(--padding-12xl) 0 var(--padding-11xs);
+}
+.frameParent7,
+.rectangleParent3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.rectangleParent3 {
+  align-self: stretch;
+  align-items: center;
+  padding: var(--padding-xs) var(--padding-xs) var(--padding-lg);
+  position: relative;
+  gap: var(--gap-4xs);
+}
+.frameParent7 {
+  flex: 1;
+  align-items: flex-start;
+  gap: var(--gap-xs);
+}
+.frameWrapper6,
+.frameWrapper7 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.frameWrapper7 {
+  flex: 1;
+}
+.frameWrapper6 {
+  align-self: stretch;
+  font-size: var(--headings-h6-size);
+  color: var(--black);
+}
+.frameParent6 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-8xs);
+}
+.frameWrapper5 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 0 0 var(--padding-6xs);
+  text-align: left;
+  font-size: var(--font-size-11xl);
+  color: var(--starving-orange);
+}
+.frameParent5 {
+  width: 218px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-9xs);
+}
+.frameChild4 {
+  position: absolute;
+  top: -20px;
+  left: 0;
+  border-radius: var(--br-xl);
+  background-color: var(--color-dimgray-100);
+  width: 227px;
+  height: 589px;
+  display: none;
+}
+.thursday {
+  position: absolute;
+  top: 0;
+  left: -17px;
+  font-weight: 500;
+  white-space: pre-wrap;
+}
+.rectangleParent4 {
+  align-self: stretch;
+  height: 30px;
+  position: relative;
+}
+.b3,
+.wrapper2 {
+  display: flex;
+  align-items: center;
+}
+.b3 {
+  height: 45px;
+  position: relative;
+}
+.wrapper2 {
+  flex-direction: row;
+  justify-content: center;
+  padding: 0 var(--padding-2xl) 0 var(--padding-lg);
+}
+.frameChild5 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  margin: 0 !important;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: var(--br-xl);
+  background-color: var(--white);
+}
+.image8Icon1 {
+  height: 130px;
+  flex: 1;
+  position: relative;
+  border-radius: var(--br-3xs);
+  max-width: 100%;
+  overflow: hidden;
+  object-fit: cover;
+  z-index: 1;
+}
+.swapIcon8 {
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  margin: 0 !important;
+  top: 6px;
+  left: 6px;
+  z-index: 2;
+}
+.image8Group {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+}
+.mushroomSoup1,
+.recipe8 {
+  position: relative;
+  font-weight: 600;
+  z-index: 1;
+}
+.recipe8 {
+  width: 102px;
+  font-weight: 500;
+  color: var(--primary-brown);
+  display: flex;
+  align-items: center;
+}
+.mushroomSoupParent {
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-10xs);
+}
+.frameWrapper11,
+.mushroomSoupParent,
+.rectangleParent5 {
+  display: flex;
+  justify-content: flex-start;
+}
+.frameWrapper11 {
+  align-self: stretch;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0 var(--padding-11xs);
+}
+.rectangleParent5 {
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--padding-xs) var(--padding-xs) var(--padding-lg);
+  position: relative;
+  gap: var(--gap-4xs);
+}
+.frameWrapper10 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.frameChild6 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  margin: 0 !important;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: var(--br-xl);
+  background-color: var(--white);
+}
+.image10Icon4 {
+  height: 130px;
+  flex: 1;
+  position: relative;
+  border-radius: var(--br-3xs);
+  max-width: 100%;
+  overflow: hidden;
+  object-fit: cover;
+  z-index: 1;
+}
+.swapIcon9 {
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  margin: 0 !important;
+  top: 6px;
+  left: 6px;
+  z-index: 2;
+}
+.image10Parent1 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+}
+.cheesePizza2,
+.recipe9 {
+  position: relative;
+  font-weight: 600;
+  z-index: 1;
+}
+.recipe9 {
+  width: 101px;
+  font-weight: 500;
+  color: var(--primary-brown);
+  display: flex;
+  align-items: center;
+}
+.cheesePizzaParent,
+.frameWrapper12 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.cheesePizzaParent {
+  flex: 1;
+  flex-direction: column;
+  gap: var(--gap-10xs);
+}
+.frameWrapper12 {
+  align-self: stretch;
+  flex-direction: row;
+  padding: 0 var(--padding-11xs);
+}
+.frameParent10,
+.frameParent9,
+.rectangleParent6 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.rectangleParent6 {
+  align-self: stretch;
+  align-items: center;
+  padding: var(--padding-xs) var(--padding-xs) var(--padding-lg);
+  position: relative;
+  gap: var(--gap-4xs);
+}
+.frameParent10,
+.frameParent9 {
+  align-items: flex-start;
+}
+.frameParent10 {
+  align-self: stretch;
+  gap: var(--gap-xs);
+  font-size: var(--headings-h6-size);
+  color: var(--black);
+}
+.frameParent9 {
+  flex: 1;
+  gap: var(--gap-8xs);
+}
+.frameWrapper9 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 0 0 var(--padding-6xs);
+  text-align: left;
+  font-size: var(--font-size-11xl);
+  color: var(--starving-orange);
+}
+.frameParent8 {
+  width: 218px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-9xs);
+}
+.frameChild7 {
+  height: 589px;
+  width: 227px;
+  position: relative;
+  border-radius: var(--br-xl);
+  background-color: var(--color-dimgray-100);
+  display: none;
+}
+.friday {
+  width: 78px;
+  position: relative;
+  font-weight: 500;
+  white-space: pre-wrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.rectangleParent7 {
+  align-self: stretch;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 0 var(--padding-4xs);
+  gap: var(--gap-52xl);
+}
+.b4,
+.rectangleParent7,
+.wrapper3 {
+  display: flex;
+  align-items: center;
+}
+.b4 {
+  height: 45px;
+  position: relative;
+}
+.wrapper3 {
+  flex-direction: row;
+  justify-content: center;
+  padding: 0 var(--padding-2xl) 0 var(--padding-lg);
+}
+.frameChild8 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  margin: 0 !important;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: var(--br-xl);
+  background-color: var(--white);
+}
+.image10Icon5 {
+  height: 130px;
+  flex: 1;
+  position: relative;
+  border-radius: var(--br-3xs);
+  max-width: 100%;
+  overflow: hidden;
+  object-fit: cover;
+  z-index: 1;
+}
+.swapIcon10 {
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  margin: 0 !important;
+  top: 6px;
+  left: 6px;
+  z-index: 2;
+}
+.image10Parent2 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+}
+.cheesePizza3,
+.recipe10 {
+  position: relative;
+  font-weight: 600;
+  z-index: 1;
+}
+.recipe10 {
+  width: 101px;
+  font-weight: 500;
+  color: var(--primary-brown);
+  display: flex;
+  align-items: center;
+}
+.cheesePizzaGroup,
+.frameWrapper14,
+.rectangleParent8 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.cheesePizzaGroup {
+  flex-direction: column;
+  gap: var(--gap-10xs);
+}
+.frameWrapper14,
+.rectangleParent8 {
+  align-self: stretch;
+  flex-direction: row;
+  padding: 0 var(--padding-11xs);
+}
+.rectangleParent8 {
+  flex-direction: column;
+  align-items: center;
+  padding: var(--padding-xs) var(--padding-xs) var(--padding-lg);
+  position: relative;
+  gap: var(--gap-4xs);
+}
+.frameChild9 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  margin: 0 !important;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: var(--br-xl);
+  background-color: var(--white);
+}
+.image10Icon6 {
+  height: 130px;
+  flex: 1;
+  position: relative;
+  border-radius: var(--br-3xs);
+  max-width: 100%;
+  overflow: hidden;
+  object-fit: cover;
+  z-index: 1;
+}
+.swapIcon11 {
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  margin: 0 !important;
+  top: 6px;
+  left: 6px;
+  z-index: 2;
+}
+.image10Parent3 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+}
+.butterChickenRice2,
+.recipe11 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+}
+.butterChickenRice2 {
+  height: 24px;
+  font-weight: 600;
+}
+.recipe11 {
+  width: 102px;
+  font-weight: 500;
+  color: var(--primary-brown);
+}
+.butterChickenRiceContainer,
+.frameWrapper15 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.butterChickenRiceContainer {
+  flex: 1;
+  flex-direction: column;
+  gap: var(--gap-10xs);
+}
+.frameWrapper15 {
+  align-self: stretch;
+  flex-direction: row;
+  padding: 0 var(--padding-12xl) 0 var(--padding-11xs);
+}
+.frameParent12,
+.frameParent13,
+.rectangleParent9 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.rectangleParent9 {
+  align-self: stretch;
+  align-items: center;
+  padding: var(--padding-xs) var(--padding-xs) var(--padding-lg);
+  position: relative;
+  gap: var(--gap-4xs);
+}
+.frameParent12,
+.frameParent13 {
+  align-items: flex-start;
+}
+.frameParent13 {
+  align-self: stretch;
+  gap: var(--gap-xs);
+  font-size: var(--headings-h6-size);
+  color: var(--black);
+}
+.frameParent12 {
+  flex: 1;
+  gap: var(--gap-8xs);
+}
+.frameWrapper13 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 0 0 var(--padding-6xs);
+  text-align: left;
+  font-size: var(--font-size-11xl);
+  color: var(--starving-orange);
+}
+.frameParent11 {
+  width: 218px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-9xs);
+}
+.frameChild10 {
+  position: absolute;
+  top: -20px;
+  left: 0;
+  border-radius: var(--br-xl);
+  background-color: var(--color-dimgray-100);
+  width: 227px;
+  height: 589px;
+  display: none;
+}
+.saturday {
+  position: absolute;
+  top: 0;
+  left: -19px;
+  font-weight: 500;
+  white-space: pre-wrap;
+}
+.rectangleParent10 {
+  align-self: stretch;
+  height: 30px;
+  position: relative;
+}
+.b5,
+.wrapper4 {
+  display: flex;
+  align-items: center;
+}
+.b5 {
+  height: 45px;
+  position: relative;
+}
+.wrapper4 {
+  flex-direction: row;
+  justify-content: center;
+  padding: 0 var(--padding-2xl) 0 var(--padding-lg);
+}
+.frameChild11 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  margin: 0 !important;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: var(--br-xl);
+  background-color: var(--white);
+}
+.image10Icon7 {
+  height: 130px;
+  flex: 1;
+  position: relative;
+  border-radius: var(--br-3xs);
+  max-width: 100%;
+  overflow: hidden;
+  object-fit: cover;
+  z-index: 1;
+}
+.swapIcon12 {
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  margin: 0 !important;
+  top: 6px;
+  left: 6px;
+  z-index: 2;
+}
+.image10Parent4 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+}
+.recipe12,
+.vegetarianBurger1 {
+  position: relative;
+  font-weight: 600;
+  z-index: 1;
+}
+.recipe12 {
+  width: 102px;
+  font-weight: 500;
+  color: var(--primary-brown);
+  display: flex;
+  align-items: center;
+}
+.frameWrapper18,
+.rectangleParent11,
+.vegetarianBurgerParent {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.vegetarianBurgerParent {
+  flex: 1;
+  flex-direction: column;
+  gap: var(--gap-10xs);
+}
+.frameWrapper18,
+.rectangleParent11 {
+  align-self: stretch;
+  flex-direction: row;
+  padding: 0 var(--padding-16xl) 0 var(--padding-11xs);
+}
+.rectangleParent11 {
+  flex-direction: column;
+  align-items: center;
+  padding: var(--padding-xs) var(--padding-xs) var(--padding-lg);
+  position: relative;
+  gap: var(--gap-4xs);
+}
+.frameChild12 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  margin: 0 !important;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: var(--br-xl);
+  background-color: var(--white);
+}
+.image10Icon8 {
+  height: 130px;
+  flex: 1;
+  position: relative;
+  border-radius: var(--br-3xs);
+  max-width: 100%;
+  overflow: hidden;
+  object-fit: cover;
+  z-index: 1;
+}
+.swapIcon13 {
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  margin: 0 !important;
+  top: 6px;
+  left: 6px;
+  z-index: 2;
+}
+.image10Parent5 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+}
+.recipe13,
+.vegetarianBurger2 {
+  position: relative;
+  font-weight: 600;
+  z-index: 1;
+}
+.recipe13 {
+  width: 102px;
+  font-weight: 500;
+  color: var(--primary-brown);
+  display: flex;
+  align-items: center;
+}
+.frameWrapper19,
+.vegetarianBurgerGroup {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.vegetarianBurgerGroup {
+  flex: 1;
+  flex-direction: column;
+  gap: var(--gap-10xs);
+}
+.frameWrapper19 {
+  align-self: stretch;
+  flex-direction: row;
+  padding: 0 var(--padding-16xl) 0 var(--padding-11xs);
+}
+.frameParent16,
+.rectangleParent12 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.rectangleParent12 {
+  align-self: stretch;
+  align-items: center;
+  padding: var(--padding-xs) var(--padding-xs) var(--padding-lg);
+  position: relative;
+  gap: var(--gap-4xs);
+}
+.frameParent16 {
+  flex: 1;
+  align-items: flex-start;
+  gap: var(--gap-xs);
+}
+.frameWrapper17 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--headings-h6-size);
+  color: var(--black);
+}
+.frameParent15 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-8xs);
+}
+.frameWrapper16 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 0 0 var(--padding-6xs);
+  text-align: left;
+  font-size: var(--font-size-11xl);
+  color: var(--starving-orange);
+}
+.frameParent14 {
+  width: 218px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-9xs);
+}
+.createGroceryList,
+.instanceParent {
+  display: flex;
+  justify-content: flex-start;
+  max-width: 100%;
+}
+.instanceParent {
+  width: 1586px;
+  overflow-x: auto;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: var(--gap-3xs);
+  font-size: var(--message-1-size);
+}
+.createGroceryList {
+  align-self: stretch;
+  border-radius: var(--br-11xl);
+  backdrop-filter: blur(190px);
+  flex-direction: column;
+  align-items: center;
+  padding: var(--padding-xl) var(--padding-12xs) var(--padding-xl)
+    var(--padding-base);
+  box-sizing: border-box;
+  gap: var(--gap-xl);
+  z-index: 1;
+  text-align: center;
+  font-size: var(--semibold-size);
+  color: var(--black);
+  font-family: var(--notification-2);
+}
+@media screen and (max-width: 800px) {
+  .frames {
+    font-size: var(--semibold-size);
+  }
+  .text {
+    flex-wrap: wrap;
+  }
+  .b,
+  .b1,
+  .b2,
+  .b3,
+  .b4,
+  .b5,
+  .rectangle1 {
+    font-size: var(--semibold-size);
+  }
+}
+@media screen and (max-width: 450px) {
+  .july2023 {
+    font-size: var(--font-size-lgi);
+  }
+  .frames {
+    font-size: var(--body-1-size);
+  }
+  .sunday {
+    font-size: var(--headings-h6-size);
+  }
+  .rectangle1 {
+    font-size: var(--body-1-size);
+  }
+  .monday {
+    font-size: var(--headings-h6-size);
+  }
+  .b {
+    font-size: var(--body-1-size);
+  }
+  .tuesday {
+    font-size: var(--headings-h6-size);
+  }
+  .b1 {
+    font-size: var(--body-1-size);
+  }
+  .wednesday {
+    font-size: var(--headings-h6-size);
+  }
+  .b2 {
+    font-size: var(--body-1-size);
+  }
+  .thursday {
+    font-size: var(--headings-h6-size);
+  }
+  .b3 {
+    font-size: var(--body-1-size);
+  }
+  .friday {
+    font-size: var(--headings-h6-size);
+  }
+  .b4 {
+    font-size: var(--body-1-size);
+  }
+  .saturday {
+    font-size: var(--headings-h6-size);
+  }
+  .b5 {
+    font-size: var(--body-1-size);
+  }
+}

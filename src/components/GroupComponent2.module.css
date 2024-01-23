@@ -1,0 +1,775 @@
+.frameChild {
+  width: 294px;
+  border-radius: var(--br-2xl);
+  background: linear-gradient(
+    180deg,
+    rgba(251, 157, 17, 0.35) 0.52%,
+    rgba(251, 157, 17, 0.69) 47.4%,
+    rgba(251, 157, 17, 0.35)
+  );
+  height: 788px;
+  display: none;
+}
+.frameChild,
+.frameItem,
+.new {
+  position: relative;
+}
+.frameItem {
+  height: 16.5px;
+  width: 33px;
+  border-radius: var(--br-26xl);
+  background-color: var(--notification-red);
+  display: none;
+}
+.new {
+  font-weight: 500;
+  z-index: 1;
+}
+.cancelButtonFrame,
+.rectangleGroup {
+  height: 17px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+.rectangleGroup {
+  border-radius: var(--br-26xl);
+  background-color: var(--notification-red);
+  justify-content: center;
+  padding: var(--padding-12xs) var(--padding-6xs) var(--padding-5xs)
+    var(--padding-7xs);
+  z-index: 1;
+}
+.cancelButtonFrame {
+  justify-content: flex-start;
+  padding: 0 var(--padding-8xs) 0 var(--padding-10xs);
+}
+.groceryList01 {
+  margin: 0;
+  height: 35px;
+  position: relative;
+  font-size: inherit;
+  font-weight: 700;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+.backButtonChild {
+  height: 14.4px;
+  width: 14.4px;
+  position: relative;
+}
+.backButton {
+  border-radius: var(--br-5xl);
+  background-color: var(--color-oldlace-100);
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 6.600000381469727px 9.600000381469727px 6.600000381469727px
+    var(--padding-3xs);
+  z-index: 1;
+}
+.cancelButtonChild {
+  height: 12px;
+  width: 12px;
+  position: relative;
+}
+.cancelButton {
+  height: 27.6px;
+  width: 33.6px;
+  border-radius: var(--br-5xl);
+  background-color: var(--yellow);
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 6.600000381469727px 9.600000381469727px;
+  box-sizing: border-box;
+  z-index: 1;
+}
+.profileFrameIcon {
+  height: 8.4px;
+  width: 13.2px;
+  position: relative;
+}
+.editButton {
+  height: 27.6px;
+  width: 33.6px;
+  border-radius: var(--br-5xl);
+  background-color: var(--starving-orange);
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 6.600000381469727px 9.600000381469727px;
+  box-sizing: border-box;
+  cursor: pointer;
+  z-index: 1;
+}
+.groceryItemText {
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0 var(--padding-11xs) 0 0;
+  gap: var(--gap-9xs);
+}
+.groceryItemText,
+.groceryListFrame,
+.inputGroupFrame {
+  display: flex;
+  justify-content: flex-start;
+}
+.inputGroupFrame {
+  flex-direction: row;
+  align-items: center;
+  gap: var(--gap-base);
+  text-align: center;
+  font-size: var(--body-1-size);
+  color: var(--black);
+  font-family: var(--notification-2);
+}
+.groceryListFrame {
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  color: var(--white);
+  font-family: var(--font-helvetica-neue);
+}
+.frameInner,
+.x {
+  position: relative;
+}
+.frameInner {
+  align-self: stretch;
+  width: 260.4px;
+  border-radius: var(--br-sm);
+  background-color: var(--white);
+  display: none;
+}
+.x {
+  z-index: 1;
+}
+.foodNameTextChild {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  margin: 0 !important;
+  top: -0.1px;
+  right: 0.4px;
+  bottom: 1.1px;
+  left: -0.4px;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  z-index: 2;
+}
+.foodNameText {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: var(--padding-8xs) var(--padding-mini) var(--padding-7xs)
+    var(--padding-12xs);
+  position: relative;
+}
+.yeast {
+  position: relative;
+  font-size: var(--font-size-2xs);
+  color: var(--black);
+  z-index: 1;
+}
+.foodItemFrame,
+.teaSpoon {
+  display: flex;
+  align-items: center;
+}
+.foodItemFrame {
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: var(--gap-smi);
+}
+.teaSpoon {
+  height: 20px;
+  position: relative;
+  justify-content: center;
+  z-index: 1;
+}
+.flourFrameChild {
+  height: 53px;
+  width: 58px;
+  position: relative;
+  z-index: 1;
+}
+.flourFrame {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-mid);
+  font-size: var(--font-size-3xs);
+  color: var(--black);
+}
+.rectangleContainer,
+.rectangleDiv {
+  align-self: stretch;
+  border-radius: var(--br-sm);
+  background-color: var(--white);
+}
+.rectangleContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0 0 var(--padding-2xs);
+  gap: var(--gap-xl);
+  z-index: 1;
+  font-size: var(--font-size-2xs-5);
+  color: var(--white);
+}
+.rectangleDiv {
+  width: 260.4px;
+  position: relative;
+  display: none;
+}
+.potatoGroupFrameChild {
+  height: 24px;
+  width: 24px;
+  position: relative;
+  z-index: 1;
+}
+.flour {
+  height: 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+.potatoGroupFrame {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-3xs);
+}
+.g {
+  position: relative;
+  z-index: 1;
+}
+.groceryItem {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 0 var(--padding-10xs);
+}
+.topBannerChild {
+  height: 53px;
+  width: 58px;
+  position: relative;
+  z-index: 1;
+}
+.topBanner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-base);
+  font-size: var(--font-size-3xs);
+}
+.frameChild1,
+.groupDiv {
+  align-self: stretch;
+  border-radius: var(--br-sm);
+  background-color: var(--white);
+}
+.groupDiv {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0 0 var(--padding-2xs);
+  gap: var(--gap-xl);
+  z-index: 1;
+}
+.frameChild1 {
+  width: 260.4px;
+  position: relative;
+  display: none;
+}
+.potatoesChild {
+  height: 24px;
+  width: 24px;
+  position: relative;
+  z-index: 1;
+}
+.cheese,
+.potatoes {
+  display: flex;
+  align-items: center;
+}
+.cheese {
+  height: 20px;
+  position: relative;
+  justify-content: center;
+  z-index: 1;
+}
+.potatoes {
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: var(--gap-mid);
+}
+.breadItemsChild,
+.g1 {
+  position: relative;
+  z-index: 1;
+}
+.breadItemsChild {
+  height: 53px;
+  width: 58px;
+}
+.breadItems {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-mid);
+  font-size: var(--font-size-3xs);
+}
+.frameChild2,
+.rectangleParent1 {
+  align-self: stretch;
+  border-radius: var(--br-sm);
+  background-color: var(--white);
+}
+.rectangleParent1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0 0 var(--padding-2xs);
+  gap: var(--gap-xl);
+  z-index: 1;
+}
+.frameChild2 {
+  width: 260.4px;
+  position: relative;
+  display: none;
+}
+.cornmealChild {
+  height: 24px;
+  width: 24px;
+  position: relative;
+  z-index: 1;
+}
+.cornmeal,
+.cornmeal1 {
+  display: flex;
+  align-items: center;
+}
+.cornmeal1 {
+  height: 20px;
+  position: relative;
+  justify-content: center;
+  z-index: 1;
+}
+.cornmeal {
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 0 var(--padding-3xs) 0 0;
+  gap: var(--gap-base);
+}
+.groupIcon,
+.teaSpoon1 {
+  position: relative;
+  z-index: 1;
+}
+.teaSpoon1 {
+  font-size: var(--font-size-3xs);
+}
+.groupIcon {
+  height: 53px;
+  width: 58px;
+}
+.frameChild3,
+.rectangleParent2 {
+  border-radius: var(--br-sm);
+  background-color: var(--white);
+}
+.rectangleParent2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 0 0 var(--padding-2xs);
+  gap: var(--gap-mid);
+  z-index: 1;
+}
+.frameChild3 {
+  align-self: stretch;
+  width: 260.4px;
+  position: relative;
+  display: none;
+}
+.chickenItemChild {
+  height: 24px;
+  width: 24px;
+}
+.chickenItemChild,
+.potato {
+  position: relative;
+  z-index: 1;
+}
+.chickenItem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-mid);
+}
+.g2 {
+  position: relative;
+  z-index: 1;
+}
+.backbutton {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 0 var(--padding-7xs);
+}
+.groceriesListChild {
+  height: 53px;
+  width: 58px;
+  position: relative;
+  z-index: 1;
+}
+.groceriesList {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-mid);
+  text-align: center;
+  font-size: var(--font-size-3xs);
+}
+.frameChild4,
+.rectangleParent3 {
+  align-self: stretch;
+  border-radius: var(--br-sm);
+  background-color: var(--white);
+}
+.rectangleParent3 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0 0 var(--padding-2xs);
+  gap: var(--gap-xl);
+  z-index: 1;
+  text-align: left;
+}
+.frameChild4 {
+  width: 260.4px;
+  position: relative;
+  display: none;
+}
+.chicken,
+.meatGroupChild {
+  position: relative;
+  z-index: 1;
+}
+.meatGroupChild {
+  height: 24px;
+  width: 24px;
+}
+.chicken {
+  height: 19px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.meatGroup {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-xs);
+}
+.cheeseItemChild,
+.g3 {
+  position: relative;
+  z-index: 1;
+}
+.cheeseItemChild {
+  height: 53px;
+  width: 58px;
+}
+.cheeseItem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-mid);
+  font-size: var(--font-size-3xs);
+}
+.frameChild5,
+.rectangleParent4 {
+  align-self: stretch;
+  border-radius: var(--br-sm);
+  background-color: var(--white);
+}
+.rectangleParent4 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0 0 var(--padding-2xs);
+  gap: var(--gap-xl);
+  z-index: 1;
+}
+.frameChild5 {
+  width: 260.4px;
+  position: relative;
+  display: none;
+}
+.potatoFrameChild {
+  height: 24px;
+  width: 24px;
+  position: relative;
+  z-index: 1;
+}
+.mushroom {
+  height: 19px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+.potatoFrame {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-xs);
+}
+.frameChild6,
+.g4 {
+  position: relative;
+  z-index: 1;
+}
+.frameChild6 {
+  height: 53px;
+  width: 58px;
+}
+.gParent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-mid);
+  font-size: var(--font-size-3xs);
+}
+.frameChild7,
+.rectangleParent5 {
+  align-self: stretch;
+  border-radius: var(--br-sm);
+  background-color: var(--white);
+}
+.rectangleParent5 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0 0 var(--padding-2xs);
+  gap: var(--gap-xl);
+  z-index: 1;
+}
+.frameChild7 {
+  width: 260.4px;
+  position: relative;
+  display: none;
+}
+.frameChild8 {
+  height: 24px;
+  width: 24px;
+  position: relative;
+  z-index: 1;
+}
+.bread,
+.frameParent {
+  display: flex;
+  align-items: center;
+}
+.bread {
+  height: 20px;
+  position: relative;
+  justify-content: center;
+  z-index: 1;
+}
+.frameParent {
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: var(--gap-smi);
+}
+.frameChild9,
+.g5 {
+  position: relative;
+  z-index: 1;
+}
+.frameChild9 {
+  height: 53px;
+  width: 58px;
+}
+.gGroup,
+.rectangleParent6 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.gGroup {
+  justify-content: flex-start;
+  gap: var(--gap-mid);
+  font-size: var(--font-size-3xs);
+}
+.rectangleParent6 {
+  flex: 1;
+  border-radius: var(--br-sm);
+  background-color: var(--white);
+  justify-content: space-between;
+  padding: 0 0 0 var(--padding-2xs);
+  gap: var(--gap-xl);
+  z-index: 1;
+}
+.bakeryItems {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 var(--padding-12xs) var(--padding-9xs) 0;
+}
+.ingredientFrameChild {
+  align-self: stretch;
+  width: 260.4px;
+  position: relative;
+  border-radius: var(--br-sm);
+  background-color: var(--white);
+  display: none;
+}
+.vegetableFrameChild {
+  height: 24px;
+  width: 24px;
+  position: relative;
+  z-index: 1;
+}
+.onion {
+  height: 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+.vegetableFrame {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: var(--gap-smi);
+}
+.editButtonChild,
+.g6 {
+  position: relative;
+  z-index: 1;
+}
+.editButtonChild {
+  height: 53px;
+  width: 58px;
+}
+.cancelButton1,
+.editButton1 {
+  display: flex;
+  justify-content: flex-start;
+}
+.editButton1 {
+  flex-direction: row;
+  align-items: center;
+  gap: var(--gap-lg);
+}
+.cancelButton1 {
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0;
+  font-size: var(--font-size-3xs);
+}
+.ciciLiuText,
+.ingredientFrame {
+  align-self: stretch;
+  display: flex;
+}
+.ingredientFrame {
+  border-radius: var(--br-sm);
+  background-color: var(--white);
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0 0 var(--padding-2xs);
+  gap: var(--gap-xl);
+  z-index: 1;
+}
+.ciciLiuText {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-base);
+  font-size: var(--font-size-2xs);
+}
+.rectangleParent,
+.total717 {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+}
+.total717 {
+  margin: 0;
+  align-self: stretch;
+  height: 39px;
+  position: relative;
+  font-size: var(--body-1-size);
+  font-weight: 700;
+  font-family: inherit;
+  white-space: pre-wrap;
+  justify-content: center;
+}
+.rectangleParent {
+  width: 295px;
+  border-radius: var(--br-2xl);
+  background: linear-gradient(
+    180deg,
+    rgba(251, 157, 17, 0.35) 0.52%,
+    rgba(251, 157, 17, 0.69) 47.4%,
+    rgba(251, 157, 17, 0.35)
+  );
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: var(--padding-5xl) var(--padding-mini) var(--padding-sm)
+    var(--padding-base);
+  box-sizing: border-box;
+  gap: var(--gap-7xl);
+  text-align: center;
+  font-size: var(--font-size-2xs-5);
+  color: var(--black);
+  font-family: var(--notification-2);
+}

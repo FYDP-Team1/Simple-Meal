@@ -1,0 +1,316 @@
+.faq {
+  margin: 0;
+  width: 100px;
+  height: 72px;
+  position: relative;
+  font-size: inherit;
+  font-weight: 700;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icbaselinePlusIcon {
+  height: 28.8px;
+  width: 28.8px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.howDoesThe {
+  height: 32px;
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  max-width: calc(100% - 43px);
+}
+.nA2 {
+  width: 924px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-sm);
+  max-width: 100%;
+}
+.frameline,
+.framelineChild {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.framelineChild {
+  height: 0.6px;
+  flex: 1;
+  position: relative;
+  border-top: 0.6px solid var(--color-saddlebrown-400);
+}
+.frameline {
+  align-self: stretch;
+  height: 3px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 0 var(--padding-10xs);
+}
+.gridiconscross {
+  height: 22.8px;
+  width: 22.8px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.whatIfMy {
+  height: 32px;
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  max-width: calc(100% - 41px);
+}
+.onceYouCreate,
+.preferenceChange {
+  display: flex;
+  align-items: center;
+  max-width: 100%;
+}
+.preferenceChange {
+  width: 922px;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: var(--gap-lg);
+}
+.onceYouCreate {
+  height: 22px;
+  width: 1026px;
+  position: relative;
+  flex-shrink: 0;
+}
+.onceYouCreateAccount,
+.userHistory {
+  align-self: stretch;
+  display: flex;
+  align-items: flex-start;
+  max-width: 100%;
+}
+.onceYouCreateAccount {
+  flex-direction: row;
+  justify-content: flex-end;
+  font-size: var(--font-size-mini-4);
+}
+.userHistory {
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: var(--gap-xs);
+}
+.frameline1,
+.framelineItem {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.framelineItem {
+  height: 0.6px;
+  flex: 1;
+  position: relative;
+  border-top: 0.6px solid var(--color-saddlebrown-400);
+}
+.frameline1 {
+  align-self: stretch;
+  height: 11px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 0 var(--padding-2xs);
+}
+.icbaselinePlusIcon1 {
+  height: 28.8px;
+  width: 28.8px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.canIChoose {
+  height: 32px;
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  max-width: calc(100% - 43px);
+}
+.skipIcon {
+  width: 924px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-sm);
+  max-width: 100%;
+}
+.preferenceQuizInfo,
+.preferenceQuizInfo1 {
+  height: 0.6px;
+  flex: 1;
+  position: relative;
+  border-top: 0.6px solid var(--color-saddlebrown-400);
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.preferenceQuizInfo1 {
+  z-index: 1;
+  margin-left: -1067px;
+}
+.informationalLine {
+  align-self: stretch;
+  height: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 100%;
+}
+.icbaselinePlusIcon2 {
+  height: 28.8px;
+  width: 28.8px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.wouldIHave {
+  height: 32px;
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  max-width: calc(100% - 43px);
+}
+.skipIcon1 {
+  width: 924px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-sm);
+  max-width: 100%;
+}
+.createAccount {
+  align-self: stretch;
+  height: 0.6px;
+  position: relative;
+  border-top: 0.6px solid var(--color-saddlebrown-400);
+  box-sizing: border-box;
+}
+.frameline2 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-14xl);
+  min-height: 176px;
+  max-width: 100%;
+}
+.icbaselinePlusIcon3 {
+  height: 28.8px;
+  width: 28.8px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.whereCanI {
+  height: 32px;
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  max-width: calc(100% - 43px);
+}
+.previousHistory {
+  width: 925px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 var(--padding-12xs) 0 0;
+  box-sizing: border-box;
+  gap: var(--gap-sm);
+  min-height: 45px;
+  max-width: 100%;
+}
+.iCBaselinePlusQ {
+  align-self: stretch;
+  height: 0.6px;
+  position: relative;
+  border-top: 0.6px solid var(--color-saddlebrown-400);
+  box-sizing: border-box;
+}
+.accountOptions,
+.fAQDetails {
+  align-self: stretch;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.accountOptions {
+  display: flex;
+  padding: 0 var(--padding-11xs) 0 0;
+  box-sizing: border-box;
+  gap: var(--gap-2xl);
+  max-width: 100%;
+}
+.fAQDetails {
+  gap: var(--gap-11xl);
+  text-align: left;
+  font-size: var(--font-size-2xl-6);
+}
+.fAQDetails,
+.nA,
+.nA1 {
+  display: flex;
+  max-width: 100%;
+}
+.nA1 {
+  width: 1069px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-31xl);
+}
+.nA {
+  width: 1719px;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0 var(--padding-xl);
+  box-sizing: border-box;
+  min-height: 683px;
+  flex-shrink: 0;
+  text-align: center;
+  font-size: var(--font-size-29xl);
+  color: var(--color-saddlebrown-200);
+  font-family: var(--notification-2);
+}
+@media screen and (max-width: 900px) {
+  .faq {
+    font-size: var(--font-size-19xl);
+  }
+  .frameline2 {
+    gap: var(--gap-base);
+  }
+  .nA1 {
+    gap: var(--gap-6xl);
+  }
+}
+@media screen and (max-width: 450px) {
+  .faq {
+    font-size: var(--font-size-10xl);
+  }
+  .canIChoose,
+  .howDoesThe,
+  .whatIfMy,
+  .whereCanI,
+  .wouldIHave {
+    font-size: var(--font-size-mid);
+  }
+}

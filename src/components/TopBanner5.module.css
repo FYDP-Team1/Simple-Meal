@@ -1,0 +1,236 @@
+.simpleMeal {
+  margin: 0;
+  width: 162px;
+  height: 45px;
+  position: relative;
+  font-size: inherit;
+  font-weight: 400;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+.imageSwap {
+  width: 231px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.frameChild {
+  position: absolute;
+  height: 63.16%;
+  width: 35.82%;
+  top: 0;
+  right: 32.84%;
+  bottom: 36.84%;
+  left: 31.34%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.weekdayFrameQuintet {
+  position: absolute;
+  height: 5.26%;
+  width: 102.99%;
+  top: 100%;
+  right: -2.99%;
+  bottom: -5.26%;
+  left: 0;
+  border-top: 2px solid var(--primary-brown);
+  box-sizing: border-box;
+}
+.frameParent {
+  position: absolute;
+  height: 100%;
+  width: 27.46%;
+  top: 0;
+  right: 72.54%;
+  bottom: 0;
+  left: 0;
+}
+.frameContainer {
+  background-color: var(--color-gray-400);
+}
+.frameContainer,
+.frameContainerWrapper,
+.frameItem {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.frameItem {
+  height: 8.33%;
+  width: 287.5%;
+  top: 158.33%;
+  right: -100%;
+  bottom: -66.67%;
+  left: -87.5%;
+  border-top: 2px solid var(--primary-brown);
+  box-sizing: border-box;
+  display: none;
+}
+.frameGroup {
+  position: absolute;
+  height: 63.16%;
+  width: 9.84%;
+  top: 0;
+  right: 54.1%;
+  bottom: 36.84%;
+  left: 36.07%;
+}
+.myMealPlanChild,
+.myMealPlanInner,
+.myMealPlanItem {
+  position: absolute;
+  height: 47.37%;
+  width: 8.2%;
+  top: 7.89%;
+  right: 0;
+  bottom: 44.74%;
+  left: 91.8%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.myMealPlanInner,
+.myMealPlanItem {
+  height: 63.16%;
+  width: 9.84%;
+  top: 0;
+  right: 26.64%;
+  bottom: 36.84%;
+  left: 63.52%;
+}
+.myMealPlanInner {
+  right: 54.1%;
+  left: 36.07%;
+  z-index: 1;
+}
+.myMealPlan {
+  align-self: stretch;
+  height: 38px;
+  position: relative;
+}
+.butterChickenRiceFrame {
+  width: 244px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-9xl) 0 0;
+  box-sizing: border-box;
+}
+.mealSelectionFrameChild {
+  height: 44px;
+  width: 44px;
+  position: relative;
+}
+.mealSelectionFrameItem {
+  height: 48px;
+  width: 48px;
+  position: relative;
+}
+.image39Icon {
+  height: 44px;
+  width: 45px;
+  border-radius: var(--br-30xl);
+  object-fit: cover;
+  min-height: 44px;
+}
+.ciciLiu,
+.image39Icon,
+.vIcon {
+  position: relative;
+}
+.ciciLiu {
+  height: 24px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+.vIcon {
+  width: 12.5px;
+  height: 6.3px;
+  border-radius: var(--br-12xs);
+}
+.dishTriple,
+.imageDuo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.imageDuo {
+  flex-direction: column;
+  padding: var(--padding-9xs) 0 0;
+}
+.dishTriple {
+  flex-direction: row;
+  gap: var(--gap-8xs);
+}
+.vegan {
+  position: relative;
+}
+.weekdayFrameTrio {
+  border-radius: var(--br-11xl);
+  background-color: var(--color-khaki-100);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 var(--padding-7xs);
+  font-size: var(--regular-size);
+}
+.image39Parent,
+.mealSelectionFrame,
+.recipePair {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-12xs);
+}
+.image39Parent,
+.mealSelectionFrame {
+  flex-direction: row;
+  gap: var(--gap-2xs);
+}
+.mealSelectionFrame {
+  flex: 1;
+  align-items: center;
+  gap: var(--gap-xs);
+  text-align: left;
+  font-size: var(--headings-h6-size);
+  font-family: var(--notification-2);
+}
+.topBanner {
+  align-self: stretch;
+  background-color: var(--white-40);
+  backdrop-filter: blur(54px);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: var(--padding-lg) var(--padding-22xl) 0 var(--padding-48xl);
+  gap: var(--gap-xl);
+  top: 0;
+  z-index: 99;
+  position: sticky;
+  text-align: center;
+  font-size: var(--font-size-11xl);
+  color: var(--black);
+  font-family: var(--font-praise);
+}
+@media screen and (max-width: 1150px) {
+  .topBanner {
+    padding-left: var(--padding-14xl);
+    box-sizing: border-box;
+  }
+}

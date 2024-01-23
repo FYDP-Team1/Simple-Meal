@@ -1,0 +1,256 @@
+.frameLine {
+  width: 113.9px;
+  height: 133px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+.budgetFriendlyMealPlanning {
+  margin: 0;
+  font-size: var(--font-size-11xl);
+  color: var(--color-saddlebrown-100);
+}
+.blankLine,
+.simplemealIsTailorMade {
+  margin: 0;
+}
+.budgetFriendlyMealPlanningContainer {
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-size: var(--message-1-size);
+  color: var(--primary-brown);
+  font-family: var(--notification-2);
+}
+.frameLineParent {
+  height: 489px;
+  width: 270px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  color: var(--color-saddlebrown-100);
+}
+.icbaselineplus {
+  width: 116px;
+  height: 133px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+.reduceGroceryBills {
+  margin: 0;
+}
+.blankLine1 {
+  margin: 0;
+  font-size: var(--semibold-size);
+  color: var(--primary-brown);
+}
+.withSimplemealYoullLearn {
+  margin: 0;
+  font-size: var(--message-1-size);
+}
+.reduceGroceryBillsContainer {
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-size: var(--font-size-11xl);
+  color: var(--color-saddlebrown-200);
+  font-family: var(--notification-2);
+}
+.icbaselineplusParent {
+  height: 495px;
+  width: 248px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.onceyoucreate {
+  width: 131.8px;
+  height: 133px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+.initialStageSupport {
+  margin: 0;
+  font-size: var(--font-size-11xl);
+  color: var(--color-saddlebrown-200);
+}
+.blankLine2,
+.weSpecializeIn {
+  margin: 0;
+}
+.initialStageSupportContainer {
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-size: var(--message-1-size);
+  font-family: var(--notification-2);
+}
+.onceyoucreateParent {
+  height: 519px;
+  width: 242px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.easyAndFun {
+  margin: 0;
+}
+.blankLine3 {
+  margin: 0;
+  font-size: var(--semibold-size);
+  color: var(--primary-brown);
+}
+.whileWeFocusOnBudgetSavin {
+  margin: 0;
+  font-size: var(--message-1-size);
+}
+.easyAndFunContainer1 {
+  width: 100%;
+}
+.easyAndFunContainer,
+.whatifpreferencechanges {
+  position: absolute;
+  top: 119px;
+  left: 0;
+  display: flex;
+  align-items: center;
+  width: 235px;
+}
+.whatifpreferencechanges {
+  top: 0;
+  font-size: var(--font-size-45xl);
+  font-family: var(--font-poller-one);
+  color: var(--primary-brown);
+  width: 119px;
+  height: 133px;
+  z-index: 1;
+}
+.deliciousRecipesOnABudget,
+.easyAndFunWhileWeFocusOnParent {
+  font-size: var(--font-size-11xl);
+  color: var(--color-saddlebrown-200);
+}
+.easyAndFunWhileWeFocusOnParent {
+  height: 496px;
+  width: 235px;
+  position: relative;
+  font-family: var(--notification-2);
+}
+.deliciousRecipesOnABudget {
+  margin: 0;
+}
+.blankLine4,
+.ourAppIs {
+  margin: 0;
+}
+.deliciousRecipesOnContainer1 {
+  width: 100%;
+}
+.checkprevioushistory,
+.deliciousRecipesOnContainer {
+  position: absolute;
+  top: 119px;
+  left: 0;
+  display: flex;
+  align-items: center;
+  width: 238px;
+}
+.checkprevioushistory {
+  top: 0;
+  font-size: var(--font-size-45xl);
+  font-family: var(--font-poller-one);
+  width: 116px;
+  height: 133px;
+  z-index: 1;
+}
+.deliciousRecipesOnABudgetParent {
+  height: 460px;
+  width: 238px;
+  position: relative;
+  font-size: var(--message-1-size);
+  font-family: var(--notification-2);
+}
+.preferenceQuiz,
+.youtube {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  max-width: 100%;
+}
+.preferenceQuiz {
+  justify-content: flex-start;
+  gap: var(--gap-41xl);
+}
+.youtube {
+  width: 1695px;
+  justify-content: center;
+  padding: 0 var(--padding-xl);
+  box-sizing: border-box;
+  min-height: 632px;
+  flex-shrink: 0;
+  text-align: left;
+  font-size: var(--font-size-45xl);
+  color: var(--primary-brown);
+  font-family: var(--font-poller-one);
+}
+@media screen and (max-width: 1600px) {
+  .preferenceQuiz {
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 900px) {
+  .checkprevioushistory,
+  .frameLine,
+  .icbaselineplus,
+  .onceyoucreate,
+  .whatifpreferencechanges {
+    font-size: var(--font-size-32xl);
+  }
+  .preferenceQuiz {
+    gap: var(--gap-11xl);
+  }
+}
+@media screen and (max-width: 450px) {
+  .frameLine {
+    font-size: var(--font-size-19xl);
+  }
+  .budgetFriendlyMealPlanningContainer {
+    font-size: var(--headings-h6-size);
+  }
+  .icbaselineplus {
+    font-size: var(--font-size-19xl);
+  }
+  .reduceGroceryBillsContainer {
+    font-size: var(--headings-h6-size);
+  }
+  .onceyoucreate {
+    font-size: var(--font-size-19xl);
+  }
+  .easyAndFunContainer,
+  .initialStageSupportContainer {
+    font-size: var(--headings-h6-size);
+  }
+  .whatifpreferencechanges {
+    font-size: var(--font-size-19xl);
+  }
+  .deliciousRecipesOnContainer {
+    font-size: var(--headings-h6-size);
+  }
+  .checkprevioushistory {
+    font-size: var(--font-size-19xl);
+  }
+}

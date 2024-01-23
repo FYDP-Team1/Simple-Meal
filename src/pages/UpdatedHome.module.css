@@ -1,0 +1,104 @@
+.burgerIcon {
+  width: 433px;
+  position: absolute;
+  margin: 0 !important;
+  top: -28px;
+  right: 289px;
+  height: 419.5px;
+  object-fit: contain;
+  opacity: 0.3;
+}
+.myWeeklyMeal {
+  margin: 0;
+  height: 57px;
+  position: relative;
+  font-size: inherit;
+  font-weight: 700;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+}
+.cheesePizza,
+.mushroomSoup,
+.vegetarianBurger {
+  display: flex;
+  justify-content: flex-start;
+  max-width: 100%;
+}
+.mushroomSoup {
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0 var(--padding-4xl);
+  box-sizing: border-box;
+}
+.cheesePizza,
+.vegetarianBurger {
+  flex-direction: column;
+}
+.cheesePizza {
+  align-self: stretch;
+  align-items: center;
+  gap: var(--gap-20xl);
+}
+.vegetarianBurger {
+  flex: 1;
+  align-items: flex-start;
+  gap: var(--gap-45xl);
+  text-align: left;
+  font-size: var(--font-size-19xl);
+  color: var(--black);
+  font-family: var(--notification-2);
+}
+.updatedHome,
+.vegetarianBurgerWrapper {
+  display: flex;
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
+.vegetarianBurgerWrapper {
+  width: 1668px;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0 var(--padding-26xl) 0 var(--padding-xl);
+  max-width: 100%;
+}
+.updatedHome {
+  width: 100%;
+  position: relative;
+  background: linear-gradient(-67.7deg, #fffaec, #fff8f0);
+  overflow: hidden;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 0 var(--padding-32xl);
+  gap: var(--gap-37xl);
+  letter-spacing: normal;
+}
+@media screen and (max-width: 1350px) {
+  .vegetarianBurgerWrapper {
+    padding-right: var(--padding-3xl);
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 800px) {
+  .myWeeklyMeal {
+    font-size: var(--font-size-11xl);
+  }
+  .cheesePizza {
+    gap: var(--gap-lgi);
+  }
+  .vegetarianBurger {
+    gap: var(--gap-13xl);
+  }
+}
+@media screen and (max-width: 450px) {
+  .myWeeklyMeal {
+    font-size: var(--font-size-4xl);
+  }
+  .vegetarianBurger {
+    gap: var(--gap-base);
+  }
+  .updatedHome {
+    gap: var(--gap-9xl);
+  }
+}

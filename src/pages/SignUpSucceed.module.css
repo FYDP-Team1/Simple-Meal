@@ -1,0 +1,226 @@
+.burgerIcon,
+.burgerIcon1,
+.eggIcon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 612.8px;
+  height: 593.7px;
+  object-fit: contain;
+  opacity: 0.3;
+}
+.burgerIcon1,
+.eggIcon {
+  top: 118.5px;
+  left: 1397.9px;
+  width: 373.5px;
+  height: 370.2px;
+}
+.eggIcon {
+  top: 446px;
+  left: 544px;
+  width: 544px;
+  height: 533px;
+  object-fit: cover;
+}
+.simple {
+  letter-spacing: 0.02em;
+}
+.m {
+  letter-spacing: -0.03em;
+}
+.eal {
+  letter-spacing: 0.02em;
+}
+.simpleMealTxtContainer {
+  width: 100%;
+}
+.simpleMeal {
+  margin: 0;
+  position: absolute;
+  top: 411px;
+  left: 214px;
+  font-size: inherit;
+  font-weight: 400;
+  font-family: var(--font-praise);
+  display: flex;
+  align-items: center;
+  z-index: 1;
+}
+.allRightsReserved {
+  position: absolute;
+  top: 1068px;
+  left: 792px;
+  font-size: var(--headings-h6-size);
+  text-transform: capitalize;
+  text-align: left;
+}
+.faceBookIcon,
+.twitterIcon,
+.twitterIcon1,
+.youtubIcon {
+  position: absolute;
+  top: 587px;
+  left: 214px;
+  width: 51px;
+  height: 51px;
+  object-fit: contain;
+}
+.twitterIcon,
+.twitterIcon1,
+.youtubIcon {
+  left: 294.1px;
+}
+.twitterIcon1,
+.youtubIcon {
+  left: 374.3px;
+}
+.youtubIcon {
+  left: 454.4px;
+}
+.celebratoryMomentChild,
+.topBannerChild {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.topBannerChild {
+  background-color: rgba(120, 120, 120, 0.7);
+}
+.celebratoryMomentChild {
+  border-radius: var(--br-31xl);
+  background-color: var(--white);
+  display: none;
+}
+.h1 {
+  position: absolute;
+  top: 81px;
+  left: 297.4px;
+  font-size: inherit;
+  font-weight: 700;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 84px;
+  height: 78.8px;
+  z-index: 1;
+}
+.h1,
+.readyToStart,
+.welcomeOnBoard {
+  margin: 0;
+}
+.welcomeOnBoardContainer1 {
+  width: 100%;
+}
+.welcomeOnBoardContainer {
+  position: absolute;
+  top: 203.6px;
+  left: 158.3px;
+  font-size: var(--message-1-size);
+  display: flex;
+  align-items: center;
+  width: 361px;
+  height: 67.5px;
+  z-index: 1;
+}
+.successiveShape {
+  position: absolute;
+  top: -0.1px;
+  left: -0.1px;
+  border-radius: var(--br-31xl);
+  background-color: var(--hungry-yelloe);
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  z-index: 1;
+}
+.letsGo {
+  position: absolute;
+  top: 5.5px;
+  left: 35.8px;
+  font-size: var(--message-1-size);
+  display: flex;
+  font-family: var(--notification-2);
+  color: var(--black);
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  width: 103.1px;
+  height: 33.8px;
+  z-index: 2;
+}
+.nextButtonFrame {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 341px;
+  left: 252px;
+  width: 174px;
+  height: 44px;
+  white-space: nowrap;
+}
+.celebratoryMoment {
+  position: absolute;
+  top: 336px;
+  left: 557px;
+  border-radius: var(--br-31xl);
+  background-color: var(--white);
+  width: 678.8px;
+  height: 435.4px;
+  z-index: 3;
+  font-size: var(--font-size-51xl);
+}
+.topBanner {
+  position: absolute;
+  top: 59px;
+  left: 135px;
+  width: 1792px;
+  height: 1117px;
+  z-index: 2;
+  text-align: center;
+  font-size: var(--font-size-121xl);
+  color: var(--black);
+  font-family: var(--notification-2);
+}
+.bannerFrame {
+  height: 1176px;
+  width: 1927px;
+  position: relative;
+  max-width: 108%;
+  flex-shrink: 0;
+}
+.signUpSucceed {
+  width: 100%;
+  height: 1117px;
+  position: relative;
+  background-color: var(--light-yelloe);
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-end;
+  letter-spacing: normal;
+}
+@media screen and (max-width: 750px) {
+  .h1,
+  .simpleMeal {
+    font-size: var(--font-size-37xl);
+  }
+}
+@media screen and (max-width: 450px) {
+  .simpleMeal {
+    font-size: var(--font-size-16xl);
+  }
+  .h1 {
+    font-size: 42px;
+  }
+  .welcomeOnBoardContainer {
+    font-size: var(--headings-h6-size);
+  }
+}

@@ -1,0 +1,218 @@
+.frameChild {
+  width: 426px;
+  height: 526px;
+  position: relative;
+  border-radius: var(--br-11xl);
+  background-color: var(--white);
+  backdrop-filter: blur(14px);
+  display: none;
+  max-width: 100%;
+}
+.pricingCardChild,
+.signUp,
+.usernameInputLabelChild {
+  display: flex;
+  align-items: center;
+  font-family: var(--notification-2);
+  z-index: 1;
+}
+.signUp {
+  margin: 0;
+  height: 54px;
+  position: relative;
+  font-size: var(--font-size-17xl);
+  font-weight: 600;
+  color: var(--black);
+  text-align: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+.pricingCardChild,
+.usernameInputLabelChild {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background-color: var(--color-cornsilk-100);
+  align-self: stretch;
+  height: 40px;
+  border-radius: var(--br-3xs);
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: var(--padding-2xs) var(--padding-lg);
+  box-sizing: border-box;
+  font-size: var(--regular-size);
+  color: var(--color-gray-300);
+  min-width: 170px;
+}
+.richeckboxFillIcon {
+  height: 14px;
+  width: 14px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  z-index: 1;
+}
+.rememberMe {
+  position: relative;
+  font-size: var(--font-size-3xs);
+  font-family: var(--notification-2);
+  color: var(--black);
+  text-align: center;
+  z-index: 1;
+}
+.signupCardPrice {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: var(--gap-3xs);
+}
+.forgot {
+  position: relative;
+  font-size: var(--font-size-3xs);
+  text-decoration: underline;
+  font-family: var(--notification-2);
+  color: var(--black);
+  text-align: center;
+  z-index: 1;
+}
+/* SignUpComponent.module.css */
+.error{
+  color: red;
+}
+.errorInput {
+  border: 2px solid red; /* Red border for the input field */
+}
+
+.pricingCard,
+.pricingCardPrice {
+  display: flex;
+  align-items: flex-start;
+}
+.pricingCardPrice {
+  width: 276px;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: var(--gap-xl);
+}
+.pricingCard {
+  align-self: stretch;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: var(--gap-xs);
+}
+.signUp1,
+.signUpButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.signUp1 {
+  height: 24px;
+  position: relative;
+  font-size: var(--headings-h6-size);
+  font-family: var(--notification-2);
+  color: var(--white);
+  text-align: center;
+}
+.signUpButton {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-sm);
+  background-color: var(--yellow);
+  align-self: stretch;
+  border-radius: var(--br-3xs);
+  overflow: hidden;
+  flex-direction: row;
+  z-index: 1;
+}
+.signUpButton:hover {
+  background-color: var(--color-goldenrod-200);
+}
+.alreadyAMember {
+  color: var(--color-gray-300);
+}
+.logIn {
+  color: var(--primary-brown);
+}
+.alreadyAMemberContainer {
+  position: relative;
+  font-size: var(--regular-size);
+  font-family: var(--notification-2);
+  text-align: center;
+  z-index: 1;
+}
+.featureImage,
+.usernameInputLabel {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-5xs);
+}
+.usernameInputLabel {
+  margin: 0;
+  gap: var(--gap-4xl);
+}
+.pricing,
+.pricing1,
+.pricing2 {
+  position: relative;
+  text-transform: capitalize;
+  z-index: 1;
+}
+.pricing1,
+.pricing2 {
+  flex: 1;
+}
+.pricingFrame {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 0 var(--padding-xl);
+  gap: var(--gap-xl);
+}
+.rectangleParent {
+  flex: 1;
+  border-radius: var(--br-11xl);
+  background-color: var(--white);
+  backdrop-filter: blur(14px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: var(--padding-52xl) var(--padding-53xl) var(--padding-22xl)
+    var(--padding-52xl);
+  box-sizing: border-box;
+  gap: var(--gap-74xl);
+  max-width: 100%;
+  z-index: 1;
+  text-align: left;
+  font-size: var(--headings-h6-size);
+  color: var(--black);
+  font-family: var(--notification-2);
+}
+@media screen and (max-width: 825px) {
+  .signUp {
+    font-size: var(--font-size-10xl);
+  }
+  .rectangleParent {
+    padding-top: var(--padding-27xl);
+    padding-bottom: var(--padding-8xl);
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 450px) {
+  .signUp {
+    font-size: var(--font-size-3xl);
+  }
+  .rectangleParent {
+    gap: var(--gap-27xl);
+    padding-left: var(--padding-xl);
+    padding-right: var(--padding-xl);
+    box-sizing: border-box;
+  }
+}
