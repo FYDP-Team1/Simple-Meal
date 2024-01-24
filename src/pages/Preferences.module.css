@@ -1,0 +1,648 @@
+.div,
+.groupChild {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+.groupChild {
+  top: 100%;
+  right: -100%;
+  bottom: -100%;
+  left: 100%;
+  border-radius: 50%;
+  background-color: var(--white);
+  border: 2.2px solid var(--primary-brown);
+  box-sizing: border-box;
+  transform: rotate(180deg);
+  transform-origin: 0 0;
+}
+.div {
+  top: 0;
+  left: 0;
+  line-height: 40.32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ellipseParent {
+  width: 39.2px;
+  position: relative;
+  height: 39.2px;
+  color: var(--primary-brown);
+}
+.frameChild {
+  width: 67.2px;
+  position: relative;
+  height: 0.52px;
+  object-fit: contain;
+}
+.groupItem {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 100%;
+  right: -100%;
+  bottom: -100%;
+  left: 100%;
+  border-radius: 50%;
+  background-color: var(--grayscale-gray-4);
+  border: 2.2px solid var(--grayscale-gray-4);
+  box-sizing: border-box;
+  transform: rotate(180deg);
+  transform-origin: 0 0;
+}
+.ellipseGroup,
+.frameItem {
+  width: 39.2px;
+  position: relative;
+  height: 39.2px;
+}
+.frameItem {
+  width: 69.44px;
+  border-top: 2.2px solid var(--grayscale-gray-4);
+  box-sizing: border-box;
+  height: 2.24px;
+}
+.cuisine1,
+.groupParent {
+  position: absolute;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.groupParent {
+  height: 42.15%;
+  width: 93.92%;
+  right: 3.53%;
+  bottom: 57.85%;
+  left: 2.55%;
+  flex-direction: row;
+  gap: 8.96px;
+  font-size: 20.16px;
+  color: var(--grayscale-gray-6);
+}
+.cuisine1 {
+  height: 100%;
+  width: 100%;
+  left: 0;
+  font-weight: 600;
+}
+.cuisineWrapper {
+  position: absolute;
+  height: 43.35%;
+  width: 11.96%;
+  top: 56.6%;
+  right: 88.04%;
+  bottom: 0.04%;
+  left: 0;
+  color: var(--black);
+}
+.budget {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.budgetWrapper {
+  position: absolute;
+  height: 43.35%;
+  width: 14.12%;
+  top: 56.6%;
+  right: 0;
+  bottom: 0.04%;
+  left: 85.88%;
+}
+.timeComplexityWrapper {
+  position: absolute;
+  height: 43.01%;
+  width: 15.23%;
+  top: 56.99%;
+  right: 21.22%;
+  bottom: 0;
+  left: 63.55%;
+}
+.size {
+  margin: 0;
+}
+.sizeFrequencyContainer1 {
+  width: 100%;
+}
+.sizeFrequencyContainer {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+}
+.dietaryWrapper,
+.sizeFrequencyWrapper {
+  position: absolute;
+  height: 43.01%;
+  width: 15.76%;
+  top: 56.99%;
+  right: 42.75%;
+  bottom: 0;
+  left: 41.49%;
+}
+.dietaryWrapper {
+  height: 43.35%;
+  width: 11.96%;
+  top: 56.6%;
+  right: 66.47%;
+  bottom: 0.04%;
+  left: 21.57%;
+}
+.cuisine,
+.whatCuisinesOr {
+  width: 571.2px;
+  position: relative;
+  height: 93px;
+}
+.whatCuisinesOr {
+  width: 603px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 41px;
+  flex-shrink: 0;
+}
+.rectangleDiv {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-sm);
+  background-color: var(--white);
+  width: 147.7px;
+  height: 131.6px;
+}
+.italian {
+  position: absolute;
+  top: 105.7px;
+  left: 10.85px;
+  font-weight: 600;
+}
+.image40Icon {
+  position: absolute;
+  top: 8.4px;
+  left: 8.4px;
+  border-radius: var(--br-6xs);
+  width: 130.9px;
+  height: 91px;
+  object-fit: cover;
+}
+.groupChild2 {
+  position: absolute;
+  top: 4.9px;
+  left: 4.9px;
+  border-radius: var(--br-11xs-4);
+  background-color: var(--color-gray-200);
+  box-shadow: 0 0.699999988079071px 2.8px rgba(0, 0, 0, 0.25);
+  width: 12.6px;
+  height: 12.6px;
+}
+.vIcon {
+  position: relative;
+  line-height: 100%;
+}
+.matInputSelectionControls,
+.rectangleGroup {
+  position: absolute;
+  width: 22.4px;
+  height: 22.4px;
+}
+.matInputSelectionControls {
+  top: 0;
+  left: 0;
+  border-radius: var(--br-3xl-4);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0 11.199999809265137px;
+  box-sizing: border-box;
+}
+.rectangleGroup {
+  top: 11.2px;
+  left: 11.2px;
+  text-align: center;
+  font-size: var(--v-icon-medium-size);
+  color: var(--white);
+  font-family: var(--v-icon-medium);
+}
+.rectangleParent {
+  width: 147.7px;
+  position: relative;
+  height: 131.6px;
+}
+.image42Icon {
+  position: absolute;
+  top: 8.4px;
+  left: 8.4px;
+  border-radius: var(--br-6xs);
+  width: 130.9px;
+  height: 91px;
+  object-fit: contain;
+}
+.groupChild7 {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  border-radius: var(--br-sm);
+  background-color: var(--white);
+  border: 2px solid var(--primary-brown);
+  box-sizing: border-box;
+  width: 149.7px;
+  height: 133.6px;
+}
+.image44Icon {
+  position: absolute;
+  top: 11.2px;
+  left: 8.4px;
+  border-radius: var(--br-6xs);
+  width: 130.9px;
+  height: 91px;
+  object-fit: cover;
+}
+.groupContainer {
+  width: 623px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 10px;
+  text-align: left;
+  font-size: var(--font-size-xs-2);
+  color: var(--black);
+}
+.cuisineParent,
+.whatCuisinesOrTypesOfFoodParent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.whatCuisinesOrTypesOfFoodParent {
+  gap: 20px;
+  font-size: var(--font-size-xl);
+  color: rgba(0, 0, 0, 0.87);
+}
+.cuisineParent {
+  height: 629px;
+  gap: 60px;
+}
+.next {
+  position: relative;
+  font-weight: 600;
+}
+.loginButton {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 40px;
+  background-color: var(--brownnn);
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 11px var(--padding-base);
+}
+.loginButtonWrapper {
+  position: absolute;
+  top: 0;
+  left: 651px;
+  width: 78px;
+  height: 52px;
+  cursor: pointer;
+}
+.groupWrapper {
+  width: 729px;
+  position: relative;
+  height: 52px;
+  font-size: var(--font-size-xl);
+  color: var(--white);
+}
+.frameParent {
+  position: absolute;
+  top: 268px;
+  left: 487px;
+  border-radius: 20px;
+  background-color: var(--color-gray-300);
+  backdrop-filter: blur(26px);
+  height: 793px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 44px;
+  box-sizing: border-box;
+  color: var(--color-gray-100);
+}
+.burgerIcon,
+.eggIcon {
+  position: absolute;
+  top: -28px;
+  left: 1070px;
+  width: 433.01px;
+  height: 419.53px;
+  object-fit: contain;
+  opacity: 0.3;
+}
+.eggIcon {
+  top: -314px;
+  left: -365px;
+  width: 752.83px;
+  height: 750.32px;
+  opacity: 0.5;
+}
+.simple {
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+}
+.meal,
+.simple,
+.simpleParent {
+  position: absolute;
+  width: 118.72px;
+}
+.meal {
+  top: 26.48px;
+  left: 0;
+  letter-spacing: 0.3em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+}
+.simpleParent {
+  top: 3.6px;
+  left: 74.56px;
+  height: 62.48px;
+}
+.simplemealLogoDesignChild,
+.simplemealLogoDesignItem {
+  position: absolute;
+  top: 9.12px;
+  left: 85.68px;
+  background-color: var(--primary-brown);
+  width: 3.68px;
+  height: 5.04px;
+}
+.simplemealLogoDesignItem {
+  top: 26.8px;
+}
+.subtractIcon {
+  position: relative;
+  width: 57.55px;
+  height: 54.18px;
+}
+.groupChild17,
+.vectorIcon {
+  position: absolute;
+  top: 4.42px;
+  left: 17.08px;
+  border-radius: var(--br-781xl);
+  width: 2.68px;
+  height: 14.56px;
+}
+.groupChild17 {
+  left: 21.72px;
+}
+.s {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.s,
+.sWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 83.1px;
+  height: 25.2px;
+}
+.groupChild18,
+.groupChild19 {
+  position: absolute;
+  top: 3.92px;
+  left: 40.26px;
+  background-color: var(--primary-brown);
+  width: 2.58px;
+  height: 3.53px;
+}
+.groupChild19 {
+  top: 16.3px;
+}
+.groupParent2,
+.starIcon,
+.subtractParent {
+  position: absolute;
+  top: 24.3px;
+  left: 0;
+  width: 83.1px;
+  height: 25.2px;
+}
+.starIcon,
+.subtractParent {
+  top: 2.24px;
+  height: 54.18px;
+}
+.starIcon {
+  top: 2.96px;
+  left: 37.92px;
+  width: 9.84px;
+  height: 11.28px;
+}
+.groupChild20,
+.groupChild21 {
+  position: absolute;
+  top: 0;
+  left: 31.52px;
+  width: 5.84px;
+  height: 9.2px;
+}
+.groupChild21 {
+  top: 0.8px;
+  left: 48.24px;
+  width: 5.88px;
+  height: 5.88px;
+}
+.groupChild22,
+.groupChild23 {
+  position: absolute;
+  top: 39.04px;
+  left: 6.96px;
+  width: 9.84px;
+  height: 11.28px;
+}
+.groupChild23 {
+  top: 28.88px;
+  left: 9.36px;
+  width: 3.92px;
+  height: 3.92px;
+}
+.groupChild24,
+.groupChild25 {
+  position: absolute;
+  top: 34px;
+  left: 65.36px;
+  width: 9.84px;
+  height: 11.28px;
+}
+.groupChild25 {
+  top: 23.04px;
+  left: 68.88px;
+  width: 6.32px;
+  height: 6.32px;
+}
+.groupChild26,
+.groupParent1 {
+  position: absolute;
+  top: 11.68px;
+  left: 67.44px;
+  width: 3.92px;
+  height: 3.92px;
+}
+.groupParent1 {
+  top: 0;
+  left: 0;
+  width: 83.1px;
+  height: 56.42px;
+  font-size: 16.8px;
+}
+.simplemealLogoDesign {
+  position: absolute;
+  top: calc(50% - 33px);
+  left: 48px;
+  width: 193.28px;
+  height: 66.08px;
+}
+.image39Icon {
+  width: 45px;
+  position: relative;
+  border-radius: 49px;
+  height: 44px;
+  object-fit: cover;
+}
+.ciciLiu {
+  width: 57px;
+  position: relative;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+.vIcon8 {
+  width: 12.54px;
+  position: relative;
+  border-radius: 1px;
+  height: 6.27px;
+}
+.ciciLiuParent,
+.vIconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.vIconWrapper {
+  flex-direction: column;
+  padding: 4px 0 0;
+}
+.ciciLiuParent {
+  flex-direction: row;
+  gap: 5px;
+}
+.frameWrapper,
+.image39Parent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.image39Parent {
+  position: absolute;
+  top: 2px;
+  left: 116px;
+  flex-direction: row;
+  gap: 11px;
+}
+.groupIcon {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  width: 44px;
+  height: 44px;
+}
+.frameGroup,
+.groupChild27 {
+  position: absolute;
+  top: 0;
+  left: 56px;
+  width: 48px;
+  height: 48px;
+}
+.frameGroup {
+  top: 31px;
+  left: 1506px;
+  width: 246.54px;
+  text-align: left;
+  font-size: 16px;
+  color: var(--black);
+  font-family: var(--font-poppins);
+}
+.topBanner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-gray-300);
+  backdrop-filter: blur(54px);
+  width: 1792px;
+  height: 110px;
+  font-size: var(--v-icon-medium-size);
+  font-family: var(--font-rammetto-one);
+}
+.forUsTo,
+.pleaseProvideYour {
+  position: absolute;
+  text-align: left;
+}
+.forUsTo {
+  top: 140px;
+  left: 105px;
+  font-size: 38px;
+  color: var(--black);
+}
+.pleaseProvideYour {
+  top: 204px;
+  left: 108px;
+  font-size: var(--font-size-xl);
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+  width: 1512px;
+  height: 27px;
+}
+.preferences1 {
+  width: 100%;
+  position: relative;
+  background-color: #fffaec;
+  height: 1117px;
+  overflow: hidden;
+  text-align: center;
+  font-size: var(--font-size-sm);
+  color: var(--primary-brown);
+  font-family: var(--font-poppins);
+}

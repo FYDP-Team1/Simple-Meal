@@ -17,7 +17,10 @@ const SignUpComponent = () => {
     setConfirmPasswordError(null);
   };
 
-  const validateInputs = () => {
+
+  const onSignUpButtonClick = useCallback((e) => {
+    e.preventDefault(); // Prevent default form submission
+    
     let valid = true;
   
     if (username.trim().length < 3) {
@@ -44,17 +47,10 @@ const SignUpComponent = () => {
     if (valid){
       resetPasswordError();
     }
-    return valid;
-  };
-  
-  const onSignUpButtonClick = useCallback((e) => {
-    e.preventDefault(); // Prevent default form submission
-    
-    const isValid = validateInputs();
-    if (isValid) {
+    if (valid) {
       navigate("/sign-up-succeed");
     }
-  }, [navigate, validateInputs]);
+  }, [navigate, password, username, confirmPassword]);
 
   // Use useEffect to check if the form is valid on every change
   useEffect(() => {
@@ -140,7 +136,7 @@ const SignUpComponent = () => {
             <span
               className={styles.alreadyAMember}
             >{`Already a member? `}</span>
-            <span className={styles.logIn}>Log in</span>
+            <span className={styles.logIn} onClick={() => navigate('/log-in')}>Log in</span>
           </div>
         </div>
       </form>

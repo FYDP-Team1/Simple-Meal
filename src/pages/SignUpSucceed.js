@@ -6,12 +6,17 @@ import styles from "./SignUpSucceed.module.css";
 const SignUpSucceed = () => {
   const navigate = useNavigate();
 
-  const onSuccessiveShapeClick = useCallback(() => {
-    navigate("/preferences-1");
-  }, [navigate]);
+  const onSuccessiveShapeClick = useCallback(
+    (e) => {
+      e.preventDefault(); // Prevent default form submission
+
+      navigate("/preferences-1");
+    },
+    [navigate]
+  );
 
   return (
-    <div className={styles.signUpSucceed} >
+    <div className={styles.signUpSucceed}>
       <main className={styles.bannerFrame}>
         <img
           className={styles.burgerIcon}
@@ -81,11 +86,11 @@ const SignUpSucceed = () => {
                 </p>
               </span>
             </div>
-            <button className={styles.nextButtonFrame}>
-              <div
-                className={styles.successiveShape}
-                onClick={onSuccessiveShapeClick}
-              />
+            <button
+              className={styles.nextButtonFrame}
+              onClick={onSuccessiveShapeClick}
+            >
+              <div className={styles.successiveShape} />
               <b className={styles.letsGo}>Let’s go!</b>
             </button>
           </div>

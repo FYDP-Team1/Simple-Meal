@@ -1,4 +1,4 @@
-.frameChild {
+.loginChild {
   width: 426px;
   height: 526px;
   position: relative;
@@ -8,41 +8,100 @@
   display: none;
   max-width: 100%;
 }
-.pricingCardChild,
-.signUp,
-.usernameInputLabelChild {
-  display: flex;
-  align-items: center;
+.email,
+.LoginComponent {
+  position: relative;
   font-family: var(--notification-2);
+  color: var(--color-gray-500);
+  text-align: center;
   z-index: 1;
 }
-.signUp {
+.LoginComponent {
   margin: 0;
   height: 54px;
-  position: relative;
   font-size: var(--font-size-17xl);
   font-weight: 600;
-  color: var(--black);
-  text-align: center;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  white-space: nowrap;
 }
-.pricingCardChild,
-.usernameInputLabelChild {
+.error{
+  font-weight: normal;
+  font-size: small;
+  color: red;
+}
+.errorInput {
+  border: 2px solid red; /* Red border for the input field */
+}
+.email {
+  font-size: var(--regular-size);
+}
+.rememberMeCheckbox,
+.usernameText {
+  align-self: stretch;
+  display: flex;
+  justify-content: flex-start;
+}
+.usernameText {
   width: 100%;
   border: 0;
   outline: 0;
-  background-color: var(--color-cornsilk-100);
-  align-self: stretch;
+  background-color: var(--color-papayawhip);
   height: 40px;
   border-radius: var(--br-3xs);
   flex-direction: row;
-  justify-content: flex-start;
-  padding: var(--padding-2xs) var(--padding-lg);
+  align-items: center;
+  padding: var(--padding-5xs) var(--padding-mini);
   box-sizing: border-box;
-  font-size: var(--regular-size);
-  color: var(--color-gray-300);
+  font-family: var(--notification-2);
+  font-size: var(--headings-h6-size);
+  color: var(--color-gray-500);
   min-width: 170px;
+  z-index: 1;
+}
+.rememberMeCheckbox {
+  flex-direction: column;
+  align-items: flex-start;
+}
+.password,
+.rememberMeCheckboxChild {
+  font-family: var(--notification-2);
+  color: var(--color-gray-500);
+  z-index: 1;
+}
+.password {
+  position: relative;
+  font-size: var(--regular-size);
+  text-align: center;
+}
+.rememberMeCheckboxChild {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background-color: var(--color-papayawhip);
+  align-self: stretch;
+  height: 40px;
+  border-radius: var(--br-3xs);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: var(--padding-5xs) var(--padding-mini);
+  box-sizing: border-box;
+  font-size: var(--headings-h6-size);
+  min-width: 170px;
+}
+.forgetPasswordLink,
+.rememberMeCheckbox1 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.forgetPasswordLink {
+  flex: 1;
+  gap: var(--gap-smi);
 }
 .richeckboxFillIcon {
   height: 14px;
@@ -60,7 +119,7 @@
   text-align: center;
   z-index: 1;
 }
-.signupCardPrice {
+.starFrame {
   display: flex;
   flex-direction: row;
   align-items: flex-end;
@@ -76,40 +135,15 @@
   text-align: center;
   z-index: 1;
 }
-/* SignUpComponent.module.css */
-.error{
-  font-size: small;
-  color: red;
-}
-.errorInput {
-  border: 2px solid red; /* Red border for the input field */
-}
-
-.pricingCard,
-.pricingCardPrice {
-  display: flex;
-  align-items: flex-start;
-}
-.pricingCardPrice {
+.starIconsFrame {
   width: 276px;
+  display: flex;
   flex-direction: row;
+  align-items: flex-start;
   justify-content: space-between;
   gap: var(--gap-xl);
 }
-.pricingCard {
-  align-self: stretch;
-  flex-direction: column;
-  justify-content: flex-start;
-  gap: var(--gap-xs);
-}
-.signUp1,
-.signUpButton {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.signUp1 {
-  height: 24px;
+.signUp {
   position: relative;
   font-size: var(--headings-h6-size);
   font-family: var(--notification-2);
@@ -120,98 +154,72 @@
   cursor: pointer;
   border: 0;
   padding: var(--padding-sm);
-  background-color: var(--yellow);
+  background-color: var(--hungry-yelloe);
   align-self: stretch;
   border-radius: var(--br-3xs);
   overflow: hidden;
+  display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
   z-index: 1;
 }
 .signUpButton:hover {
-  background-color: var(--color-goldenrod-200);
+  background-color: var(--color-goldenrod-300);
 }
-.alreadyAMember {
+.notAMember {
   color: var(--color-gray-300);
 }
-.logIn {
+.signUp1 {
   color: var(--primary-brown);
 }
-.alreadyAMemberContainer {
+.notAMemberContainer {
   position: relative;
   font-size: var(--regular-size);
   font-family: var(--notification-2);
+  white-space: pre-wrap;
   text-align: center;
   z-index: 1;
 }
-.featureImage,
-.usernameInputLabel {
+.login,
+.loginInputContainer {
   align-self: stretch;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  gap: var(--gap-5xs);
+  gap: var(--gap-base);
 }
-.usernameInputLabel {
+.login {
   margin: 0;
-  gap: var(--gap-4xl);
-}
-.pricing,
-.pricing1,
-.pricing2 {
-  position: relative;
-  text-transform: capitalize;
-  z-index: 1;
-}
-.pricing1,
-.pricing2 {
-  flex: 1;
-}
-.pricingFrame {
-  align-self: stretch;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: space-between;
-  padding: 0 var(--padding-xl);
-  gap: var(--gap-xl);
-}
-.rectangleParent {
   flex: 1;
   border-radius: var(--br-11xl);
   background-color: var(--white);
   backdrop-filter: blur(14px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  padding: var(--padding-52xl) var(--padding-53xl) var(--padding-22xl)
+  padding: var(--padding-55xl) var(--padding-53xl) var(--padding-66xl)
     var(--padding-52xl);
   box-sizing: border-box;
-  gap: var(--gap-74xl);
+  gap: var(--gap-11xl);
   max-width: 100%;
   z-index: 1;
-  text-align: left;
-  font-size: var(--headings-h6-size);
-  color: var(--black);
-  font-family: var(--notification-2);
 }
 @media screen and (max-width: 825px) {
-  .signUp {
+  .LoginComponent {
     font-size: var(--font-size-10xl);
   }
-  .rectangleParent {
-    padding-top: var(--padding-27xl);
-    padding-bottom: var(--padding-8xl);
+  .login {
+    padding-top: var(--padding-29xl);
+    padding-bottom: var(--padding-36xl);
     box-sizing: border-box;
   }
 }
 @media screen and (max-width: 450px) {
-  .signUp {
+  .LoginComponent {
     font-size: var(--font-size-3xl);
   }
-  .rectangleParent {
-    gap: var(--gap-27xl);
+  .login {
+    gap: var(--gap-mini);
     padding-left: var(--padding-xl);
     padding-right: var(--padding-xl);
     box-sizing: border-box;

@@ -1,6 +1,12 @@
+import { useCallback } from "react";
 import styles from "./GroupComponent.module.css";
+import { useNavigate } from "react-router-dom";
 
 const GroupComponent = () => {
+  const navigate = useNavigate();
+  const OnLoginClickHandler = useCallback((e)=>{
+    navigate('/log-in');
+  })
   return (
     <form className={styles.rectangleParent}>
       <div className={styles.frameChild} />
@@ -14,8 +20,8 @@ const GroupComponent = () => {
       </button>
       <div className={styles.alreadyAMemberContainer}>
         <span className={styles.alreadyAMemberContainer1}>
-          <span className={styles.alreadyAMember}>{`Already a member? `}</span>
-          <span className={styles.logIn}>Log in</span>
+          <span className={styles.alreadyAMember} >{`Already a member? `}</span>
+          <span className={styles.logIn} onClick={() => navigate('/log-in')}>Log in</span>
         </span>
       </div>
       <img

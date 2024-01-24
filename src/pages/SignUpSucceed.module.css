@@ -199,7 +199,7 @@
   width: 100%;
   height: 1117px;
   position: relative;
-  background-color: var(--light-yelloe);
+  background-color: gray;
   overflow: hidden;
   display: flex;
   flex-direction: row;

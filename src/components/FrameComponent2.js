@@ -1,13 +1,8 @@
-import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./FrameComponent2.module.css";
 
 const FrameComponent2 = () => {
   const navigate = useNavigate();
-
-  const onSignUpButtonClick = useCallback(() => {
-    navigate("/sign-up");
-  }, [navigate]);
 
   return (
     <header className={styles.signUpLogInButtonWrapper}>
@@ -42,10 +37,10 @@ const FrameComponent2 = () => {
           </div>
         </div>
         <div className={styles.loginButtonParent}>
-          <button className={styles.loginButton}>
+          <button className={styles.loginButton} onClick={() => navigate('log-in')}>
             <b className={styles.login}>Login</b>
           </button>
-          <button className={styles.signUpButton} onClick={onSignUpButtonClick}>
+          <button className={styles.signUpButton} onClick={() => navigate('sign-up')}>
             <b className={styles.signUp}>Sign Up</b>
           </button>
         </div>
