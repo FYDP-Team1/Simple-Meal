@@ -713,7 +713,7 @@
   padding: 0;
   font-size: var(--font-size-3xs);
 }
-.ciciLiuText,
+.userNameText,
 .ingredientFrame {
   align-self: stretch;
   display: flex;
@@ -728,7 +728,7 @@
   gap: var(--gap-xl);
   z-index: 1;
 }
-.ciciLiuText {
+.userNameText {
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;

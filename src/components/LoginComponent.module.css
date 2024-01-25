@@ -8,7 +8,7 @@
   display: none;
   max-width: 100%;
 }
-.email,
+.username,
 .LoginComponent {
   position: relative;
   font-family: var(--notification-2);
@@ -33,7 +33,7 @@
 .errorInput {
   border: 2px solid red; /* Red border for the input field */
 }
-.email {
+.username {
   font-size: var(--regular-size);
 }
 .rememberMeCheckbox,

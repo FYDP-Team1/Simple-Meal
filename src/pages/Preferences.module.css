@@ -530,14 +530,14 @@
   width: 193.28px;
   height: 66.08px;
 }
-.image39Icon {
+.usereNameImageIcon {
   width: 45px;
   position: relative;
   border-radius: 49px;
   height: 44px;
   object-fit: cover;
 }
-.ciciLiu {
+.userName {
   width: 57px;
   position: relative;
   font-weight: 600;
@@ -551,7 +551,7 @@
   border-radius: 1px;
   height: 6.27px;
 }
-.ciciLiuParent,
+.userNameParent,
 .vIconWrapper {
   display: flex;
   align-items: center;
@@ -561,18 +561,18 @@
   flex-direction: column;
   padding: 4px 0 0;
 }
-.ciciLiuParent {
+.userNameParent {
   flex-direction: row;
   gap: 5px;
 }
 .frameWrapper,
-.image39Parent {
+.userNameImage {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-.image39Parent {
+.userNameImage {
   position: absolute;
   top: 2px;
   left: 116px;

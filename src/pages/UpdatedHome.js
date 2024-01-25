@@ -1,6 +1,6 @@
 import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-import TopBanner5 from "../components/TopBanner5";
+import NavBar from "../components/NavBar";
 import FrameGrid from "../components/FrameGrid";
 import CreateGroceryList from "../components/CreateGroceryList";
 import styles from "./UpdatedHome.module.css";
@@ -19,7 +19,7 @@ const UpdatedHome = () => {
   return (
     <div className={styles.updatedHome}>
       <img className={styles.burgerIcon} alt="" src="/burger@2x.png" />
-      <TopBanner5
+      <NavBar
         onGroupIcon1Click={onGroupIcon1Click}
         onGroupIcon3Click={onGroupIcon3Click}
       />

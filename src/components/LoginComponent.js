@@ -4,7 +4,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const LoginComponent = () => {
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
   const navigate = useNavigate();
@@ -13,9 +13,13 @@ const LoginComponent = () => {
     e.preventDefault();
     try {
       // Make an API request to your server to authenticate the user
-      const response = await axios.post("/api/login", { email, password });
+      const res = await axios.post("http://localhost:3001/api/login", { username, password });
       // Handle successful login, e.g., store user token in localStorage and redirect
-      console.log("User logged in:", response.data);
+      console.log("User logged in:", res.data);
+      if (res.status === 200){
+        localStorage.setItem("username", username);
+        navigate("/home");
+      }
     } catch (err) {
       setError("Login failed. Please check your credentials.");
     }
@@ -27,13 +31,13 @@ const LoginComponent = () => {
       <h1 className={styles.LoginComponent}>Login</h1>
       <div className={styles.forgetPasswordLink}>
         <div className={styles.rememberMeCheckbox}>
-          <div className={styles.email}>Email</div>
+          <div className={styles.username}>Username</div>
           <input
             className={styles.usernameText}
             placeholder=""
             type="text"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
           />
         </div>
         <div className={styles.rememberMeCheckbox1}>

@@ -231,11 +231,11 @@ const Preferences = () => {
           </div>
         </div>
         <div className={styles.frameGroup}>
-          <div className={styles.image39Parent}>
-            <img className={styles.image39Icon} alt="" src="/image-39@2x.png" />
+          <div className={styles.userNameImage}>
+            <img className={styles.usereNameImageIcon} alt="" src="/image-39@2x.png" />
             <div className={styles.frameWrapper}>
-              <div className={styles.ciciLiuParent}>
-                <div className={styles.ciciLiu}>Cici Liu</div>
+              <div className={styles.userNameParent}>
+                <div className={styles.userName}>Cici Liu</div>
                 <div className={styles.vIconWrapper}>
                   <img className={styles.vIcon8} alt="" src="/vicon.svg" />
                 </div>

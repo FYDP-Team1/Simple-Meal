@@ -1,6 +1,6 @@
 import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-import TopBanner5 from "../components/TopBanner5";
+import NavBar from "../components/NavBar";
 import CreateGroceryList from "../components/CreateGroceryList";
 import styles from "./Home.module.css";
 
@@ -14,7 +14,7 @@ const Home = () => {
   return (
     <div className={styles.home}>
       <img className={styles.burgerIcon} alt="" src="/burger@2x.png" />
-      <TopBanner5 />
+      <NavBar />
       <main className={styles.mealSelectionQuartet}>
         <section className={styles.rectanglePair}>
           <div className={styles.shapeSwapQuintet}>

@@ -1,6 +1,7 @@
 import React, { useState, useCallback, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./SignUpComponent.module.css";
+import axios from "axios"; // Import Axios for making HTTP requests
 
 const SignUpComponent = () => {
   const navigate = useNavigate();
@@ -18,7 +19,7 @@ const SignUpComponent = () => {
   };
 
 
-  const onSignUpButtonClick = useCallback((e) => {
+  const onSignUpButtonClick = useCallback(async (e) => {
     e.preventDefault(); // Prevent default form submission
     
     let valid = true;
@@ -44,11 +45,21 @@ const SignUpComponent = () => {
       setConfirmPasswordError("");
     }
 
-    if (valid){
-      resetPasswordError();
-    }
     if (valid) {
-      navigate("/sign-up-succeed");
+      try {
+        // Make a POST request to your signup endpoint on the server
+        let res = await axios.post("http://localhost:3001/api/signup", {
+          username,
+          password,
+        });
+        console.log(res);
+        if (res.status === 200){
+          navigate("/sign-up-succeed");
+        }
+      } catch (error) {
+        console.error(error);
+        // Handle the error (e.g., show an error message to the user)
+      }
     }
   }, [navigate, password, username, confirmPassword]);
 

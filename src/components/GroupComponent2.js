@@ -52,7 +52,7 @@ const GroupComponent2 = () => {
           </div>
         </div>
       </div>
-      <div className={styles.ciciLiuText}>
+      <div className={styles.userNameText}>
         <div className={styles.rectangleContainer}>
           <div className={styles.frameInner} />
           <div className={styles.foodItemFrame}>

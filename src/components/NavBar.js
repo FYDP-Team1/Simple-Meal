@@ -1,6 +1,9 @@
-import styles from "./TopBanner5.module.css";
+import styles from "./NavBar.module.css";
 
-const TopBanner5 = ({ onGroupIcon1Click, onGroupIcon3Click }) => {
+
+const NavBar = ({ onGroupIcon1Click, onGroupIcon3Click }) => {
+  const username = localStorage.getItem("username");
+
   return (
     <header className={styles.topBanner}>
       <div className={styles.imageSwap}>
@@ -58,11 +61,11 @@ const TopBanner5 = ({ onGroupIcon1Click, onGroupIcon3Click }) => {
           alt=""
           src="/group-490.svg"
         />
-        <div className={styles.image39Parent}>
-          <img className={styles.image39Icon} alt="" src="/image-39@2x.png" />
+        <div className={styles.userNameImage}>
+          <img className={styles.usereNameImageIcon} alt="" src="/image-39@2x.png" />
           <div className={styles.recipePair}>
             <div className={styles.dishTriple}>
-              <div className={styles.ciciLiu}>Cici Liu</div>
+              <div className={styles.userName}>{username}</div>
               <div className={styles.imageDuo}>
                 <img className={styles.vIcon} alt="" src="/vicon.svg" />
               </div>
@@ -77,4 +80,4 @@ const TopBanner5 = ({ onGroupIcon1Click, onGroupIcon3Click }) => {
   );
 };
 
-export default TopBanner5;
+export default NavBar;
