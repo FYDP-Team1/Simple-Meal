@@ -1,5 +1,7 @@
 ## Development workflow for developers
 
+Install [Docker Desktop](https://www.docker.com/products/docker-desktop/)
+
 Pull the source code [Simple Meal](https://github.com/FYDP-Team1/Simple-Meal)
 
 If pulled for the first time or the package.json changed run
