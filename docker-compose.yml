@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  app:
+    build: 
+      context: .
+      target: development
+    ports:
+      - "3000:3000"
+      - "3001:3001"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+      - WDS_SOCKET_HOST=127.0.0.1
+      - WATCHPACK_POLLING=true
+  db:
+    image: postgres:16-bookworm
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: Maan_2000
+      POSTGRES_DB: simple_meal
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+      - ./src/backend/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+volumes:
+  postgres_data:
