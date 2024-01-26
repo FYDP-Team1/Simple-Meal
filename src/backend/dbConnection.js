@@ -8,7 +8,7 @@ const app = express();
 const port = 3001;
 
 const db = pgp({
-  host: "localhost",
+  host: "db",
   port: 5432,
   database: "simple_meal",
   user: "postgres",
