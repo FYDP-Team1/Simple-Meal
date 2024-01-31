@@ -54,7 +54,7 @@
   justify-content: center;
   z-index: 1;
 }
-.frameInner {
+.textChild {
   height: 3.9px;
   width: 3.9px;
   position: absolute;
@@ -63,7 +63,7 @@
   right: -1.3px;
   z-index: 2;
 }
-.sParent {
+.text1 {
   position: absolute;
   top: 0;
   left: 0;
@@ -72,8 +72,8 @@
   align-items: flex-start;
   justify-content: flex-start;
 }
-.frameChild1,
-.rectangleDiv {
+.rectangleChild,
+.rectangleItem {
   position: absolute;
   top: 4.5px;
   left: 40.3px;
@@ -82,16 +82,16 @@
   height: 3.5px;
   z-index: 2;
 }
-.frameChild1 {
+.rectangleItem {
   top: 16.8px;
 }
-.frameParent1 {
+.rectangle2 {
   height: 25px;
   flex: 1;
   position: relative;
 }
-.frameWrapper {
-  align-self: stretch;
+.rectangle1 {
+  flex: 1;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -104,8 +104,8 @@
   width: 57.5px;
   height: 54.2px;
 }
-.vectorPairIcon,
-.vectorPairIcon1 {
+.frameInner,
+.vectorIcon {
   position: absolute;
   top: 4.7px;
   left: 4.1px;
@@ -114,10 +114,10 @@
   height: 14.6px;
   z-index: 1;
 }
-.vectorPairIcon1 {
+.vectorIcon {
   left: 8.7px;
 }
-.frameChild2,
+.frameChild1,
 .starIcon {
   position: absolute;
   top: 1px;
@@ -126,50 +126,54 @@
   height: 11.3px;
   z-index: 1;
 }
-.frameChild2 {
+.frameChild1 {
   top: 9.7px;
   left: 54.4px;
   width: 3.9px;
   height: 3.9px;
 }
 .subtractParent {
-  width: 59px;
   height: 100%;
+  width: 59px;
   position: absolute;
   margin: 0 !important;
   top: 0;
   right: -1px;
   bottom: 0;
 }
-.frameContainer {
+.rectangleParent {
   flex: 1;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-end;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-start;
   padding: var(--padding-5xl) var(--padding-9xl) var(--padding-8xs) 0;
   position: relative;
 }
-.frameGroup,
-.simple {
+.simple,
+.text {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.frameGroup {
+.text {
   width: 71px;
   flex-direction: row;
   position: relative;
 }
 .simple {
+  margin: 0;
   position: absolute;
   top: 0;
   left: 0;
+  font-size: inherit;
+  font-weight: 400;
+  font-family: inherit;
   width: 100%;
   height: 100%;
 }
-.rectangleRectangleFrame,
-.rectangleRectangleFrame1 {
+.frameChild2,
+.rectangleDiv {
   position: absolute;
   top: 6.1px;
   left: 11.7px;
@@ -178,69 +182,73 @@
   height: 5px;
   z-index: 1;
 }
-.rectangleRectangleFrame1 {
+.frameChild2 {
   top: 23.8px;
 }
-.rectangleGroupFrame {
+.simpleParent {
   height: 36px;
   flex: 1;
   position: relative;
 }
-.meal,
-.mealGroupFrame {
+.frameWrapper,
+.meal {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.mealGroupFrame {
+.frameWrapper {
   width: 105px;
   flex-direction: row;
 }
 .meal {
+  margin: 0;
   height: 36px;
   flex: 1;
   position: relative;
+  font-size: inherit;
   letter-spacing: 0.3em;
+  font-weight: 400;
+  font-family: inherit;
 }
-.mealTextFrame,
-.simpleTextFrame {
+.frameParent,
+.mealWrapper {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
 }
-.mealTextFrame {
+.mealWrapper {
   align-self: stretch;
   flex-direction: row;
   padding: 0;
 }
-.simpleTextFrame {
+.frameParent {
   flex: 1;
   flex-direction: column;
   padding: 0 var(--padding-5xs) 0 0;
   font-size: var(--v-icon-medium-size);
 }
-.frameDiv,
-.frameParent {
+.rectangle,
+.rectangleWrapper {
   display: flex;
   flex-direction: row;
 }
-.frameParent {
+.rectangle {
   flex: 1;
   align-items: flex-start;
   justify-content: flex-start;
   gap: var(--gap-10xs);
 }
-.frameDiv {
+.rectangleWrapper {
   width: 193px;
   align-items: center;
   justify-content: center;
 }
-.backgroundFrameChild {
+.groupIcon {
   height: 44px;
   width: 44px;
   position: relative;
 }
-.backgroundFrameItem,
+.frameChild3,
 .image39Icon {
   height: 48px;
   width: 48px;
@@ -252,28 +260,28 @@
   border-radius: var(--br-30xl);
   object-fit: cover;
 }
-.viconVectorFormselect {
+.frameFormselect {
   font-family: var(--message-2);
   font-weight: 600;
   font-size: var(--headings-h6-size);
   color: var(--black);
 }
-.backgroundFrame,
-.ciciLiuTextFrame,
-.imageRectangle,
+.frameContainer,
+.frameGroup,
+.image39Parent,
 .topBanner {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-.backgroundFrame,
-.imageRectangle,
+.frameGroup,
+.image39Parent,
 .topBanner {
   flex-direction: row;
   gap: var(--gap-2xs);
 }
-.backgroundFrame,
+.frameGroup,
 .topBanner {
   justify-content: flex-start;
   gap: var(--gap-xs);

@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import TopBanner1 from "../components/TopBanner";
+import TopBanner from "../components/TopBanner";
 import TimeComplexity from "../components/TimeComplexity";
 import GroupComponent from "../components/GroupComponent";
 import { useNavigate } from "react-router-dom";
@@ -17,7 +17,7 @@ const Preferences = () => {
     <div className={styles.preferences9}>
       <img className={styles.burgerIcon} alt="" src="/burger@2x.png" />
       <img className={styles.eggIcon} alt="" src="/egg@2x.png" />
-      <TopBanner1 />
+      <TopBanner />
       <main className={styles.preferenceFrame}>
         <section className={styles.inputFieldFrame}>
           <div className={styles.timeComplexityFrame}>

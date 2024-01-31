@@ -1,125 +1,22 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Form } from "react-bootstrap";
 import styles from "./Preferences4.module.css";
-import '../global1.css';
+import "../global1.css";
 import { useNavigate } from "react-router-dom";
+import TopBanner from "../components/TopBanner";
+import React, { useState } from "react";
+import RangeSlider from "react-bootstrap-range-slider"; // Import
 
 const Preferences2 = () => {
   let navigate = useNavigate();
+
+  const [budget, setBudget] = useState(120); // Initial budget value
+
 
   return (
     <div className={styles.preferences10}>
       <img className={styles.burgerIcon} alt="" src="/burger@2x.png" />
       <img className={styles.eggIcon} alt="" src="/egg@2x.png" />
-      <header className={styles.topBanner}>
-        <img
-          className={styles.topBannerChild}
-          loading="eager"
-          alt=""
-          src="/star-222.svg"
-        />
-        <img className={styles.topBannerItem} alt="" src="/star-233.svg" />
-        <img className={styles.topBannerInner} alt="" src="/star-241.svg" />
-        <div className={styles.rectangleFrameWrapper}>
-          <div className={styles.rectangleFrame}>
-            <div className={styles.shape}>
-              <div className={styles.vectorParent}>
-                <img
-                  className={styles.frameChild}
-                  loading="eager"
-                  alt=""
-                  src="/star-27.svg"
-                />
-                <img
-                  className={styles.frameItem}
-                  loading="eager"
-                  alt=""
-                  src="/star-282.svg"
-                />
-              </div>
-              <div className={styles.rectangleParent}>
-                <div className={styles.rectangle}>
-                  <div className={styles.text}>
-                    <div className={styles.text1}>
-                      <div className={styles.s}>S</div>
-                      <img
-                        className={styles.textChild}
-                        alt=""
-                        src="/star-253.svg"
-                      />
-                    </div>
-                    <div className={styles.textItem} />
-                    <div className={styles.textInner} />
-                  </div>
-                </div>
-                <div className={styles.vectorFrame}>
-                  <img
-                    className={styles.subtractIcon}
-                    alt=""
-                    src="/subtract1.svg"
-                  />
-                  <img
-                    className={styles.vectorFrameChild}
-                    loading="eager"
-                    alt=""
-                    src="/vector-31.svg"
-                  />
-                  <img
-                    className={styles.vectorFrameItem}
-                    loading="eager"
-                    alt=""
-                    src="/vector-41.svg"
-                  />
-                  <img
-                    className={styles.vectorFrameInner}
-                    loading="eager"
-                    alt=""
-                    src="/star-211.svg"
-                  />
-                  <img className={styles.starIcon} alt="" src="/star-263.svg" />
-                </div>
-              </div>
-            </div>
-            <div className={styles.frameParent}>
-              <div className={styles.frameWrapper}>
-                <div className={styles.simpleParent}>
-                  <div className={styles.simple}>SIMPLE</div>
-                  <div className={styles.frameInner} />
-                  <div className={styles.rectangleDiv} />
-                </div>
-              </div>
-              <div className={styles.mealWrapper}>
-                <div className={styles.meal}>MEAL</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className={styles.frameGroup}>
-          <img
-            className={styles.groupIcon}
-            loading="eager"
-            alt=""
-            src="/group-270431.svg"
-          />
-          <img
-            className={styles.frameChild1}
-            loading="eager"
-            alt=""
-            src="/group-4901.svg"
-          />
-          <div className={styles.image39Parent}>
-            <img
-              className={styles.image39Icon}
-              loading="eager"
-              alt=""
-              src="/image-39@2x.png"
-            />
-            <div className={styles.frameContainer}>
-              <Form.Select className={styles.frameFormselect} />
-            </div>
-          </div>
-        </div>
-      </header>
+      <TopBanner />
       <main className={styles.preferences10Inner}>
         <section className={styles.frameSection}>
           <div className={styles.forUsToLearnAboutYouParent}>
@@ -131,7 +28,6 @@ const Preferences2 = () => {
           </div>
           <div className={styles.frameDiv}>
             <div className={styles.dotParent}>
-              <div className={styles.dot} />
               <div className={styles.budgetParent}>
                 <div className={styles.budget}>
                   <div className={styles.budgetInner}>
@@ -201,27 +97,26 @@ const Preferences2 = () => {
                 <div className={styles.whatIsYour}>
                   What is your weekly budget for groceries? 
                 </div>
-                <div className={styles.pleaseProvideInfoParent}>
-                  <div className={styles.pleaseProvideInfoContainer}>
-                    <span className={styles.pleaseProvideInfoContainer1}>
-                      <span>$</span>
-                      <span className={styles.span}>120</span>
-                    </span>
-                  </div>
-                  <div className={styles.dotCircleParent}>
-                    <div className={styles.dotCircle}>$10</div>
-                    <div className={styles.progressWrapper}>
-                      <div className={styles.progress}>
-                        <div className={styles.progressChild} />
-                        <div className={styles.progressItem} />
-                      </div>
-                    </div>
-                    <div className={styles.dotCircle1}>$500</div>
+                <div className={styles.whatIsYour}>
+                  ${budget}
+                </div>
+                
+                <div className={styles.slider}>
+                  <div className={styles.sliderContainer}>
+                    <RangeSlider
+                      min={10}
+                      max={500}
+                      tooltip={'auto'}
+                      onChange={(e)=>setBudget(e.target.value)}
+                    />
                   </div>
                 </div>
               </div>
               <div className={styles.loginPreviousSubmit}>
-                <button onClick={()=>navigate('/preferences-3')} className={styles.loginButton}>
+                <button
+                  onClick={() => navigate("/preferences-3")}
+                  className={styles.loginButton}
+                >
                   <div className={styles.previous}>Previous</div>
                 </button>
                 <button className={styles.loginButton1}>

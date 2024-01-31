@@ -1,21 +1,23 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Form } from "react-bootstrap";
 import styles from "./TopBanner.module.css";
+import { useNavigate } from "react-router-dom";
 
-const TopBanner1 = () => {
+const TopBanner = () => {
+  const navigate = useNavigate();
   return (
     <header className={styles.topBanner}>
       <img
         className={styles.topBannerChild}
         loading="eager"
         alt=""
-        src="/star-223.svg"
+        src="/star-224.svg"
       />
-      <img className={styles.topBannerItem} alt="" src="/star-234.svg" />
-      <img className={styles.topBannerInner} alt="" src="/star-241.svg" />
-      <div className={styles.frameDiv}>
-        <div className={styles.frameParent}>
-          <div className={styles.frameGroup}>
+      <img className={styles.topBannerItem} alt="" src="/star-23.svg" />
+      <img className={styles.topBannerInner} alt="" src="/star-24.svg" />
+      <div className={styles.rectangleWrapper} onClick={()=> navigate('/')}>
+        <div className={styles.rectangle}>
+          <div className={styles.text}>
             <div className={styles.vectorParent}>
               <img
                 className={styles.frameChild}
@@ -27,92 +29,89 @@ const TopBanner1 = () => {
                 className={styles.frameItem}
                 loading="eager"
                 alt=""
-                src="/star-283.svg"
+                src="/star-284.svg"
               />
             </div>
-            <div className={styles.frameContainer}>
-              <div className={styles.frameWrapper}>
-                <div className={styles.frameParent1}>
-                  <div className={styles.sParent}>
+            <div className={styles.rectangleParent}>
+              <div className={styles.rectangle1}>
+                <div className={styles.rectangle2}>
+                  <div className={styles.text1}>
                     <div className={styles.s}>S</div>
                     <img
-                      className={styles.frameInner}
+                      className={styles.textChild}
                       alt=""
-                      src="/star-254.svg"
+                      src="/star-25.svg"
                     />
                   </div>
-                  <div className={styles.rectangleDiv} />
-                  <div className={styles.frameChild1} />
+                  <div className={styles.rectangleChild} />
+                  <div className={styles.rectangleItem} />
                 </div>
               </div>
               <div className={styles.subtractParent}>
                 <img
                   className={styles.subtractIcon}
                   alt=""
-                  src="/subtract1.svg"
+                  src="/subtract.svg"
                 />
                 <img
-                  className={styles.vectorPairIcon}
+                  className={styles.frameInner}
                   loading="eager"
                   alt=""
-                  src="/vector-31.svg"
+                  src="/vector-3.svg"
                 />
                 <img
-                  className={styles.vectorPairIcon1}
+                  className={styles.vectorIcon}
                   loading="eager"
                   alt=""
-                  src="/vector-41.svg"
+                  src="/vector-4.svg"
                 />
                 <img
                   className={styles.starIcon}
                   loading="eager"
                   alt=""
-                  src="/star-211.svg"
+                  src="/star-21.svg"
                 />
-                <img
-                  className={styles.frameChild2}
-                  alt=""
-                  src="/star-264.svg"
-                />
+                <img className={styles.frameChild1} alt="" src="/star-26.svg" />
               </div>
             </div>
           </div>
-          <div className={styles.simpleTextFrame}>
-            <div className={styles.mealGroupFrame}>
-              <div className={styles.rectangleGroupFrame}>
-                <div className={styles.simple}>SIMPLE</div>
-                <div className={styles.rectangleRectangleFrame} />
-                <div className={styles.rectangleRectangleFrame1} />
+          <div className={styles.frameParent} 
+            onClick={()=> navigate('/')}>
+            <div className={styles.frameWrapper}>
+              <div className={styles.simpleParent}>
+                <h2 className={styles.simple}>SIMPLE</h2>
+                <div className={styles.rectangleDiv} />
+                <div className={styles.frameChild2} />
               </div>
             </div>
-            <div className={styles.mealTextFrame}>
-              <div className={styles.meal}>MEAL</div>
+            <div className={styles.mealWrapper}>
+              <h2 className={styles.meal}>MEAL</h2>
             </div>
           </div>
         </div>
       </div>
-      <div className={styles.backgroundFrame}>
+      <div className={styles.frameGroup}>
         <img
-          className={styles.backgroundFrameChild}
+          className={styles.groupIcon}
           loading="eager"
           alt=""
-          src="/group-270431.svg"
+          src="/group-27043.svg"
         />
         <img
-          className={styles.backgroundFrameItem}
+          className={styles.frameChild3}
           loading="eager"
           alt=""
-          src="/group-4901.svg"
+          src="/group-490.svg"
         />
-        <div className={styles.imageRectangle}>
+        <div className={styles.image39Parent}>
           <img
             className={styles.image39Icon}
             loading="eager"
             alt=""
             src="/image-39@2x.png"
           />
-          <div className={styles.ciciLiuTextFrame}>
-            <Form.Select className={styles.viconVectorFormselect} />
+          <div className={styles.frameContainer}>
+            <Form.Select className={styles.frameFormselect} />
           </div>
         </div>
       </div>
@@ -120,4 +119,4 @@ const TopBanner1 = () => {
   );
 };
 
-export default TopBanner1;
+export default TopBanner;

@@ -643,7 +643,6 @@
   justify-content: center;
   flex-shrink: 0;
 }
-.image40Icon,
 .rectangleDiv {
   position: relative;
   display: none;
@@ -678,16 +677,6 @@
   padding: var(--padding-11xs) var(--padding-11xs) var(--padding-10xs);
   z-index: 3;
 }
-.cuisineOptions2 {
-  width: 22px;
-  height: 12.6px;
-  position: relative;
-  border-radius: var(--br-11xs-4);
-  background-color: var(--color-gray-300);
-  box-shadow: 0 0.7px 2.8px rgba(0, 0, 0, 0.25);
-  z-index: 2;
-  margin-top: -17px;
-}
 .cuisineOptions,
 .cuisineOptions1 {
   align-self: stretch;
@@ -703,14 +692,10 @@
   cursor: pointer;
   border: 0;
   padding: var(--padding-10xs) var(--padding-10xs) var(--padding-47xl);
-  background-color: transparent;
   flex: 1;
   border-radius: var(--br-6xs);
   flex-direction: row;
   align-items: flex-start;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top;
   z-index: 1;
 }
 .italian {
@@ -724,10 +709,9 @@
   justify-content: flex-start;
 }
 .italianWrapper {
-  align-self: stretch;
+  align-self: center;
   flex-direction: row;
   align-items: flex-start;
-  padding: 0 var(--padding-11xs);
 }
 .rectangleParent {
   height: 132px;
@@ -1111,7 +1095,7 @@
   color: var(--black);
   font-family: var(--message-2);
 }
-.rectangleParent2 {
+.highlighted  {
   height: 134px;
   width: 150px;
   border-radius: var(--br-sm);

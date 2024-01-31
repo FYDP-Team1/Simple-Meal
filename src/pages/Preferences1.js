@@ -1,134 +1,52 @@
-import { useCallback } from "react";
+import React, { useCallback, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Form } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import styles from "./Preferences1.module.css";
-import '../global1.css';
+import "../global1.css";
+import TopBanner from "../components/TopBanner";
+import BootstrapSwitchButton from "bootstrap-switch-button-react";
 
 const Preferences1 = () => {
   const navigate = useNavigate();
+
+  const [hasDietaryRestrictions, setHasDietaryRestrictions] = useState(false);
+  const [selectedOptions, setSelectedOptions] = useState([]);
+  const [availableOptions] = useState([
+    "No-shellfish",
+    "Vegan",
+    "Vegetarian",
+    "Healthy",
+    "Dairy-free",
+    "Low-sodium",
+    "Gluten-free",
+    "Diabetic",
+    "Low-carb",
+    "High-calcium",
+    "Egg-free",
+    "Low-calorie",
+    "Low-fat",
+    "Nut-free",
+  ]);
 
   const onGroupButtonClick = useCallback(() => {
     navigate("/preferences-2");
   }, [navigate]);
 
+  const handleOptionChange = (option) => {
+    if (selectedOptions.includes(option)) {
+      // If option is already selected, remove it
+      setSelectedOptions(selectedOptions.filter((item) => item !== option));
+    } else {
+      // If option is not selected, add it
+      setSelectedOptions([...selectedOptions, option]);
+    }
+  };
+
   return (
     <div className={styles.preferences7}>
       <img className={styles.burgerIcon} alt="" src="/burger@2x.png" />
       <img className={styles.eggIcon} alt="" src="/egg@2x.png" />
-      <header className={styles.topBanner}>
-        <img
-          className={styles.topBannerChild}
-          loading="eager"
-          alt=""
-          src="/star-22.svg"
-        />
-        <img className={styles.topBannerItem} alt="" src="/star-231.svg" />
-        <img className={styles.topBannerInner} alt="" src="/star-24.svg" />
-        <div className={styles.sIMPLEText}>
-          <div className={styles.rectangleFrame}>
-            <div className={styles.rectangleIntersect}>
-              <div className={styles.starVector}>
-                <img
-                  className={styles.starVectorChild}
-                  loading="eager"
-                  alt=""
-                  src="/star-27.svg"
-                />
-                <img
-                  className={styles.starVectorItem}
-                  loading="eager"
-                  alt=""
-                  src="/star-28.svg"
-                />
-              </div>
-              <div className={styles.cuisineAndDietary}>
-                <div className={styles.sizeFrequencyTimeComplexity}>
-                  <div className={styles.budgetText}>
-                    <div className={styles.text}>
-                      <div className={styles.s}>S</div>
-                      <img
-                        className={styles.textChild}
-                        alt=""
-                        src="/star-251.svg"
-                      />
-                    </div>
-                    <div className={styles.rectangleIntersect1} />
-                    <div className={styles.rectangleIntersect2} />
-                  </div>
-                </div>
-                <div className={styles.imageContainer}>
-                  <img
-                    className={styles.subtractIcon}
-                    alt=""
-                    src="/subtract.svg"
-                  />
-                  <img
-                    className={styles.vectorPairIcon}
-                    loading="eager"
-                    alt=""
-                    src="/vector-3.svg"
-                  />
-                  <img
-                    className={styles.vectorPairIcon1}
-                    loading="eager"
-                    alt=""
-                    src="/vector-4.svg"
-                  />
-                  <img
-                    className={styles.imageContainerChild}
-                    loading="eager"
-                    alt=""
-                    src="/star-21.svg"
-                  />
-                  <img
-                    className={styles.imageContainerItem}
-                    alt=""
-                    src="/star-261.svg"
-                  />
-                </div>
-              </div>
-            </div>
-            <div className={styles.backgroundFrame}>
-              <div className={styles.frameGroup}>
-                <div className={styles.frameNestedGroup}>
-                  <h2 className={styles.simple}>SIMPLE</h2>
-                  <div className={styles.rectangleRectangle} />
-                  <div className={styles.rectangleRectangle1} />
-                </div>
-              </div>
-              <div className={styles.mealText}>
-                <h2 className={styles.meal}>MEAL</h2>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className={styles.frameOuter}>
-          <img
-            className={styles.frameOuterChild}
-            loading="eager"
-            alt=""
-            src="/group-27043.svg"
-          />
-          <img
-            className={styles.frameOuterItem}
-            loading="eager"
-            alt=""
-            src="/group-490.svg"
-          />
-          <div className={styles.imageRectangle}>
-            <img
-              className={styles.image39Icon}
-              loading="eager"
-              alt=""
-              src="/image-39@2x.png"
-            />
-            <div className={styles.viconVector}>
-              <Form.Select className={styles.parentFrameFormselect} />
-            </div>
-          </div>
-        </div>
-      </header>
+      <TopBanner />
       <main className={styles.preferenceFrame}>
         <section className={styles.learnAboutYouFrame}>
           <div className={styles.preferencesGroup}>
@@ -211,18 +129,44 @@ const Preferences1 = () => {
                   should consider when planning your meals?
                 </h3>
                 <div className={styles.loginbuttons}>
-                  <div className={styles.switch}>
-                    <div className={styles.track} />
-                    <div className={styles.thumb} />
-                  </div>
+                  <BootstrapSwitchButton
+                    size="xs"
+                    onlabel="Yes"
+                    offlabel="No"
+                    checked={hasDietaryRestrictions}
+                    onChange={(checked) => {
+                      setHasDietaryRestrictions(checked);
+                    }}
+                  />
                   <div className={styles.iHaveA}>
                     I have a diet restriction as selected below.
                   </div>
                 </div>
+                {hasDietaryRestrictions && (
+                  <div className={styles.formElements}>
+                    <p>Select one or more options:</p>
+                    {availableOptions.map((option) => (
+                      <div key={option}>
+                        <input
+                          type="checkbox"
+                          id={option}
+                          name="formElement"
+                          value={option}
+                          checked={selectedOptions.includes(option)}
+                          onChange={() => handleOptionChange(option)}
+                        />
+                        <label htmlFor={option}>{option}</label>
+                      </div>
+                    ))}
+                    
+                  </div>
+                )}
               </div>
               <div className={styles.loginbuttonFrame}>
-                <button className={styles.loginButton} 
-                onClick={()=>navigate('/preferences')}>
+                <button
+                  className={styles.loginButton}
+                  onClick={() => navigate("/preferences")}
+                >
                   <div className={styles.previous}>Previous</div>
                 </button>
                 <button
