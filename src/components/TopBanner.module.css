@@ -1,0 +1,298 @@
+.topBannerChild,
+.topBannerItem {
+  height: 9.2px;
+  width: 5.8px;
+  position: absolute;
+  margin: 0 !important;
+  top: 22px;
+  left: 70.5px;
+  z-index: 2;
+}
+.topBannerItem {
+  height: 5.9px;
+  width: 5.9px;
+  top: 22.8px;
+  left: 87.2px;
+}
+.frameChild,
+.frameItem,
+.topBannerInner {
+  position: absolute;
+  width: 9.8px;
+  height: 11.3px;
+  z-index: 2;
+}
+.topBannerInner {
+  margin: 0 !important;
+  bottom: 37.7px;
+  left: 46px;
+}
+.frameChild,
+.frameItem {
+  top: 11px;
+  left: 0.4px;
+}
+.frameItem {
+  top: 0;
+  left: 3.9px;
+  width: 6.3px;
+  height: 6.3px;
+}
+.vectorParent {
+  height: 22px;
+  width: 10px;
+  position: absolute;
+  margin: 0 !important;
+  right: -4px;
+  bottom: 11px;
+}
+.s {
+  height: 25px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+.frameInner {
+  height: 3.9px;
+  width: 3.9px;
+  position: absolute;
+  margin: 0 !important;
+  top: 2.9px;
+  right: -1.3px;
+  z-index: 2;
+}
+.sParent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.frameChild1,
+.rectangleDiv {
+  position: absolute;
+  top: 4.5px;
+  left: 40.3px;
+  background-color: var(--dark-brown);
+  width: 2.6px;
+  height: 3.5px;
+  z-index: 2;
+}
+.frameChild1 {
+  top: 16.8px;
+}
+.frameParent1 {
+  height: 25px;
+  flex: 1;
+  position: relative;
+}
+.frameWrapper {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.subtractIcon {
+  position: absolute;
+  top: 0.2px;
+  left: -0.3px;
+  width: 57.5px;
+  height: 54.2px;
+}
+.vectorPairIcon,
+.vectorPairIcon1 {
+  position: absolute;
+  top: 4.7px;
+  left: 4.1px;
+  border-radius: var(--br-781xl);
+  width: 2.7px;
+  height: 14.6px;
+  z-index: 1;
+}
+.vectorPairIcon1 {
+  left: 8.7px;
+}
+.frameChild2,
+.starIcon {
+  position: absolute;
+  top: 1px;
+  left: 24.9px;
+  width: 9.8px;
+  height: 11.3px;
+  z-index: 1;
+}
+.frameChild2 {
+  top: 9.7px;
+  left: 54.4px;
+  width: 3.9px;
+  height: 3.9px;
+}
+.subtractParent {
+  width: 59px;
+  height: 100%;
+  position: absolute;
+  margin: 0 !important;
+  top: 0;
+  right: -1px;
+  bottom: 0;
+}
+.frameContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: var(--padding-5xl) var(--padding-9xl) var(--padding-8xs) 0;
+  position: relative;
+}
+.frameGroup,
+.simple {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.frameGroup {
+  width: 71px;
+  flex-direction: row;
+  position: relative;
+}
+.simple {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.rectangleRectangleFrame,
+.rectangleRectangleFrame1 {
+  position: absolute;
+  top: 6.1px;
+  left: 11.7px;
+  background-color: var(--dark-brown);
+  width: 3.7px;
+  height: 5px;
+  z-index: 1;
+}
+.rectangleRectangleFrame1 {
+  top: 23.8px;
+}
+.rectangleGroupFrame {
+  height: 36px;
+  flex: 1;
+  position: relative;
+}
+.meal,
+.mealGroupFrame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mealGroupFrame {
+  width: 105px;
+  flex-direction: row;
+}
+.meal {
+  height: 36px;
+  flex: 1;
+  position: relative;
+  letter-spacing: 0.3em;
+}
+.mealTextFrame,
+.simpleTextFrame {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.mealTextFrame {
+  align-self: stretch;
+  flex-direction: row;
+  padding: 0;
+}
+.simpleTextFrame {
+  flex: 1;
+  flex-direction: column;
+  padding: 0 var(--padding-5xs) 0 0;
+  font-size: var(--v-icon-medium-size);
+}
+.frameDiv,
+.frameParent {
+  display: flex;
+  flex-direction: row;
+}
+.frameParent {
+  flex: 1;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-10xs);
+}
+.frameDiv {
+  width: 193px;
+  align-items: center;
+  justify-content: center;
+}
+.backgroundFrameChild {
+  height: 44px;
+  width: 44px;
+  position: relative;
+}
+.backgroundFrameItem,
+.image39Icon {
+  height: 48px;
+  width: 48px;
+  position: relative;
+}
+.image39Icon {
+  height: 44px;
+  width: 45px;
+  border-radius: var(--br-30xl);
+  object-fit: cover;
+}
+.viconVectorFormselect {
+  font-family: var(--message-2);
+  font-weight: 600;
+  font-size: var(--headings-h6-size);
+  color: var(--black);
+}
+.backgroundFrame,
+.ciciLiuTextFrame,
+.imageRectangle,
+.topBanner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.backgroundFrame,
+.imageRectangle,
+.topBanner {
+  flex-direction: row;
+  gap: var(--gap-2xs);
+}
+.backgroundFrame,
+.topBanner {
+  justify-content: flex-start;
+  gap: var(--gap-xs);
+}
+.topBanner {
+  align-self: stretch;
+  height: 110px;
+  background-color: var(--white-40);
+  backdrop-filter: blur(54px);
+  justify-content: space-between;
+  padding: var(--padding-5xl) var(--padding-21xl) var(--padding-3xl)
+    var(--padding-20xl);
+  box-sizing: border-box;
+  position: sticky;
+  gap: var(--gap-xl);
+  top: 0;
+  z-index: 99;
+  text-align: center;
+  font-size: var(--font-size-base-8);
+  color: var(--dark-brown);
+  font-family: var(--font-rammetto-one);
+}

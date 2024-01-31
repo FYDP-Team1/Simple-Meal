@@ -1,0 +1,262 @@
+.burgerIcon,
+.eggIcon {
+  position: absolute;
+  margin: 0 !important;
+  object-fit: contain;
+}
+.burgerIcon {
+  width: 433px;
+  top: -28px;
+  right: 289px;
+  height: 419.5px;
+}
+.eggIcon {
+  width: 752.8px;
+  height: 750.3px;
+  top: -314px;
+  left: -365px;
+}
+.forUsTo {
+  margin: 0;
+  height: 57px;
+  position: relative;
+  font-size: inherit;
+  font-weight: 700;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  max-width: 100%;
+  z-index: 1;
+}
+.pleaseProvideYour {
+  align-self: stretch;
+  position: relative;
+  font-size: var(--message-1-size);
+  font-weight: 300;
+  color: var(--dark-brown);
+  z-index: 1;
+}
+.timeComplexityFrame {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-6xs);
+  max-width: 100%;
+}
+.cuisineDietaryGroup,
+.howMuchTime {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+}
+.howMuchTime {
+  height: 63px;
+  position: relative;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.cuisineDietaryGroup {
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.forUsToLearnFrame,
+.timeWillingToSpendText {
+  width: 603px;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.forUsToLearnFrame {
+  display: flex;
+  align-items: center;
+}
+.timeWillingToSpendText {
+  overflow-x: auto;
+  max-width: 100%;
+}
+.loginbuttonFrame,
+.previous,
+.timeWillingToSpendText {
+  display: flex;
+  align-items: center;
+}
+.loginbuttonFrame {
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: var(--gap-21xl);
+  max-width: 100%;
+}
+.previous {
+  height: 30px;
+  position: relative;
+  font-size: var(--message-1-size);
+  font-weight: 600;
+  font-family: var(--message-2);
+  color: var(--brownnn);
+  text-align: center;
+  justify-content: center;
+}
+.loginButton {
+  cursor: pointer;
+  border: 1px solid var(--brownnn);
+  padding: var(--padding-2xs);
+  background-color: var(--color-darkgoldenrod-300);
+  width: 120px;
+  border-radius: var(--br-21xl);
+  box-sizing: border-box;
+  overflow: hidden;
+  flex-shrink: 0;
+  flex-direction: row;
+}
+.loginButton:hover {
+  background-color: var(--color-darkgoldenrod-200);
+  border: 1px solid var(--color-darkgoldenrod-100);
+  box-sizing: border-box;
+}
+.loginButton,
+.loginButton1,
+.loginButtonWrapper,
+.next {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.next {
+  height: 30px;
+  position: relative;
+  font-size: var(--message-1-size);
+  font-weight: 600;
+  font-family: var(--message-2);
+  color: var(--grayscale-white);
+  text-align: center;
+}
+.loginButton1,
+.loginButtonWrapper {
+  flex-direction: row;
+}
+.loginButton1 {
+  flex: 1;
+  border-radius: var(--br-21xl);
+  background-color: var(--brownnn);
+  overflow: hidden;
+  padding: var(--padding-2xs);
+}
+.loginButtonWrapper {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  width: 78px;
+}
+.loginbuttonsGroup {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--gap-xl);
+}
+.timeSpendingFrame {
+  width: 817px;
+  border-radius: var(--br-xl);
+  background-color: var(--white-40);
+  backdrop-filter: blur(26px);
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: var(--padding-25xl);
+  box-sizing: border-box;
+  gap: 314px;
+  max-width: 100%;
+  z-index: 1;
+}
+.budgetGroup,
+.inputFieldFrame {
+  width: 883px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+  max-width: 100%;
+  text-align: center;
+  font-size: var(--message-1-size);
+  color: var(--color-gray-700);
+}
+.inputFieldFrame {
+  width: 1515px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-18xl);
+  text-align: left;
+  font-size: var(--font-size-19xl);
+  color: var(--black);
+  font-family: var(--message-2);
+}
+.preferenceFrame,
+.preferences9 {
+  display: flex;
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
+.preferenceFrame {
+  width: 1622px;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0 var(--padding-xl);
+  max-width: 100%;
+  flex-shrink: 0;
+}
+.preferences9 {
+  width: 100%;
+  position: relative;
+  background-color: var(--background);
+  overflow: hidden;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 0 var(--padding-37xl);
+  gap: var(--gap-11xl);
+  letter-spacing: normal;
+}
+@media screen and (max-width: 825px) {
+  .forUsTo {
+    font-size: var(--font-size-11xl);
+  }
+  .timeSpendingFrame {
+    gap: 157px;
+    padding: var(--padding-10xl) var(--padding-3xl);
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 675px) {
+  .loginbuttonFrame {
+    gap: var(--gap-xl);
+  }
+  .inputFieldFrame {
+    gap: var(--gap-lg);
+  }
+}
+@media screen and (max-width: 450px) {
+  .forUsTo {
+    font-size: var(--font-size-4xl);
+  }
+  .howMuchTime,
+  .next,
+  .pleaseProvideYour,
+  .previous {
+    font-size: var(--headings-h6-size);
+  }
+  .loginbuttonsGroup {
+    flex-wrap: wrap;
+  }
+  .timeSpendingFrame {
+    gap: var(--gap-59xl);
+    padding-top: var(--padding-xl);
+    padding-bottom: var(--padding-xl);
+    box-sizing: border-box;
+  }
+}

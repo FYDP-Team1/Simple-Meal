@@ -1,12 +1,9 @@
-import { useCallback } from "react";
 import styles from "./GroupComponent.module.css";
 import { useNavigate } from "react-router-dom";
 
 const GroupComponent = () => {
   const navigate = useNavigate();
-  const OnLoginClickHandler = useCallback((e)=>{
-    navigate('/log-in');
-  })
+
   return (
     <form className={styles.rectangleParent}>
       <div className={styles.frameChild} />

@@ -53,9 +53,9 @@ const SignUpComponent = () => {
           password,
         });
         console.log(res);
-        if (res.status === 200){
+        
           navigate("/sign-up-succeed");
-        }
+      
       } catch (error) {
         console.error(error);
         // Handle the error (e.g., show an error message to the user)

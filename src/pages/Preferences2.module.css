@@ -1,0 +1,768 @@
+.burgerIcon,
+.eggIcon {
+  position: absolute;
+  margin: 0 !important;
+  object-fit: contain;
+}
+.burgerIcon {
+  width: 433px;
+  top: -28px;
+  right: 289px;
+  height: 419.5px;
+}
+.eggIcon {
+  width: 752.8px;
+  height: 750.3px;
+  top: -314px;
+  left: -365px;
+}
+.forUsTo,
+.pleaseProvideYour {
+  margin: 0;
+  position: relative;
+  font-family: inherit;
+  z-index: 1;
+}
+.forUsTo {
+  height: 57px;
+  font-size: inherit;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  max-width: 100%;
+}
+.pleaseProvideYour {
+  align-self: stretch;
+  font-size: var(--message-1-size);
+  font-weight: 300;
+  color: var(--dark-brown);
+}
+.preferenceGroup {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-6xs);
+  max-width: 100%;
+}
+.howManyMeals,
+.howManyMealsPerDayDoYouWrapper {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+}
+.howManyMeals {
+  margin: 0;
+  height: 63px;
+  position: relative;
+  font-size: inherit;
+  font-weight: 400;
+  font-family: inherit;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.howManyMealsPerDayDoYouWrapper {
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.vIcon {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  line-height: 100%;
+  font-weight: 400;
+  font-family: inherit;
+}
+.matInputSelectionControls {
+  align-self: stretch;
+  border-radius: var(--br-13xl);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0 var(--padding-9xs);
+}
+.meal7 {
+  position: relative;
+  font-size: var(--message-2-size);
+  font-family: var(--message-2);
+  color: var(--black);
+  text-align: left;
+}
+.matInputSelectionControlsG {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--gap-xl);
+}
+.vIcon1 {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  line-height: 100%;
+  font-weight: 400;
+  font-family: inherit;
+}
+.matInputSelectionControls1 {
+  align-self: stretch;
+  border-radius: var(--br-13xl);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0 var(--padding-9xs);
+}
+.meal14 {
+  position: relative;
+  font-size: var(--message-2-size);
+  font-family: var(--message-2);
+  color: var(--black);
+  text-align: left;
+}
+.matInputSelectionControlsG1 {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--gap-xl);
+  color: var(--dark-brown);
+}
+.vIcon2 {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  line-height: 100%;
+  font-weight: 400;
+  font-family: inherit;
+}
+.matInputSelectionControls2 {
+  align-self: stretch;
+  border-radius: var(--br-13xl);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0 var(--padding-9xs);
+}
+.meal21 {
+  position: relative;
+  font-size: var(--message-2-size);
+  font-family: var(--message-2);
+  color: var(--black);
+  text-align: left;
+}
+.matInputSelectionControlsG2 {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--gap-xl);
+}
+.vIcon3 {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  line-height: 100%;
+  font-weight: 400;
+  font-family: inherit;
+}
+.matInputSelectionControls3 {
+  align-self: stretch;
+  border-radius: var(--br-13xl);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0 var(--padding-9xs);
+}
+.meal28 {
+  position: relative;
+  font-size: var(--message-2-size);
+  font-family: var(--message-2);
+  color: var(--black);
+  text-align: left;
+}
+.matInputSelectionControlsG3 {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--gap-xl);
+}
+.matInputSelectionControlsGParent {
+  height: 149px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-6xs);
+  font-size: var(--v-icon-medium-size);
+  color: var(--black-06);
+  font-family: var(--v-icon-medium);
+}
+.frameParent,
+.howManyServings {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+}
+.frameParent {
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: var(--gap-3xs);
+}
+.howManyServings {
+  margin: 0;
+  height: 63px;
+  position: relative;
+  font-size: inherit;
+  font-weight: 400;
+  font-family: inherit;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.howManyServingsPerRecipeWWrapper {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.vIcon4 {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  line-height: 100%;
+  font-weight: 400;
+  font-family: inherit;
+}
+.matInputSelectionControls4 {
+  align-self: stretch;
+  border-radius: var(--br-13xl);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0 var(--padding-9xs);
+}
+.person {
+  position: relative;
+  font-size: var(--message-2-size);
+  font-family: var(--message-2);
+  color: var(--black);
+  text-align: left;
+}
+.matInputSelectionControlsParent {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--gap-xl);
+}
+.vIcon5 {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  line-height: 100%;
+  font-weight: 400;
+  font-family: inherit;
+}
+.matInputSelectionControls5 {
+  align-self: stretch;
+  border-radius: var(--br-13xl);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0 var(--padding-9xs);
+}
+.people {
+  position: relative;
+  font-size: var(--message-2-size);
+  font-family: var(--message-2);
+  color: var(--black);
+  text-align: left;
+}
+.matInputSelectionControlsGroup {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--gap-xl);
+  color: var(--dark-brown);
+}
+.vIcon6 {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  line-height: 100%;
+  font-weight: 400;
+  font-family: inherit;
+}
+.matInputSelectionControls6 {
+  align-self: stretch;
+  border-radius: var(--br-13xl);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0 var(--padding-9xs);
+}
+.people1 {
+  position: relative;
+  font-size: var(--message-2-size);
+  font-family: var(--message-2);
+  color: var(--black);
+  text-align: left;
+}
+.matInputSelectionControlsContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--gap-xl);
+}
+.vIcon7 {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  line-height: 100%;
+  font-weight: 400;
+  font-family: inherit;
+}
+.matInputSelectionControls7 {
+  align-self: stretch;
+  border-radius: var(--br-13xl);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0 var(--padding-9xs);
+}
+.people2 {
+  position: relative;
+  font-size: var(--message-2-size);
+  font-family: var(--message-2);
+  color: var(--black);
+  text-align: left;
+}
+.frameDiv {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--gap-xl);
+}
+.vIcon8 {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  line-height: 100%;
+  font-weight: 400;
+  font-family: inherit;
+}
+.matInputSelectionControls8 {
+  align-self: stretch;
+  border-radius: var(--br-13xl);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0 var(--padding-9xs);
+}
+.people3 {
+  position: relative;
+  font-size: var(--message-2-size);
+  font-family: var(--message-2);
+  color: var(--black);
+  text-align: left;
+}
+.matInputSelectionControlsParent1 {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--gap-xl);
+}
+.matInputSelectionControls9,
+.vIcon9 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.vIcon9 {
+  margin: 0;
+  height: 24px;
+  flex: 1;
+  position: relative;
+  font-size: inherit;
+  line-height: 100%;
+  font-weight: 400;
+  font-family: inherit;
+}
+.matInputSelectionControls9 {
+  align-self: stretch;
+  width: 32px;
+  border-radius: var(--br-13xl);
+  flex-direction: row;
+  padding: 0 var(--padding-9xs);
+  box-sizing: border-box;
+}
+.people4 {
+  height: 21px;
+  flex: 1;
+  position: relative;
+  font-size: var(--message-2-size);
+  font-family: var(--message-2);
+  color: var(--black);
+  text-align: left;
+  display: flex;
+  align-items: center;
+}
+.matInputSelectionControlsParent2 {
+  width: 114px;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--gap-xl);
+}
+.matInputSelectionControls10,
+.vIcon10 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.vIcon10 {
+  margin: 0;
+  height: 24px;
+  flex: 1;
+  position: relative;
+  font-size: inherit;
+  line-height: 100%;
+  font-weight: 400;
+  font-family: inherit;
+}
+.matInputSelectionControls10 {
+  align-self: stretch;
+  width: 32px;
+  border-radius: var(--br-13xl);
+  flex-direction: row;
+  padding: 0 var(--padding-9xs);
+  box-sizing: border-box;
+}
+.people5 {
+  height: 21px;
+  flex: 1;
+  position: relative;
+  font-size: var(--message-2-size);
+  font-family: var(--message-2);
+  color: var(--black);
+  text-align: left;
+  display: flex;
+  align-items: center;
+}
+.matInputSelectionControlsParent3 {
+  width: 113px;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--gap-xl);
+}
+.matInputSelectionControls11,
+.vIcon11 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.vIcon11 {
+  margin: 0;
+  height: 24px;
+  flex: 1;
+  position: relative;
+  font-size: inherit;
+  line-height: 100%;
+  font-weight: 400;
+  font-family: inherit;
+}
+.matInputSelectionControls11 {
+  align-self: stretch;
+  width: 32px;
+  border-radius: var(--br-13xl);
+  flex-direction: row;
+  padding: 0 var(--padding-9xs);
+  box-sizing: border-box;
+}
+.people6 {
+  height: 21px;
+  flex: 1;
+  position: relative;
+  font-size: var(--message-2-size);
+  font-family: var(--message-2);
+  color: var(--black);
+  text-align: left;
+  display: flex;
+  align-items: center;
+}
+.matInputSelectionControlsParent4 {
+  width: 114px;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--gap-xl);
+}
+.loginContainerFrame {
+  height: 305px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-6xs);
+  font-size: var(--v-icon-medium-size);
+  color: var(--black-06);
+  font-family: var(--v-icon-medium);
+}
+.containerFrame,
+.frameGroup,
+.sizeFrequencyParent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.frameGroup {
+  align-self: stretch;
+  gap: var(--gap-3xs);
+}
+.containerFrame,
+.sizeFrequencyParent {
+  flex-shrink: 0;
+}
+.containerFrame {
+  align-self: stretch;
+  gap: var(--gap-xl);
+}
+.sizeFrequencyParent {
+  width: 603px;
+  height: 629px;
+  overflow-y: auto;
+  gap: var(--gap-21xl);
+  max-width: 100%;
+}
+.previous {
+  height: 30px;
+  position: relative;
+  font-size: var(--message-1-size);
+  font-weight: 600;
+  font-family: var(--message-2);
+  color: var(--brownnn);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loginButton {
+  cursor: pointer;
+  border: 1px solid var(--brownnn);
+  padding: var(--padding-2xs);
+  background-color: var(--color-darkgoldenrod-300);
+  width: 120px;
+  border-radius: var(--br-21xl);
+  box-sizing: border-box;
+  overflow: hidden;
+  flex-shrink: 0;
+  flex-direction: row;
+}
+.loginButton:hover {
+  background-color: var(--color-darkgoldenrod-200);
+  border: 1px solid var(--color-darkgoldenrod-100);
+  box-sizing: border-box;
+}
+.loginButton,
+.loginButton1,
+.loginButtonWrapper,
+.next {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.next {
+  height: 30px;
+  position: relative;
+  font-size: var(--message-1-size);
+  font-weight: 600;
+  font-family: var(--message-2);
+  color: var(--grayscale-white);
+  text-align: center;
+}
+.loginButton1,
+.loginButtonWrapper {
+  flex-direction: row;
+}
+.loginButton1 {
+  flex: 1;
+  border-radius: var(--br-21xl);
+  background-color: var(--brownnn);
+  overflow: hidden;
+  padding: var(--padding-2xs);
+}
+.loginButtonWrapper {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  width: 78px;
+}
+.loginbuttonGroup {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--gap-xl);
+}
+.textFrame {
+  width: 817px;
+  border-radius: var(--br-xl);
+  background-color: var(--white-40);
+  backdrop-filter: blur(26px);
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: var(--padding-25xl);
+  box-sizing: border-box;
+  gap: var(--gap-5xl);
+  max-width: 100%;
+  z-index: 1;
+}
+.inputFrame,
+.textFrameWrapper {
+  width: 883px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+  max-width: 100%;
+  text-align: center;
+  font-size: var(--message-1-size);
+  color: var(--color-gray-700);
+}
+.inputFrame {
+  width: 1515px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-18xl);
+  text-align: left;
+  font-size: var(--font-size-19xl);
+  color: var(--black);
+  font-family: var(--message-2);
+}
+.preferenceFrame,
+.preferences8 {
+  display: flex;
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
+.preferenceFrame {
+  width: 1622px;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0 var(--padding-xl);
+  max-width: 100%;
+  flex-shrink: 0;
+}
+.preferences8 {
+  width: 100%;
+  position: relative;
+  background-color: var(--background);
+  overflow: hidden;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 0 var(--padding-37xl);
+  gap: var(--gap-11xl);
+  letter-spacing: normal;
+}
+@media screen and (max-width: 825px) {
+  .forUsTo {
+    font-size: var(--font-size-11xl);
+  }
+  .textFrame {
+    padding: var(--padding-10xl) var(--padding-3xl);
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 675px) {
+  .howManyMealsPerDayDoYouWrapper,
+  .howManyServingsPerRecipeWWrapper {
+    gap: var(--gap-11xl);
+  }
+  .sizeFrequencyParent {
+    height: auto;
+    gap: var(--gap-xl);
+  }
+  .inputFrame {
+    gap: var(--gap-lg);
+  }
+}
+@media screen and (max-width: 450px) {
+  .forUsTo {
+    font-size: var(--font-size-4xl);
+  }
+  .howManyMeals,
+  .pleaseProvideYour {
+    font-size: var(--headings-h6-size);
+  }
+  .vIcon,
+  .vIcon1,
+  .vIcon2,
+  .vIcon3 {
+    font-size: var(--font-size-lgi);
+    line-height: 19px;
+  }
+  .howManyServings {
+    font-size: var(--headings-h6-size);
+  }
+  .vIcon10,
+  .vIcon11,
+  .vIcon4,
+  .vIcon5,
+  .vIcon6,
+  .vIcon7,
+  .vIcon8,
+  .vIcon9 {
+    font-size: var(--font-size-lgi);
+    line-height: 19px;
+  }
+  .next,
+  .previous {
+    font-size: var(--headings-h6-size);
+  }
+  .loginbuttonGroup {
+    flex-wrap: wrap;
+  }
+  .textFrame {
+    padding-top: var(--padding-xl);
+    padding-bottom: var(--padding-xl);
+    box-sizing: border-box;
+  }
+}

@@ -9,8 +9,7 @@ const SignUpSucceed = () => {
   const onSuccessiveShapeClick = useCallback(
     (e) => {
       e.preventDefault(); // Prevent default form submission
-
-      navigate("/preferences-1");
+      navigate("/preferences");
     },
     [navigate]
   );
