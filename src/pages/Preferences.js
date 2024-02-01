@@ -77,12 +77,7 @@ const Preferences = () => {
                           <div className={styles.viconRectangle1}>1</div>
                           <div className={styles.italianGroup} />
                         </div>
-                        <img
-                          className={styles.japaneseGroupIcon}
-                          loading="eager"
-                          alt=""
-                          src="/line-211.svg"
-                        />
+                        <div className={styles.matinputselectioncontrols} />
                         <div className={styles.parent}>
                           <div className={styles.div}>2</div>
                           <div className={styles.frameInner} />
