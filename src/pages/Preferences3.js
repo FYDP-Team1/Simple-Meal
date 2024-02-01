@@ -1,13 +1,19 @@
-import { useCallback } from "react";
+import { useCallback, useEffect, useState } from "react";
 import TopBanner from "../components/TopBanner";
+import Dropdown from "react-bootstrap/Dropdown";
 import TimeComplexity from "../components/TimeComplexity";
 import GroupComponent from "../components/GroupComponent";
 import { useNavigate } from "react-router-dom";
 import styles from "./Preferences3.module.css";
-import '../global1.css';
+import "../global1.css";
 
 const Preferences = () => {
   const navigate = useNavigate();
+  const [timeRange, SetTimeRange] = useState("Choose Time");
+
+  useEffect(()=>{
+    localStorage.setItem('preptime', timeRange);
+  },[timeRange]);
 
   const onGroupButtonClick = useCallback(() => {
     navigate("/preferences-4");
@@ -41,10 +47,25 @@ const Preferences = () => {
                     </div>
                   </div>
                 </div>
+                <Dropdown>
+                  <Dropdown.Toggle variant="success" id="dropdown-basic">
+                    {timeRange}
+                  </Dropdown.Toggle>
+
+                  <Dropdown.Menu>
+                    <Dropdown.Item onClick={()=>SetTimeRange('5-10 Minutes')}> 5-10 Minutes</Dropdown.Item>
+                    <Dropdown.Item onClick={()=>SetTimeRange('10-30 Minutes')}> 10-30 Minutes</Dropdown.Item>
+                    <Dropdown.Item onClick={()=>SetTimeRange('30-60 Minutes')}> 30-60 Minutes</Dropdown.Item>
+                    <Dropdown.Item onClick={()=>SetTimeRange('More than an hour')}> More than an hour</Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
                 <GroupComponent />
               </div>
               <div className={styles.loginbuttonsGroup}>
-                <button onClick={()=>navigate('/preferences-2')} className={styles.loginButton}>
+                <button
+                  onClick={() => navigate("/preferences-2")}
+                  className={styles.loginButton}
+                >
                   <div className={styles.previous}>Previous</div>
                 </button>
                 <button

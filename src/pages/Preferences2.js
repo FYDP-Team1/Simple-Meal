@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import TopBanner from "../components/TopBanner";
 import SizeFrequency from "../components/SizeFrequency";
 import { useNavigate } from "react-router-dom";
@@ -25,7 +25,32 @@ const Preferences = () => {
     "8 people": false,
   });
 
-  const onGroupButtonClick = useCallback(() => {
+  useEffect(()=>{
+    let selectedMeal = null;
+
+    for (const key in mealsPerDayOptions) {
+      if (mealsPerDayOptions[key] === true) {
+        selectedMeal = key;
+        break; // Stop the loop once a true value is found
+      }
+    }
+
+    localStorage.setItem('size', selectedMeal);
+  },[mealsPerDayOptions]);
+
+  useEffect(()=>{
+    let selectedFreq = null;
+
+    for (const key in servingsPerRecipeOptions) {
+      if (servingsPerRecipeOptions[key] === true) {
+        selectedFreq = key;
+        break; // Stop the loop once a true value is found
+      }
+    }
+    localStorage.setItem('freq', selectedFreq);
+  },[servingsPerRecipeOptions]);
+
+  const onGroupButtonClick = useCallback(() => {  
     navigate("/preferences-3");
   }, [navigate]);
 

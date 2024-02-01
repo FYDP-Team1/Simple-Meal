@@ -3,14 +3,20 @@ import styles from "./Preferences4.module.css";
 import "../global1.css";
 import { useNavigate } from "react-router-dom";
 import TopBanner from "../components/TopBanner";
-import React, { useState } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import RangeSlider from "react-bootstrap-range-slider"; // Import
 
 const Preferences2 = () => {
   let navigate = useNavigate();
 
   const [budget, setBudget] = useState(120); // Initial budget value
-
+  useEffect(()=>{
+    localStorage.setItem('budget', budget);
+  }, [budget]);
+  
+  const onSubmitClick = useCallback(() => {
+    navigate("/home");
+  }, [navigate]);
 
   return (
     <div className={styles.preferences10}>
@@ -119,7 +125,7 @@ const Preferences2 = () => {
                 >
                   <div className={styles.previous}>Previous</div>
                 </button>
-                <button className={styles.loginButton1}>
+                <button className={styles.loginButton1} onClick={onSubmitClick}>
                   <div className={styles.submit}>Submit</div>
                 </button>
               </div>

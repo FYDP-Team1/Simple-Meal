@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useNavigate } from "react-router-dom";
 import styles from "./Preferences1.module.css";
@@ -27,6 +27,10 @@ const Preferences1 = () => {
     "Low-fat",
     "Nut-free",
   ]);
+
+  useEffect(()=>{
+    localStorage.setItem("dietary", selectedOptions);
+  }, [selectedOptions]);
 
   const onGroupButtonClick = useCallback(() => {
     navigate("/preferences-2");

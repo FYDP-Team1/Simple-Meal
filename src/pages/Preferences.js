@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useNavigate } from "react-router-dom";
 import styles from "./Preferences.module.css";
@@ -7,11 +7,18 @@ import TopBanner from "../components/TopBanner";
 
 const Preferences = () => {
   const navigate = useNavigate();
+  // State to store selected cuisines
+  const [selectedCuisines, setSelectedCuisines] = useState([]);
 
   const onGroupButtonClick = useCallback(() => {
     navigate("/preferences-1");
   }, [navigate]);
 
+  // Use useEffect to watch for changes in selectedCuisines and update localStorage
+  useEffect(() => {
+    localStorage.setItem("cuisines", JSON.stringify(selectedCuisines.map(m=>m.value)));
+  }, [selectedCuisines]);
+  
   // Define options for cuisine selection
   const cuisineOptions = [
     { value: "italian", label: "Italian" },
@@ -44,8 +51,6 @@ const Preferences = () => {
     }
   };
 
-  // State to store selected cuisines
-  const [selectedCuisines, setSelectedCuisines] = useState([]);
 
   return (
     <div className={styles.preferences6}>
@@ -149,11 +154,12 @@ const Preferences = () => {
                                 : ""
                             }`}
                           >
-                            <div onClick={() => handleCuisineClick(option)}>
+                            <div >
                               <img
                                 className={styles.image40Icon}
                                 alt=""
                                 src={"/" + option.label + ".png"}
+                                onClick={() => handleCuisineClick(option)}
                               />
                               <div className={styles.italianWrapper}>
                                 <div className={styles.italian}>
