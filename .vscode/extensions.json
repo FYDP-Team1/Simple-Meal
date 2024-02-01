@@ -1,0 +1,10 @@
+{
+    "recommendations": [
+        "ms-vscode-remote.vscode-remote-extensionpack",
+        "swellaby.node-pack",
+        "ms-azuretools.vscode-docker",
+        "codezombiech.gitignore",
+        "mhutchie.git-graph",
+        "sonarsource.sonarlint-vscode"
+    ]
+}
