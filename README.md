@@ -4,17 +4,48 @@ Install [Docker Desktop](https://www.docker.com/products/docker-desktop/)
 
 Pull the source code [Simple Meal](https://github.com/FYDP-Team1/Simple-Meal)
 
+### Build 
+
 If pulled for the first time or the package.json changed run
 
-`docker compose build`
+`docker compose build --pull --no-cache`
+
+### Logs
 
 Then, run the following command to start the environment.
 
-`docker compose up`
+`docker compose up -d`
+
+### Logs
+
+view the logs from the app continer
+
+`docker compose logs -f app`
+
+view the logs from the postgres db continer
+
+`docker compose logs -f db`
+
+### Terminal
+
+connect to the terminal inside the db container
+
+```
+docker compose exec -it bash
+psql -d simple_meal -U postgres
+```
+
+
+
+### Stop
 
 stop the containers
 
 `docker compose down`
+
+stop the containers and remove the postgres data
+
+`docker compose down -v postgres_data`
 
 ## VS Code
 
