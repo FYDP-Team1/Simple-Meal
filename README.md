@@ -10,7 +10,7 @@ If pulled for the first time or the package.json changed run
 
 `docker compose build --pull --no-cache`
 
-### Logs
+### Start
 
 Then, run the following command to start the environment.
 
@@ -34,8 +34,6 @@ connect to the terminal inside the db container
 docker compose exec -it bash
 psql -d simple_meal -U postgres
 ```
-
-
 
 ### Stop
 
