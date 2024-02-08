@@ -16,6 +16,10 @@ Then, run the following command to start the environment.
 
 `docker compose up -d`
 
+open your web browser and navigate to the app
+
+[localhost:3000](http://localhost:3000)
+
 ### Logs
 
 view the logs from the app continer
