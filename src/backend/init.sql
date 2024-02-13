@@ -1,10 +1,10 @@
 -- Users table
 CREATE    TABLE users (
           id serial PRIMARY KEY,
-          username varchar UNIQUE,
-          created_at timestamp,
-          updated_at timestamp,
-          password varchar,
+          username varchar NOT NULL UNIQUE,
+          created_at timestamp NOT NULL,
+          updated_at timestamp NOT NULL,
+          password varchar NOT NULL,
           meals_per_day smallint CHECK (meals_per_day IN (1, 2, 3, 4)),
           servings_per_meal smallint CHECK (servings_per_meal IN (1, 2, 4)),
           max_cooking_minutes smallint,
@@ -12,7 +12,10 @@ CREATE    TABLE users (
           );
 
 -- Dietary restrictions table
-CREATE    TABLE dietary_restrictions (id serial PRIMARY KEY, name varchar);
+CREATE    TABLE dietary_restrictions (
+          id serial PRIMARY KEY,
+          name varchar NOT NULL UNIQUE
+          );
 
 -- User preferences restrictions table
 CREATE    TABLE user_preferences_restrictions (
@@ -22,7 +25,10 @@ CREATE    TABLE user_preferences_restrictions (
           );
 
 -- Cuisines table
-CREATE    TABLE cuisines (id serial PRIMARY KEY, name varchar);
+CREATE    TABLE cuisines (
+          id serial PRIMARY KEY,
+          name varchar NOT NULL UNIQUE
+          );
 
 -- User preferences cuisines table
 CREATE    TABLE user_preferences_cuisines (
@@ -34,38 +40,54 @@ CREATE    TABLE user_preferences_cuisines (
 -- Recipes table
 CREATE    TABLE recipes (
           id serial PRIMARY KEY,
-          name varchar,
-          description text,
-          cooking_minutes smallint,
-          cost decimal,
-          n_steps smallint,
-          steps text,
-          n_ingredients smallint,
-          calories decimal,
-          total_fat_pdv decimal,
-          sodium_pdv decimal,
-          protein_pdv decimal,
-          saturated_fat_pdv decimal,
-          carbohydrate_pdv decimal,
-          cooking_method varchar,
-          course varchar,
-          difficulty varchar,
-          dish varchar,
-          equipment varchar,
-          event varchar,
-          key_ingredient varchar,
-          season varchar,
-          sugar_pdv decimal
+          name varchar NOT NULL,
+          description text NOT NULL,
+          cooking_minutes smallint NOT NULL,
+          cost decimal NOT NULL,
+          n_steps smallint NOT NULL,
+          steps text NOT NULL,
+          n_ingredients smallint NOT NULL,
+          calories decimal CHECK (calories > 0) NOT NULL,
+          total_fat_pdv decimal CHECK (total_fat_pdv > 0) NOT NULL,
+          sodium_pdv decimal CHECK (sodium_pdv > 0) NOT NULL,
+          protein_pdv decimal CHECK (protein_pdv > 0) NOT NULL,
+          saturated_fat_pdv decimal CHECK (saturated_fat_pdv > 0) NOT NULL,
+          carbohydrate_pdv decimal CHECK (carbohydrate_pdv > 0) NOT NULL,
+          sugar_pdv decimal CHECK (sugar_pdv > 0) NOT NULL,
+          cooking_method varchar NOT NULL,
+          course varchar NOT NULL,
+          difficulty varchar NOT NULL,
+          dish varchar NOT NULL,
+          equipment varchar NOT NULL,
+          event varchar NOT NULL,
+          key_ingredient varchar NOT NULL,
+          season varchar NOT NULL
           );
 
 -- Ingredients table
 CREATE    TABLE ingredients (
           id serial PRIMARY KEY,
-          name VARCHAR,
-          unit_quantity decimal,
-          unit_label varchar,
-          unit_price decimal,
-          walmart_item_id varchar,
+          name VARCHAR NOT NULL,
+          quantity decimal CHECK (quantity > 0) NOT NULL,
+          unit varchar CHECK (
+          unit IN (
+          'g',
+          'kg',
+          'ml',
+          'l',
+          'oz',
+          'lb',
+          'tsp',
+          'tbsp',
+          'cup',
+          'pint',
+          'quart',
+          'gallon',
+          'unit'
+          ) NOT NULL
+          ),
+          price decimal CHECK (price > 0) NOT NULL,
+          walmart_item_id varchar NOT NULL UNIQUE,
           PRIMARY KEY (id),
           );
 
@@ -73,7 +95,8 @@ CREATE    TABLE ingredients (
 CREATE    TABLE recipe_ingredients (
           recipe_id INT REFERENCES recipes (id),
           ingredient_id INT REFERENCES ingredients (id),
-          quantity_multiplier DECIMAL,
+          quantity DECIMAL NOT NULL,
+          unit VARCHAR NOT NULL,
           PRIMARY KEY (recipe_id, ingredient_id)
           );
 
@@ -95,14 +118,14 @@ CREATE    TABLE recipe_cuisines (
 CREATE    TABLE weekly_schedules (
           id serial PRIMARY KEY,
           user_id int REFERENCES users (id),
-          week_start_date date,
-          cost decimal
+          week_start_date date NOT NULL,
+          cost decimal NOT NULL
           );
 
 -- Scheduled recipes table
 CREATE    TABLE scheduled_recipes (
           schedule_id int REFERENCES weekly_schedules (id),
           recipe_id int REFERENCES recipes (id),
-          cost decimal,
+          cost decimal NOT NULL,
           PRIMARY KEY (schedule_id, recipe_id)
           );
