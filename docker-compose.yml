@@ -26,7 +26,7 @@ services:
       - postgres_data:/var/lib/postgresql/data/
       # Initialize the database with some tables and data
       - ./src/backend/init.sql:/docker-entrypoint-initdb.d/init.sql
-      - ./src/backend/seedRecipieData.sql:/docker-entrypoint-initdb.d/seedRecipieData.sql
+      - ./src/backend/seed.sql:/docker-entrypoint-initdb.d/seed.sql
 
 volumes:
   postgres_data:

@@ -39,7 +39,7 @@ CREATE    TABLE user_preferences_cuisines (
 
 -- Recipes table
 CREATE    TABLE recipes (
-          id serial PRIMARY KEY,
+          id smallint PRIMARY KEY,
           name varchar NOT NULL,
           description text NOT NULL,
           cooking_minutes smallint NOT NULL,
@@ -95,6 +95,7 @@ CREATE    TABLE ingredients (
 CREATE    TABLE recipe_ingredients (
           recipe_id INT REFERENCES recipes (id),
           ingredient_id INT REFERENCES ingredients (id),
+          label VARCHAR NOT NULL,
           quantity DECIMAL NOT NULL,
           unit VARCHAR NOT NULL,
           PRIMARY KEY (recipe_id, ingredient_id)
