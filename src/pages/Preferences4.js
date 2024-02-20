@@ -17,12 +17,13 @@ const Preferences2 = () => {
 
   const onSubmitClick = useCallback(async () => {
     try {
-      const userId = localStorage.getItem("userId");
+      const userId = localStorage.getItem("user_id");
       if (userId == null) {
         navigate("/log-in");
       }
-      const dietaryRestrictions = localStorage.getItem("dietary").split(",");
-      const cuisines = localStorage.getItem("cuisines").split(",");
+
+      const dietaryRestrictions = localStorage.getItem("dietary");
+      const cuisines = localStorage.getItem("cuisines");
       const mealsPerDay = localStorage.getItem("size");
       const servingsPerMeal = localStorage.getItem("freq");
       const maxCookingMinutes = localStorage.getItem("preptime");

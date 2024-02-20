@@ -53,8 +53,12 @@ const SignUpComponent = () => {
           password,
         });
         console.log(res);
-        
-          navigate("/sign-up-succeed");
+        let getUserIdRes = await axios.post("http://localhost:3001/api/getUserId", {
+          username
+        });
+        console.log(getUserIdRes);
+        localStorage.setItem('user_id', getUserIdRes.data.id);
+        navigate("/sign-up-succeed");
       
       } catch (error) {
         console.error(error);

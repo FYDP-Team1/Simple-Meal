@@ -41,9 +41,24 @@ app.post("/api/signup", async (req, res) => {
   }
 });
 
+app.post("/api/getUserId", async (req, res) => {
+  const { username } = req.body;
+  try {
+    const user = await db.one("SELECT id FROM users WHERE username = $1", [
+      username,
+    ]);
+    return res.status(200).json({ id: user.id });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+});
+
 // Endpoint to save user preferences and details
 app.post("/api/savePreferences", async (req, res) => {
-  const {
+  const currentTime = pgp.as.date(new Date());
+  console.log(req.body);
+  let {
     userId,
     dietaryRestrictions,
     cuisines,
@@ -52,18 +67,42 @@ app.post("/api/savePreferences", async (req, res) => {
     maxCookingMinutes,
     weeklyBudget,
   } = req.body;
-
+  console.log(dietaryRestrictions);
   try {
-    // Insert new dietary restrictions
-    for (const restrictionId of dietaryRestrictions) {
+    // Assuming dietaryRestrictions is a comma-separated string like "restriction1,restriction2,restriction3"
+    const dietaryRestrictionsArray = dietaryRestrictions.split(",");
+
+    // Query to fetch IDs of dietary restrictions
+    const restrictionIdsQuery = await db.any(
+      "SELECT id FROM dietary_restrictions WHERE name = ANY($1)",
+      [dietaryRestrictionsArray]
+    );
+
+    // Extract IDs from the query result
+    const restrictionIds = restrictionIdsQuery.map((row) => row.id);
+
+    // Insert into user_preferences_restrictions table
+    for (const restrictionId of restrictionIds) {
       await db.none(
         "INSERT INTO user_preferences_restrictions(user_id, restriction_id) VALUES($1, $2)",
         [userId, restrictionId]
       );
     }
 
-    // Insert new cuisines
-    for (const cuisineId of cuisines) {
+    // Assuming cuisines is a comma-separated string like "cuisine1,cuisine2,cuisine3"
+    const cuisineIdsArray = cuisines.split(",");
+
+    // Query to fetch IDs of cuisines
+    const cuisineIdsQuery = await db.any(
+      "SELECT id FROM cuisines WHERE name = ANY($1)",
+      [cuisineIdsArray]
+    );
+
+    // Extract IDs from the query result
+    const cuisineIds = cuisineIdsQuery.map((row) => row.id);
+
+    // Insert into user_preferences_cuisines table
+    for (const cuisineId of cuisineIds) {
       await db.none(
         "INSERT INTO user_preferences_cuisines(user_id, cuisine_id) VALUES($1, $2)",
         [userId, cuisineId]
@@ -72,11 +111,18 @@ app.post("/api/savePreferences", async (req, res) => {
 
     // Update user details
     await db.none(
-      "UPDATE users SET meals_per_day = $1, servings_per_meal = $2, max_cooking_minutes = $3, weekly_budget = $4 WHERE id = $5",
-      [mealsPerDay, servingsPerMeal, maxCookingMinutes, weeklyBudget, userId]
+      "UPDATE users SET meals_per_day = $1, servings_per_meal = $2, max_cooking_minutes = $3, weekly_budget = $4, updated_at = $6 WHERE id = $5",
+      [
+        mealsPerDay,
+        servingsPerMeal,
+        maxCookingMinutes,
+        weeklyBudget,
+        userId,
+        currentTime,
+      ]
     );
 
-    res
+    return res
       .status(200)
       .json({ message: "User preferences and details saved successfully" });
   } catch (error) {

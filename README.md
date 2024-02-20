@@ -68,6 +68,10 @@ Go into our Database:
 
 `\c simple_meal`
 
+OR
+
+`docker exec -it simple-meal-db psql -d simple_meal -U postgres`
+
 ## VS Code
 
 ### Setup
