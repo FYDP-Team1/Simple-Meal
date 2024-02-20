@@ -25,11 +25,15 @@ app.post("/api/signup", async (req, res) => {
   try {
     const saltRounds = 10;
     const hashedPassword = await bcrypt.hash(password, saltRounds);
+    const currentTime = pgp.as.date(new Date());
 
-    await db.none("INSERT INTO users(username, password) VALUES($1, $2)", [
-      username,
-      hashedPassword,
-    ]);
+    // Perform the insert query with the current timestamp
+    await db.none(
+      `
+     INSERT INTO users(username, created_at, updated_at, password) 
+     VALUES($1, $2, $2, $3)`,
+      [username, currentTime, hashedPassword]
+    );
     res.status(201).json({ message: "User registered successfully" });
   } catch (error) {
     console.error(error);

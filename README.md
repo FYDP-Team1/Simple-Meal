@@ -66,7 +66,7 @@ Go to docker database container and open Terminal
 
 Go into our Database:
 
-`\c name_of_db`
+`\c simple_meal`
 
 ## VS Code
 

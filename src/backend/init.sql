@@ -5,12 +5,12 @@ CREATE TABLE users (
     created_at timestamp NOT NULL,
     updated_at timestamp NOT NULL,
     password varchar NOT NULL,
-    meals_per_day smallint,
+    meals_per_day smallint DEFAULT NULL,
     --CHECK (meals_per_day IN (1, 2, 3, 4))
-    servings_per_meal smallint,
+    servings_per_meal smallint DEFAULT NULL,
     --CHECK (servings_per_meal IN (1, 2, 4)),
-    max_cooking_minutes smallint,
-    weekly_budget decimal -- decimal CHECK (weekly_budget > 0)
+    max_cooking_minutes smallint DEFAULT NULL,
+    weekly_budget decimal DEFAULT NULL -- decimal CHECK (weekly_budget > 0)
 );
 
 -- Dietary restrictions table
