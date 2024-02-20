@@ -12,7 +12,16 @@ const Preferences = () => {
   const [timeRange, SetTimeRange] = useState("Choose Time");
 
   useEffect(()=>{
-    localStorage.setItem('preptime', timeRange);
+    let timeRangeSplit = timeRange.split(' ')[0];
+    
+    if (timeRangeSplit === "Choose" || timeRangeSplit === "More"){
+      timeRangeSplit = "60+";
+    }
+    else{
+      timeRangeSplit = timeRangeSplit.split('-')[1];
+    }
+    
+    localStorage.setItem('preptime', timeRangeSplit);
   },[timeRange]);
 
   const onGroupButtonClick = useCallback(() => {

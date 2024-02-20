@@ -2,6 +2,7 @@ version: '3.8'
 
 services:
   app:
+    container_name: simple-meal-app
     build: 
       context: .
       target: development
@@ -16,6 +17,7 @@ services:
       - WDS_SOCKET_HOST=127.0.0.1
       - WATCHPACK_POLLING=true
   db:
+    container_name: simple-meal-db
     image: postgres:16-bookworm
     restart: unless-stopped
     environment:

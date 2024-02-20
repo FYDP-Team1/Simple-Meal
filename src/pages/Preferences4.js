@@ -5,17 +5,44 @@ import { useNavigate } from "react-router-dom";
 import TopBanner from "../components/TopBanner";
 import React, { useState, useCallback, useEffect } from "react";
 import RangeSlider from "react-bootstrap-range-slider"; // Import
+import axios from "axios";
 
 const Preferences2 = () => {
   let navigate = useNavigate();
 
   const [budget, setBudget] = useState(120); // Initial budget value
-  useEffect(()=>{
-    localStorage.setItem('budget', budget);
+  useEffect(() => {
+    localStorage.setItem("budget", budget);
   }, [budget]);
-  
-  const onSubmitClick = useCallback(() => {
-    navigate("/home");
+
+  const onSubmitClick = useCallback(async () => {
+    try {
+      const userId = localStorage.getItem("userId");
+      if (userId == null) {
+        navigate("/log-in");
+      }
+      const dietaryRestrictions = localStorage.getItem("dietary").split(",");
+      const cuisines = localStorage.getItem("cuisines").split(",");
+      const mealsPerDay = localStorage.getItem("size");
+      const servingsPerMeal = localStorage.getItem("freq");
+      const maxCookingMinutes = localStorage.getItem("preptime");
+      const weeklyBudget = localStorage.getItem("budget");
+
+      await axios.post("/api/savePreferences", {
+        userId,
+        dietaryRestrictions,
+        cuisines,
+        mealsPerDay,
+        servingsPerMeal,
+        maxCookingMinutes,
+        weeklyBudget,
+      });
+
+      navigate("/home");
+    } catch (error) {
+      console.error("Error saving preferences:", error);
+      // Handle error, e.g., show an error message to the user
+    }
   }, [navigate]);
 
   return (
@@ -103,17 +130,15 @@ const Preferences2 = () => {
                 <div className={styles.whatIsYour}>
                   What is your weekly budget for groceries? 
                 </div>
-                <div className={styles.whatIsYour}>
-                  ${budget}
-                </div>
-                
+                <div className={styles.whatIsYour}>${budget}</div>
+
                 <div className={styles.slider}>
                   <div className={styles.sliderContainer}>
                     <RangeSlider
                       min={10}
                       max={500}
-                      tooltip={'auto'}
-                      onChange={(e)=>setBudget(e.target.value)}
+                      tooltip={"auto"}
+                      onChange={(e) => setBudget(e.target.value)}
                     />
                   </div>
                 </div>

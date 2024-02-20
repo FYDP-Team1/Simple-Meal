@@ -34,8 +34,8 @@ const Preferences = () => {
         break; // Stop the loop once a true value is found
       }
     }
-
-    localStorage.setItem('size', selectedMeal);
+    let splitSelectedMeal = selectedMeal.split(' ')[0];
+    localStorage.setItem('size', splitSelectedMeal);
   },[mealsPerDayOptions]);
 
   useEffect(()=>{
@@ -47,7 +47,9 @@ const Preferences = () => {
         break; // Stop the loop once a true value is found
       }
     }
-    localStorage.setItem('freq', selectedFreq);
+    
+    let splitselectedFreq = selectedFreq.split(' ')[0];
+    localStorage.setItem('freq', splitselectedFreq);
   },[servingsPerRecipeOptions]);
 
   const onGroupButtonClick = useCallback(() => {  

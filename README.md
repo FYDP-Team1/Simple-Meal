@@ -20,6 +20,7 @@ open your web browser and navigate to the app
 
 [localhost:3000](http://localhost:3000)
 
+
 ### Logs
 
 view the logs from the app continer
@@ -45,9 +46,27 @@ stop the containers
 
 `docker compose down`
 
+AND 
+
+removing docker volume
+
+`docker volume rm simple-meal_postgres_data`
+
+OR
+
 stop the containers and remove the postgres data
 
 `docker compose down -v postgres_data`
+
+### Getting into the Database
+
+Go to docker database container and open Terminal
+
+`psql -d postgres -U postgres`
+
+Go into our Database:
+
+`\c name_of_db`
 
 ## VS Code
 
