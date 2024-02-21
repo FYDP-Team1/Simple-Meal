@@ -80,19 +80,14 @@ CREATE TABLE
         quantity decimal CHECK (quantity > 0) NOT NULL,
         unit varchar CHECK (
             unit IN (
+                'mg',
                 'g',
-                'kg',
-                'ml',
-                'l',
                 'oz',
                 'lb',
-                'tsp',
-                'tbsp',
-                'cup',
-                'pint',
-                'quart',
-                'gallon',
-                'unit'
+                'ml',
+                'fl oz',
+                'bunch',
+                'each'
             )
         ),
         price decimal CHECK (price >= 0) NOT NULL,
