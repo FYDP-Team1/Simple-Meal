@@ -141,5 +141,6 @@ CREATE TABLE
         schedule_id integer REFERENCES weekly_schedules (id),
         recipe_id integer REFERENCES recipes (id),
         cost decimal NOT NULL,
+        day smallint NOT NULL,
         PRIMARY KEY (schedule_id, recipe_id)
     );

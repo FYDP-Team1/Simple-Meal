@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const { Console } = require("console");
 const pgp = require("pg-promise")();
 
 const db = pgp({
@@ -10,6 +11,51 @@ const db = pgp({
   database: "simple_meal",
   user: "postgres",
   password: "Maan_2000",
+});
+
+// Endpoint for user registration
+router.post("/api/createWeeklySchedule", async (req, res) => {
+  const { id } = req.body;
+  let weeklySchedule = {
+    Mon: [],
+    Tue: [],
+    Wed: [],
+    Thu: [],
+    Fri: [],
+    Sat: [],
+    Sun: [],
+  };
+  let heuristicStoreForUserRecipies = {};
+
+  try {
+    const restrictionIdsQuery = await db.any(
+      "SELECT restriction_id FROM user_preferences_restrictions WHERE user_id = $1",
+      [id]
+    );
+
+    // Extract IDs from the query result
+    const restrictionIds = restrictionIdsQuery.map((row) => row.id);
+
+    const restrictionIdString = restrictionIds.join(",");
+    console.log("HERE IS THE RESCTPKN ID");
+    console.log(restrictionIdString);
+    const filteredNonRestrictedRecipies = await db.none(
+      `SELECT recipes.id, cuisines.name, recipes.cost, recipes.cooking_minutes
+            FROM recipes
+            JOIN recipe_cuisines ON recipes.id = recipe_cuisines.recipe_id
+            JOIN cuisines ON recipe_cuisines.cuisine_id = cuisines.id
+            LEFT JOIN recipe_restrictions ON recipes.id = recipe_restrictions.recipe_id
+            WHERE recipe_restrictions.restriction_id NOT IN ($1);
+            `,
+      [restrictionIdString]
+    );
+    console.log(filteredNonRestrictedRecipies);
+
+    res.status(201).json({ message: weeklySchedule });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Internal server error" });
+  }
 });
 
 // Endpoint for user registration
@@ -65,15 +111,21 @@ router.post("/api/savePreferences", async (req, res) => {
   try {
     // Assuming dietaryRestrictions is a comma-separated string like "restriction1,restriction2,restriction3"
     const dietaryRestrictionsArray = dietaryRestrictions.split(",");
-
     // Query to fetch IDs of dietary restrictions
-    const restrictionIdsQuery = await db.any(
-      "SELECT id FROM dietary_restrictions WHERE name = ANY($1)",
-      [dietaryRestrictionsArray]
-    );
-
-    // Extract IDs from the query result
-    const restrictionIds = restrictionIdsQuery.map((row) => row.id);
+    let restrictionIds = [];
+    await db
+      .map(
+        "SELECT id FROM dietary_restrictions WHERE name IN ($1:list)",
+        [dietaryRestrictionsArray],
+        (row) => row.id
+      )
+      .then((data) => {
+        console.log(data);
+        restrictionIds = data;
+      })
+      .catch((error) => {
+        console.log(error);
+      });
 
     // Insert into user_preferences_restrictions table
     for (const restrictionId of restrictionIds) {
@@ -87,13 +139,20 @@ router.post("/api/savePreferences", async (req, res) => {
     const cuisineIdsArray = cuisines.split(",");
 
     // Query to fetch IDs of cuisines
-    const cuisineIdsQuery = await db.any(
-      "SELECT id FROM cuisines WHERE name = ANY($1)",
-      [cuisineIdsArray]
-    );
-
-    // Extract IDs from the query result
-    const cuisineIds = cuisineIdsQuery.map((row) => row.id);
+    let cuisineIds = [];
+    await db
+      .map(
+        "SELECT id FROM cuisines WHERE name IN ($1:list)",
+        [cuisineIdsArray],
+        (row) => row.id
+      )
+      .then((data) => {
+        console.log(data);
+        cuisineIds = data;
+      })
+      .catch((error) => {
+        console.log(error);
+      });
 
     // Insert into user_preferences_cuisines table
     for (const cuisineId of cuisineIds) {

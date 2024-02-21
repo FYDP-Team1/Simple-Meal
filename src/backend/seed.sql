@@ -496,11 +496,11 @@ INSERT INTO dietary_restrictions (id, name) VALUES (3, 'vegan');
 INSERT INTO dietary_restrictions (id, name) VALUES (4, 'low-fat');
 INSERT INTO dietary_restrictions (id, name) VALUES (5, 'low-carb');
 INSERT INTO dietary_restrictions (id, name) VALUES (6, 'gluten-free');
-INSERT INTO dietary_restrictions (id, name) VALUES (7, '');
+INSERT INTO dietary_restrictions (id, name) VALUES (7, 'dairy-free');
 INSERT INTO dietary_restrictions (id, name) VALUES (8, 'diabetic');
 INSERT INTO dietary_restrictions (id, name) VALUES (9, 'high-calcium');
 INSERT INTO dietary_restrictions (id, name) VALUES (10, 'seafood');
-INSERT INTO dietary_restrictions (id, name) VALUES (11, 'no-shell-fish');
+INSERT INTO dietary_restrictions (id, name) VALUES (11, 'no-shellfish');
 INSERT INTO dietary_restrictions (id, name) VALUES (12, 'low-sodium');
 INSERT INTO dietary_restrictions (id, name) VALUES (13, 'vegetarian');
 
