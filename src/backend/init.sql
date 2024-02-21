@@ -76,22 +76,7 @@ CREATE TABLE
 CREATE TABLE
     ingredients (
         id serial PRIMARY KEY,
-        name VARCHAR NOT NULL,
-        quantity decimal CHECK (quantity > 0) NOT NULL,
-        unit varchar CHECK (
-            unit IN (
-                'mg',
-                'g',
-                'oz',
-                'lb',
-                'ml',
-                'fl oz',
-                'bunch',
-                'each'
-            )
-        ),
-        price decimal CHECK (price >= 0) NOT NULL,
-        walmart_item_id varchar NOT NULL UNIQUE
+        name VARCHAR NOT NULL UNIQUE
     );
 
 -- Recipe ingredients table
@@ -101,7 +86,6 @@ CREATE TABLE
         ingredient_id integer REFERENCES ingredients (id),
         label VARCHAR NOT NULL,
         quantity DECIMAL NOT NULL,
-        unit VARCHAR NOT NULL,
         PRIMARY KEY (recipe_id, ingredient_id)
     );
 
