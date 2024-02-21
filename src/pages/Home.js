@@ -1,5 +1,6 @@
 import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
+//import TopBanner from "../components/TopBanner";
 import NavBar from "../components/NavBar";
 import CreateGroceryList from "../components/CreateGroceryList";
 import styles from "./Home.module.css";
@@ -15,6 +16,7 @@ const Home = () => {
     <div className={styles.home}>
       <img className={styles.burgerIcon} alt="" src="/burger@2x.png" />
       <NavBar />
+
       <main className={styles.mealSelectionQuartet}>
         <section className={styles.rectanglePair}>
           <div className={styles.shapeSwapQuintet}>
@@ -35,7 +37,7 @@ const Home = () => {
                       <div className={styles.content}>
                         <div className={styles.text}>
                           <div className={styles.text1}>
-                            Current Week Plan Spending
+                            Average Cost per Meal
                           </div>
                         </div>
                       </div>
@@ -79,7 +81,7 @@ const Home = () => {
                         <div className={styles.content2}>
                           <div className={styles.text5}>
                             <div className={styles.text6}>
-                              Savings Compared to Eat-out
+                              Average Savings per Meal Compared to Eat-out
                             </div>
                           </div>
                         </div>
@@ -126,7 +128,7 @@ const Home = () => {
                         <div className={styles.content4}>
                           <div className={styles.text10}>
                             <div className={styles.text11}>
-                              Current Grocery Item Cost
+                              Weekly Grocery List Cost
                             </div>
                           </div>
                         </div>
@@ -168,7 +170,7 @@ const Home = () => {
                         <div className={styles.content6}>
                           <div className={styles.text16}>
                             <div className={styles.text17}>
-                              Preference Budget Usage
+                              Budget Usage
                             </div>
                           </div>
                         </div>
