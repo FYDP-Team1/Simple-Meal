@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-const { Console } = require("console");
+const { Console, error } = require("console");
 const pgp = require("pg-promise")();
 
 const db = pgp({
@@ -13,7 +13,6 @@ const db = pgp({
   password: "Maan_2000",
 });
 
-// Endpoint for user registration
 router.post("/api/createWeeklySchedule", async (req, res) => {
   const { id } = req.body;
   let weeklySchedule = {
@@ -25,33 +24,134 @@ router.post("/api/createWeeklySchedule", async (req, res) => {
     Sat: [],
     Sun: [],
   };
-  let heuristicStoreForUserRecipies = {};
 
   try {
-    const restrictionIdsQuery = await db.any(
-      "SELECT restriction_id FROM user_preferences_restrictions WHERE user_id = $1",
+    // Retrieve user preferences from the Users table
+    const { meals_per_day, weekly_budget, max_cooking_minutes } = await db.one(
+      "SELECT meals_per_day, weekly_budget, max_cooking_minutes FROM users WHERE id = $1",
       [id]
     );
 
-    // Extract IDs from the query result
-    const restrictionIds = restrictionIdsQuery.map((row) => row.id);
+    // Retrieve the IDs of dietary restrictions for the user
+    let restrictionIds;
+    await db
+      .map(
+        "SELECT restriction_id FROM user_preferences_restrictions WHERE user_id = $1",
+        [id],
+        (row) => row.restriction_id
+      )
+      .then((data) => {
+        console.log(data);
+        restrictionIds = data;
+      })
+      .catch((error) => {
+        console.log(error);
+      });
 
-    const restrictionIdString = restrictionIds.join(",");
-    console.log("HERE IS THE RESCTPKN ID");
-    console.log(restrictionIdString);
-    const filteredNonRestrictedRecipies = await db.none(
-      `SELECT recipes.id, cuisines.name, recipes.cost, recipes.cooking_minutes
-            FROM recipes
-            JOIN recipe_cuisines ON recipes.id = recipe_cuisines.recipe_id
-            JOIN cuisines ON recipe_cuisines.cuisine_id = cuisines.id
-            LEFT JOIN recipe_restrictions ON recipes.id = recipe_restrictions.recipe_id
-            WHERE recipe_restrictions.restriction_id NOT IN ($1);
-            `,
-      [restrictionIdString]
+    console.log("eljkrher");
+    console.log(restrictionIds);
+
+    // Retrieve recipes without restricted ingredients
+    const filteredNonRestrictedRecipes = await db.any(
+      `SELECT recipes.id, cuisines.name AS cuisine, recipes.cost, recipes.cooking_minutes
+         FROM recipes
+         JOIN recipe_cuisines ON recipes.id = recipe_cuisines.recipe_id
+         JOIN cuisines ON recipe_cuisines.cuisine_id = cuisines.id
+         LEFT JOIN recipe_restrictions ON recipes.id = recipe_restrictions.recipe_id
+         WHERE recipe_restrictions.restriction_id NOT IN ($1:list)
+         ORDER BY recipes.cost ASC`,
+      [restrictionIds]
     );
-    console.log(filteredNonRestrictedRecipies);
 
-    res.status(201).json({ message: weeklySchedule });
+    // Query to fetch cuisine names from user preferences
+    const getUserPreferredCuisinesQuery = `
+        SELECT cuisines.name
+        FROM cuisines
+        JOIN user_preferences_cuisines ON cuisines.id = user_preferences_cuisines.cuisine_id
+        WHERE user_preferences_cuisines.user_id = $1
+        `;
+    let userPreferredCuisines;
+    try {
+      await db
+        .map(getUserPreferredCuisinesQuery, [id], (row) => row.name)
+        .then((data) => {
+          console.log(data);
+          userPreferredCuisines = data;
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+      console.log("User preferred cuisines:", userPreferredCuisines);
+    } catch (error) {
+      console.error("Error retrieving user preferred cuisines:", error);
+    }
+
+    console.log(filteredNonRestrictedRecipes);
+    // Calculate weights for each recipe
+    for (let recipe of filteredNonRestrictedRecipes) {
+      // Assign weights based on cost
+      const costWeight = 10 - Math.floor((recipe.cost / weekly_budget) * 10);
+
+      // Assign weights based on cooking minutes
+      let cookingTimeWeight;
+      if (recipe.cooking_minutes === max_cooking_minutes) {
+        cookingTimeWeight = 3;
+      } else if (recipe.cooking_minutes < max_cooking_minutes) {
+        cookingTimeWeight = 4;
+      } else if (recipe.cooking_minutes > max_cooking_minutes) {
+        cookingTimeWeight = 2;
+      } else {
+        cookingTimeWeight = 0;
+      }
+
+      // Get cuisine IDs based on user's preferred cuisines
+      const cuisineIdsQuery = await db.any(
+        "SELECT id FROM cuisines WHERE name IN ($1:csv)",
+        [userPreferredCuisines]
+      );
+
+      // Extract IDs from the query result
+      const cuisineIds = cuisineIdsQuery.map((row) => row.id);
+
+      let cuisineWeight = 0;
+      // Check if cuisine IDs match user preferences
+      for (const cuisineId of cuisineIds) {
+        const isCuisinePreferred = await db.oneOrNone(
+          "SELECT COUNT(*) FROM user_preferences_cuisines WHERE user_id = $1 AND cuisine_id = $2",
+          [id, cuisineId]
+        );
+        // If the cuisine is preferred, assign a weight of 5 to the corresponding recipes
+        if (isCuisinePreferred) {
+          // Loop through recipes and assign weight of 5 to matching recipes
+
+          if (recipe.cuisine_id === cuisineId) {
+            cuisineWeight = 5;
+          }
+        }
+      }
+      // Calculate the total weight for the recipe
+      const totalWeight = costWeight + cookingTimeWeight + cuisineWeight;
+
+      // Assign the total weight to the recipe
+      recipe.weight = totalWeight;
+    }
+
+    // Sort recipes by weight in descending order
+    filteredNonRestrictedRecipes.sort((a, b) => b.weight - a.weight);
+
+    // Assign recipes to each day of the week
+    const daysOfWeek = Object.keys(weeklySchedule);
+    let recipesIndex = 0;
+    for (let i = 0; i < daysOfWeek.length; i++) {
+      const day = daysOfWeek[i];
+      // Distribute meals for each day based on the user's meals_per_day attribute
+      for (let j = 0; j < meals_per_day; j++) {
+        weeklySchedule[day].push(filteredNonRestrictedRecipes[recipesIndex]);
+        recipesIndex = (recipesIndex + 1) % filteredNonRestrictedRecipes.length;
+      }
+    }
+
+    res.status(201).json({ weeklySchedule });
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Internal server error" });
@@ -130,7 +230,7 @@ router.post("/api/savePreferences", async (req, res) => {
     // Insert into user_preferences_restrictions table
     for (const restrictionId of restrictionIds) {
       await db.none(
-        "INSERT INTO user_preferences_restrictions(user_id, restriction_id) VALUES($1, $2)",
+        "INSERT INTO user_preferences_restrictions(user_id, restriction_id) VALUES($1, $2) ON CONFLICT (user_id, restriction_id) DO NOTHING",
         [userId, restrictionId]
       );
     }
@@ -157,7 +257,7 @@ router.post("/api/savePreferences", async (req, res) => {
     // Insert into user_preferences_cuisines table
     for (const cuisineId of cuisineIds) {
       await db.none(
-        "INSERT INTO user_preferences_cuisines(user_id, cuisine_id) VALUES($1, $2)",
+        "INSERT INTO user_preferences_cuisines(user_id, cuisine_id) VALUES($1, $2) ON CONFLICT (user_id, cuisine_id) DO NOTHING",
         [userId, cuisineId]
       );
     }
