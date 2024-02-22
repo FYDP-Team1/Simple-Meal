@@ -3,7 +3,7 @@ import styles from "./Preferences4.module.css";
 import "../global1.css";
 import { useNavigate } from "react-router-dom";
 import TopBanner from "../components/TopBanner";
-import React, { useState, useCallback, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import RangeSlider from "react-bootstrap-range-slider"; // Import
 import axios from "axios";
 
@@ -15,13 +15,14 @@ const Preferences2 = () => {
     localStorage.setItem("budget", budget);
   }, [budget]);
 
-  const onSubmitClick = useCallback(async () => {
+  const onSubmitClick = async (e) => {
+    e.preventDefault();
     try {
       const userId = localStorage.getItem("user_id");
       if (userId == null) {
         navigate("/log-in");
       }
-
+      navigate("/home");
       const dietaryRestrictions = localStorage.getItem("dietary");
       const cuisines = localStorage.getItem("cuisines");
       const mealsPerDay = localStorage.getItem("size");
@@ -29,7 +30,7 @@ const Preferences2 = () => {
       const maxCookingMinutes = localStorage.getItem("preptime");
       const weeklyBudget = localStorage.getItem("budget");
 
-      await axios.post("https://localhost:3001/api/savePreferences", {
+      const res = await axios.post("http://localhost:3001/api/savePreferences", {
         userId,
         dietaryRestrictions,
         cuisines,
@@ -39,12 +40,14 @@ const Preferences2 = () => {
         weeklyBudget,
       });
 
-      navigate("/home");
+      if (res.status === 200){
+        console.log("Successfully Saved Preferences")
+      }
     } catch (error) {
       console.error("Error saving preferences:", error);
       // Handle error, e.g., show an error message to the user
     }
-  }, [navigate]);
+  };
 
   return (
     <div className={styles.preferences10}>
