@@ -15,10 +15,10 @@ const Preferences = () => {
     let timeRangeSplit = timeRange.split(' ')[0];
     
     if (timeRangeSplit === "Choose" || timeRangeSplit === "More"){
-      timeRangeSplit = "60+";
+      timeRangeSplit = "-1";
     }
     else{
-      timeRangeSplit = timeRangeSplit.split('-')[1];
+      timeRangeSplit = timeRange.split(' ')[1];
     }
     
     localStorage.setItem('preptime', timeRangeSplit);
@@ -62,9 +62,9 @@ const Preferences = () => {
                   </Dropdown.Toggle>
 
                   <Dropdown.Menu>
-                    <Dropdown.Item onClick={()=>SetTimeRange('5-10 Minutes')}> 5-10 Minutes</Dropdown.Item>
-                    <Dropdown.Item onClick={()=>SetTimeRange('10-30 Minutes')}> 10-30 Minutes</Dropdown.Item>
-                    <Dropdown.Item onClick={()=>SetTimeRange('30-60 Minutes')}> 30-60 Minutes</Dropdown.Item>
+                    {/* <Dropdown.Item onClick={()=>SetTimeRange('5-10 Minutes')}> 10 Minutes</Dropdown.Item> */}
+                    <Dropdown.Item onClick={()=>SetTimeRange('Under 30 Minutes')}> Under 30 Minutes</Dropdown.Item>
+                    <Dropdown.Item onClick={()=>SetTimeRange('Under 60 Minutes')}> Under 60 Minutes</Dropdown.Item>
                     <Dropdown.Item onClick={()=>SetTimeRange('More than an hour')}> More than an hour</Dropdown.Item>
                   </Dropdown.Menu>
                 </Dropdown>

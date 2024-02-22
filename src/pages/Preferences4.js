@@ -29,7 +29,7 @@ const Preferences2 = () => {
       const maxCookingMinutes = localStorage.getItem("preptime");
       const weeklyBudget = localStorage.getItem("budget");
 
-      await axios.post("/api/savePreferences", {
+      await axios.post("https://localhost:3001/api/savePreferences", {
         userId,
         dietaryRestrictions,
         cuisines,
