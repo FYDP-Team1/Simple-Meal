@@ -121,8 +121,3 @@ CREATE TABLE scheduled_recipes (
     cost decimal NOT NULL,
     PRIMARY KEY (schedule_id, recipe_id)
 );
-
--- recipe img table
-CREATE TABLE img_recipes (
-    recipe_id int REFERENCES recipes (id)
-);

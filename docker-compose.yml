@@ -29,7 +29,6 @@ services:
       # Initialize the database with some tables and data
       - ./src/backend/init.sql:/docker-entrypoint-initdb.d/init.sql
       - ./src/backend/seed.sql:/docker-entrypoint-initdb.d/seed.sql
-      - ./src/backend/img.sql:/docker-entrypoint-initdb.d/img.sql
-
+      
 volumes:
   postgres_data:
