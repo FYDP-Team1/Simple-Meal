@@ -72,7 +72,7 @@ const getUserPreferredCuisines = async (userId) => {
 const filterRecipes = async (restrictionIds) => {
   try {
     const filteredRecipes = await db.any(
-      `SELECT recipes.id, cuisines.name AS cuisine, recipes.cost, recipes.cooking_minutes
+      `SELECT recipes.id, cuisines.name AS cuisine, recipes.cost, recipes.cooking_minutes,recipes.name
          FROM recipes
          JOIN recipe_cuisines ON recipes.id = recipe_cuisines.recipe_id
          JOIN cuisines ON recipe_cuisines.cuisine_id = cuisines.id
