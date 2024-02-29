@@ -121,6 +121,12 @@ const calculateRecipeWeights = async (
 
   // Sort recipes by weight in descending order
   recipes.sort((a, b) => b.weight - a.weight);
+
+  // Return top N recipes, where N = number of meals per week
+  if (recipes.length > 7 * meals_per_day) {
+    return recipes.slice(0, 7 * meals_per_day);
+  }
+  return recipes;
 };
 
 // Function to get cuisine ID by name
@@ -136,7 +142,7 @@ const getCuisineIdByName = async (cuisineName) => {
   }
 };
 // Function to generate weekly schedule and insert into database
-const generateWeeklySchedule = async (recipes, mealsPerDay, userId, weekStartDate, cost) => {
+const generateWeeklySchedule = async (recipes, mealsPerDay, userId) => {
     const weeklySchedule = {
         Mon: [],
         Tue: [],
@@ -147,14 +153,35 @@ const generateWeeklySchedule = async (recipes, mealsPerDay, userId, weekStartDat
         Sun: [],
     };
 
+    // Calculate the start date of the current week
+    const currentDate = new Date();
+    const currentDay = currentDate.getDay();
+    const daysToMonday = currentDay === 0 ? 6 : currentDay - 1;
+    const mondayDate = new Date(currentDate.setDate(currentDate.getDate() - daysToMonday));
+    const weekStartDate = mondayDate.toISOString().split('T')[0];
+
+    // Pad and Truncate the recipes array to ensure only enough recipes for the week
+    while (recipes.length < 7 * mealsPerDay) {
+        recipes = recipes.concat(recipes);
+    }
+    recipes = recipes.slice(0, 7 * mealsPerDay);
+
     const daysOfWeek = Object.keys(weeklySchedule);
-    let recipesIndex = 0;
-    for (let i = 0; i < daysOfWeek.length; i++) {
-        const day = daysOfWeek[i];
-        for (let j = 0; j < mealsPerDay; j++) {
-            weeklySchedule[day].push(recipes[recipesIndex]);
-            recipesIndex = (recipesIndex + 1) % recipes.length;
+    let total = 0;
+
+    // Sample the recipes for each day of the week
+    for (const day of daysOfWeek) {
+      const recipesForDay = [];
+      while (recipesForDay.length < mealsPerDay) {
+        const randomIndex = Math.floor(Math.random() * recipes.length);
+        const randomRecipe = recipes[randomIndex];
+        if (!recipesForDay.includes(randomRecipe)) {
+          total += randomRecipe.cost;
+          recipesForDay.push(randomRecipe);
+          recipes.splice(randomIndex, 1); // Remove the selected recipe from the list
         }
+      }
+      weeklySchedule[day] = recipesForDay;
     }
 
     try {
