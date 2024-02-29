@@ -117,14 +117,6 @@ router.post("/api/savePreferences", async (req, res) => {
         console.log(error);
       });
 
-    // Insert into user_preferences_restrictions table
-    for (const restrictionId of restrictionIds) {
-      await db.none(
-        "INSERT INTO user_preferences_restrictions(user_id, restriction_id) VALUES($1, $2) ON CONFLICT (user_id, restriction_id) DO NOTHING",
-        [userId, restrictionId]
-      );
-    }
-
     // Assuming cuisines is a comma-separated string like "cuisine1,cuisine2,cuisine3"
     const cuisineIdsArray = cuisines.split(",");
 
@@ -143,26 +135,37 @@ router.post("/api/savePreferences", async (req, res) => {
         console.log(error);
       });
 
-    // Insert into user_preferences_cuisines table
-    for (const cuisineId of cuisineIds) {
-      await db.none(
-        "INSERT INTO user_preferences_cuisines(user_id, cuisine_id) VALUES($1, $2) ON CONFLICT (user_id, cuisine_id) DO NOTHING",
-        [userId, cuisineId]
-      );
-    }
+    // Start a transaction
+    await db.tx(async (t) => {
+      // Insert into user_preferences_restrictions table
+      for (const restrictionId of restrictionIds) {
+        await t.none(
+          "INSERT INTO user_preferences_restrictions(user_id, restriction_id) VALUES($1, $2) ON CONFLICT (user_id, restriction_id) DO NOTHING",
+          [userId, restrictionId]
+        );
+      }
 
-    // Update user details
-    await db.none(
-      "UPDATE users SET meals_per_day = $1, servings_per_meal = $2, max_cooking_minutes = $3, weekly_budget = $4, updated_at = $6 WHERE id = $5",
-      [
-        mealsPerDay,
-        servingsPerMeal,
-        maxCookingMinutes,
-        weeklyBudget,
-        userId,
-        currentTime,
-      ]
-    );
+      // Insert into user_preferences_cuisines table
+      for (const cuisineId of cuisineIds) {
+        await t.none(
+          "INSERT INTO user_preferences_cuisines(user_id, cuisine_id) VALUES($1, $2) ON CONFLICT (user_id, cuisine_id) DO NOTHING",
+          [userId, cuisineId]
+        );
+      }
+
+      // Update user details
+      await t.none(
+        "UPDATE users SET meals_per_day = $1, servings_per_meal = $2, max_cooking_minutes = $3, weekly_budget = $4, updated_at = $6 WHERE id = $5",
+        [
+          mealsPerDay,
+          servingsPerMeal,
+          maxCookingMinutes,
+          weeklyBudget,
+          userId,
+          currentTime,
+        ]
+      );
+    });
 
     return res
       .status(200)

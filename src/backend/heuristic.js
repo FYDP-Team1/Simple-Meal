@@ -187,28 +187,31 @@ const generateWeeklySchedule = async (recipes, mealsPerDay, userId) => {
       }
       weeklySchedule[day] = recipesForDay;
     }
-
+    
     try {
-
+      // Start a transaction
+      await db.tx(async (t) => {
         for (const day of daysOfWeek) {
+          for (const recipe of weeklySchedule[day]) {
+            // Insert into weekly_schedules table
+            const { id: scheduleId } = await t.one(
+              `INSERT INTO weekly_schedules (user_id, week_start_date, cost)
+                VALUES ($1, $2, $3)
+                ON CONFLICT (user_id, week_start_date) DO NOTHING
+                RETURNING id`,
+              [userId, weekStartDate, total]
+            );
 
-            for (const recipe of weeklySchedule[day]) {
-                                    // Insert into weekly_schedules table
-        const weekScheduleQuery = `
-        INSERT INTO weekly_schedules (user_id, week_start_date, cost)
-        VALUES ($1, $2, $3)
-        RETURNING id
-        `;
-        const { id: scheduleId } = await db.one(weekScheduleQuery, [userId, weekStartDate, cost]);
-
-        // Insert into scheduled_recipes table
-        const scheduledRecipesQuery = `
-            INSERT INTO scheduled_recipes (schedule_id, recipe_id, cost, day)
-            VALUES ($1, $2, $3, $4)
-            `;
-                await db.none(scheduledRecipesQuery, [scheduleId, recipe.id, recipe.cost, getDayIndex(day)]);
-            }
+            // Insert into scheduled_recipes table
+            await t.none(
+              `INSERT INTO scheduled_recipes (schedule_id, recipe_id, cost, day)
+                VALUES ($1, $2, $3, $4)
+                ON CONFLICT (schedule_id, recipe_id, day) DO NOTHING`,
+              [scheduleId, recipe.id, recipe.cost, getDayIndex(day)]
+            );
+          }
         }
+      });
 
     } catch (error) {
         console.error("Error inserting weekly schedule:", error);
