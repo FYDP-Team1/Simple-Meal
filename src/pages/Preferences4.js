@@ -22,6 +22,7 @@ const Preferences2 = () => {
         navigate("/log-in");
       }
 
+      navigate("/home");
       const dietaryRestrictions = localStorage.getItem("dietary");
       const cuisines = localStorage.getItem("cuisines");
       const mealsPerDay = localStorage.getItem("size");
@@ -39,7 +40,6 @@ const Preferences2 = () => {
         weeklyBudget,
       });
 
-      navigate("/home");
     } catch (error) {
       console.error("Error saving preferences:", error);
       // Handle error, e.g., show an error message to the user

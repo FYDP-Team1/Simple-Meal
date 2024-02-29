@@ -664,7 +664,7 @@
   max-width: 100%;
   text-align: center;
   font-size: var(--message-1-size);
-  color: var(--color-gray-700);
+  color: var(--grayscale-gray-6);
 }
 .inputFrame {
   width: 1515px;
