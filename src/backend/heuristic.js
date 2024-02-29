@@ -34,52 +34,34 @@ const getDayIndex = (day) => {
 const getUserPreferences = async (userId) => {
   try {
     const userData = await db.one(
-      "SELECT meals_per_day, weekly_budget, max_cooking_minutes FROM users WHERE id = $1",
+      `SELECT users.meals_per_day, users.weekly_budget, users.max_cooking_minutes, json_agg(DISTINCT user_preferences_restrictions.restriction_id) AS restrictions, json_agg(DISTINCT user_preferences_cuisines.cuisine_id) AS userPreferredCuisines
+        FROM users
+        LEFT JOIN user_preferences_restrictions ON users.id = user_preferences_restrictions.user_id
+        LEFT JOIN user_preferences_cuisines ON users.id = user_preferences_cuisines.user_id
+        WHERE users.id = $1
+        GROUP BY users.id`,
       [userId]
     );
 
-    const restrictionIds = await db.map(
-      "SELECT restriction_id FROM user_preferences_restrictions WHERE user_id = $1",
-      [userId],
-      (row) => row.restriction_id
-    );
-
-    const userPreferredCuisines = await getUserPreferredCuisines(userId);
-
-    return { ...userData, restrictionIds, userPreferredCuisines };
+    return userData;
   } catch (error) {
     console.error("Error retrieving user preferences:", error);
     throw error;
   }
 };
 
-// Function to retrieve user preferred cuisines
-const getUserPreferredCuisines = async (userId) => {
-  try {
-    const userPreferredCuisines = await db.map(
-      "SELECT cuisines.name FROM cuisines INNER JOIN user_preferences_cuisines ON cuisines.id = user_preferences_cuisines.cuisine_id WHERE user_preferences_cuisines.user_id = $1",
-      [userId],
-      (row) => row.name
-    );
-    return userPreferredCuisines;
-  } catch (error) {
-    console.error("Error retrieving user preferred cuisines:", error);
-    throw error;
-  }
-};
-
 // Function to filter recipes based on dietary restrictions
-const filterRecipes = async (restrictionIds) => {
+const filterRecipes = async (restrictions) => {
   try {
     const filteredRecipes = await db.any(
-      `SELECT recipes.id, cuisines.name AS cuisine, recipes.cost, recipes.cooking_minutes
-         FROM recipes
-         JOIN recipe_cuisines ON recipes.id = recipe_cuisines.recipe_id
-         JOIN cuisines ON recipe_cuisines.cuisine_id = cuisines.id
-         LEFT JOIN recipe_restrictions ON recipes.id = recipe_restrictions.recipe_id
-         WHERE recipe_restrictions.restriction_id NOT IN ($1:list)
-         ORDER BY recipes.cost ASC`,
-      [restrictionIds]
+      `SELECT DISTINCT ON (recipes.id) recipes.id, json_agg(DISTINCT recipe_cuisines.cuisine_id) AS cuisines, recipes.cost, recipes.cooking_minutes
+        FROM recipes
+        JOIN recipe_cuisines ON recipes.id = recipe_cuisines.recipe_id
+        LEFT JOIN recipe_restrictions ON recipes.id = recipe_restrictions.recipe_id
+        WHERE recipe_restrictions.restriction_id NOT IN ($1:list)
+        GROUP BY recipes.id
+        ORDER BY recipes.id, recipes.cost ASC`,
+      [restrictions]
     );
     return filteredRecipes;
   } catch (error) {
