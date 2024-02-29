@@ -1737,6 +1737,19 @@
   font-size: var(--font-size-11xl);
   color: var(--starving-orange);
 }
+.weekdaysContainer {
+  display: flex;
+  justify-content: space-around; /* Adjusts spacing around each item */
+  padding: 20px 0; /* Adds some padding above and below the container */
+}
+
+.dayContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 20px; /* Increases space between each day */
+}
+
 .frameParent14 {
   width: 218px;
   flex-shrink: 0;
