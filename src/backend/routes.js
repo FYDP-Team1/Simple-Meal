@@ -31,15 +31,15 @@ router.post("/api/createWeeklySchedule", async (req, res) => {
       meals_per_day: mealsPerDay,
       weekly_budget: weeklyBudget,
       max_cooking_minutes: maxCookingMinutes,
-      restrictionIds,
+      restrictions,
       userPreferredCuisines,
     } = await getUserPreferences(userId);
 
     // Filter recipes based on dietary restrictions
-    const recipes = await filterRecipes(restrictionIds);
+    const recipes = await filterRecipes(restrictions);
 
     // Calculate recipe weights
-    await calculateRecipeWeights(recipes, userId, weeklyBudget, maxCookingMinutes, userPreferredCuisines);
+    await calculateRecipeWeights(recipes, meals_per_day, weeklyBudget, maxCookingMinutes, userPreferredCuisines);
 
     // Sort recipes by weight in descending order
     recipes.sort((a, b) => b.weight - a.weight);

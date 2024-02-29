@@ -73,34 +73,42 @@ const filterRecipes = async (restrictions) => {
 // Function to calculate recipe weights
 const calculateRecipeWeights = async (
   recipes,
-  userId,
+  meals_per_day,
   weeklyBudget,
   maxCookingMinutes,
   userPreferredCuisines
 ) => {
+  const avgCost = meals_per_day * weeklyBudget / 7;
+
   for (let recipe of recipes) {
     // Assign weights based on cost
-    const costWeight = 10 - Math.floor((recipe.cost / weeklyBudget) * 10);
+    let costWeight;
+    const costDiff = Math.abs(recipe.cost - avgCost);
+    if (costDiff < 0.1 * avgCost) {
+      costWeight = 5;
+    } else if (costDiff < 0.2 * avgCost) {
+      costWeight = 2;
+    }
 
     // Assign weights based on cooking minutes
     let cookingTimeWeight;
-    if (recipe.cooking_minutes === maxCookingMinutes) {
-      cookingTimeWeight = 3;
-    } else if (recipe.cooking_minutes < maxCookingMinutes) {
-      cookingTimeWeight = 4;
-    } else if (recipe.cooking_minutes > maxCookingMinutes) {
-      cookingTimeWeight = 2;
-    } else {
+    const timeDiff = recipe.cooking_minutes - maxCookingMinutes;
+    if (timeDiff > 30) {
       cookingTimeWeight = 0;
+    } else if (timeDiff > 0) {
+      cookingTimeWeight = 1;
+    } else if (timeDiff < 10) {
+      cookingTimeWeight = 4;
+    } else {
+      cookingTimeWeight = 3;
     }
 
     // Calculate cuisine weight
     let cuisineWeight = 0;
-    for (const cuisineName of userPreferredCuisines) {
-      const cuisineId = await getCuisineIdByName(cuisineName);
-      if (cuisineId === recipe.cuisine_id) {
-        cuisineWeight = 5;
-        break;
+    const recipeCuisines = recipe.cuisines;
+    for (const cuisine of userPreferredCuisines) {
+      if (recipeCuisines.includes(cuisine)) {
+        cuisineWeight += 5;
       }
     }
 
@@ -110,6 +118,9 @@ const calculateRecipeWeights = async (
     // Assign the total weight to the recipe
     recipe.weight = totalWeight;
   }
+
+  // Sort recipes by weight in descending order
+  recipes.sort((a, b) => b.weight - a.weight);
 };
 
 // Function to get cuisine ID by name
