@@ -141,6 +141,16 @@ const getCuisineIdByName = async (cuisineName) => {
     throw error;
   }
 };
+
+const getCurrentWeekStartDate = async () => {
+    // Calculate the start date of the current week
+    const currentDate = new Date();
+    const currentDay = currentDate.getDay();
+    const daysToMonday = currentDay === 0 ? 6 : currentDay - 1;
+    const mondayDate = new Date(currentDate.setDate(currentDate.getDate() - daysToMonday));
+    return mondayDate.toISOString().split('T')[0];
+};
+
 // Function to generate weekly schedule and insert into database
 const generateWeeklySchedule = async (recipes, mealsPerDay, userId) => {
     const weeklySchedule = {
@@ -153,19 +163,13 @@ const generateWeeklySchedule = async (recipes, mealsPerDay, userId) => {
         Sun: [],
     };
 
-    // Calculate the start date of the current week
-    const currentDate = new Date();
-    const currentDay = currentDate.getDay();
-    const daysToMonday = currentDay === 0 ? 6 : currentDay - 1;
-    const mondayDate = new Date(currentDate.setDate(currentDate.getDate() - daysToMonday));
-    const weekStartDate = mondayDate.toISOString().split('T')[0];
-
     // Pad and Truncate the recipes array to ensure only enough recipes for the week
     while (recipes.length < 7 * mealsPerDay) {
         recipes = recipes.concat(recipes);
     }
     recipes = recipes.slice(0, 7 * mealsPerDay);
 
+    const weekStartDate = await getCurrentWeekStartDate();
     const daysOfWeek = Object.keys(weeklySchedule);
     let total = 0;
 
