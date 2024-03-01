@@ -8,7 +8,6 @@ import styles from "./Home.module.css";
 import axios from "axios";
 
 const Home = () => {
-  const navigate = useNavigate();
   const [schedule, setSchedule] = useState(null);
 
   const populateSchedule = async (e) => {
