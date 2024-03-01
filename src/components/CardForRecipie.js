@@ -31,7 +31,7 @@ const CardForRecipie = ({ items }) => {
                 >
                   <div className={styles.recipeFrame}>
                     <div className={styles.potatoSalad1}>{item.name}</div>
-                    <div className={styles.recipe6}>{item.cost}/recipe</div>
+                    <div className={styles.recipe6}>{(item.cost).toFixed(2)}/meal</div>
                   </div>
                 </div>
               </div>

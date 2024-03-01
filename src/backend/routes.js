@@ -29,23 +29,21 @@ router.post("/api/createWeeklySchedule", async (req, res) => {
     // Retrieve user preferences
     const {
       meals_per_day: mealsPerDay,
+      servings_per_meal: servingsPerMeal,
       weekly_budget: weeklyBudget,
       max_cooking_minutes: maxCookingMinutes,
-      restrictionIds,
-      userPreferredCuisines,
+      restrictions,
+      userpreferredcuisines: userPreferredCuisines,
     } = await getUserPreferences(userId);
 
     // Filter recipes based on dietary restrictions
-    const recipes = await filterRecipes(restrictionIds);
+    const recipes = await filterRecipes(restrictions);
 
     // Calculate recipe weights
-    await calculateRecipeWeights(recipes, userId, weeklyBudget, maxCookingMinutes, userPreferredCuisines);
+    const avgCost = weeklyBudget / 7 / mealsPerDay / servingsPerMeal;
+    const weighted_recipes = await calculateRecipeWeights(recipes, mealsPerDay, avgCost, maxCookingMinutes, userPreferredCuisines);
 
-    // Sort recipes by weight in descending order
-    recipes.sort((a, b) => b.weight - a.weight);
-    const weekStartDate = new Date(); // Example week start date
-    const cost = 100; // Example cost
-    const weeklySchedule = await generateWeeklySchedule(recipes, mealsPerDay, userId, weekStartDate, cost);
+    const weeklySchedule = await generateWeeklySchedule(weighted_recipes, mealsPerDay, servingsPerMeal, userId);
     res.status(201).json({ weeklySchedule });
   } catch (error) {
     console.error(error);
@@ -121,14 +119,6 @@ router.post("/api/savePreferences", async (req, res) => {
         console.log(error);
       });
 
-    // Insert into user_preferences_restrictions table
-    for (const restrictionId of restrictionIds) {
-      await db.none(
-        "INSERT INTO user_preferences_restrictions(user_id, restriction_id) VALUES($1, $2) ON CONFLICT (user_id, restriction_id) DO NOTHING",
-        [userId, restrictionId]
-      );
-    }
-
     // Assuming cuisines is a comma-separated string like "cuisine1,cuisine2,cuisine3"
     const cuisineIdsArray = cuisines.split(",");
 
@@ -147,26 +137,37 @@ router.post("/api/savePreferences", async (req, res) => {
         console.log(error);
       });
 
-    // Insert into user_preferences_cuisines table
-    for (const cuisineId of cuisineIds) {
-      await db.none(
-        "INSERT INTO user_preferences_cuisines(user_id, cuisine_id) VALUES($1, $2) ON CONFLICT (user_id, cuisine_id) DO NOTHING",
-        [userId, cuisineId]
-      );
-    }
+    // Start a transaction
+    await db.tx(async (t) => {
+      // Insert into user_preferences_restrictions table
+      for (const restrictionId of restrictionIds) {
+        await t.none(
+          "INSERT INTO user_preferences_restrictions(user_id, restriction_id) VALUES($1, $2) ON CONFLICT (user_id, restriction_id) DO NOTHING",
+          [userId, restrictionId]
+        );
+      }
 
-    // Update user details
-    await db.none(
-      "UPDATE users SET meals_per_day = $1, servings_per_meal = $2, max_cooking_minutes = $3, weekly_budget = $4, updated_at = $6 WHERE id = $5",
-      [
-        mealsPerDay,
-        servingsPerMeal,
-        maxCookingMinutes,
-        weeklyBudget,
-        userId,
-        currentTime,
-      ]
-    );
+      // Insert into user_preferences_cuisines table
+      for (const cuisineId of cuisineIds) {
+        await t.none(
+          "INSERT INTO user_preferences_cuisines(user_id, cuisine_id) VALUES($1, $2) ON CONFLICT (user_id, cuisine_id) DO NOTHING",
+          [userId, cuisineId]
+        );
+      }
+
+      // Update user details
+      await t.none(
+        "UPDATE users SET meals_per_day = $1, servings_per_meal = $2, max_cooking_minutes = $3, weekly_budget = $4, updated_at = $6 WHERE id = $5",
+        [
+          mealsPerDay,
+          servingsPerMeal,
+          maxCookingMinutes,
+          weeklyBudget,
+          userId,
+          currentTime,
+        ]
+      );
+    });
 
     return res
       .status(200)
