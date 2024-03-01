@@ -9,12 +9,7 @@ const SizeFrequency = () => {
             <div className={styles.frame}>1</div>
             <div className={styles.textFrame} />
           </div>
-          <img
-            className={styles.groupFrameIcon}
-            loading="eager"
-            alt=""
-            src="/line-211.svg"
-          />
+          <div className={styles.groupFrameIcon} />
           <div className={styles.parent}>
             <div className={styles.div}>2</div>
             <div className={styles.frameChild} />

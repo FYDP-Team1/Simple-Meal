@@ -9,17 +9,18 @@ import axios from "axios";
 
 const Home = () => {
   const navigate = useNavigate();
-  const [scheudle, setSchedule] = useState(null);
+  const [schedule, setSchedule] = useState(null);
 
-  useEffect(() => {
-    console.log("hello");
+  const populateSchedule = async (e) => {
     const userId = localStorage.getItem("user_id");
-    const res = axios.post("http://localhost:3001/api/createWeeklySchedule", {
-      userId,
-    });
+    
+    const res = await axios.post("http://localhost:3001/api/createWeeklySchedule", { userId });
     setSchedule(res.data);
-    console.log(scheudle);
-  }, []);
+  };
+
+  useEffect(()=>{
+    populateSchedule();
+  },[])
 
   return (
     <div className={styles.home}>
@@ -43,8 +44,7 @@ const Home = () => {
                 <BudgetDetails />
               </div>
             </div>
-
-            <CreateGroceryList weeklySchedule={scheudle} />
+            <CreateGroceryList weeklySchedule={schedule} />
           </div>
         </section>
       </main>
