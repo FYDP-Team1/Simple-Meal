@@ -22,7 +22,6 @@ const Preferences2 = () => {
       if (userId == null) {
         navigate("/log-in");
       }
-      navigate("/home");
       const dietaryRestrictions = localStorage.getItem("dietary");
       const cuisines = localStorage.getItem("cuisines");
       const mealsPerDay = localStorage.getItem("size");
@@ -40,6 +39,7 @@ const Preferences2 = () => {
         weeklyBudget,
       });
 
+      navigate("/home");
       if (res.status === 200){
         console.log("Successfully Saved Preferences")
       }
