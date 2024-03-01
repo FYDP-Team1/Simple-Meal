@@ -21,7 +21,7 @@ const CardForRecipie = ({ items }) => {
                   <img
                     className={styles.image9Icon1}
                     alt=""
-                    src="/image-9@2x.png"
+                    src={"recipe_images/"+item.id+".jpg"}
                   />
                   {/* <img className={styles.swapIcon6} alt="" /> */}
                 </div>
