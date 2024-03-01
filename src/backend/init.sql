@@ -37,7 +37,7 @@ CREATE TABLE
 -- User preferences restrictions table
 CREATE TABLE
     user_preferences_restrictions (
-        user_id integer REFERENCES users (id),
+        user_id integer REFERENCES users (id) ON DELETE CASCADE,
         restriction_id integer REFERENCES dietary_restrictions (id),
         PRIMARY KEY (user_id, restriction_id)
     );
@@ -52,7 +52,7 @@ CREATE TABLE
 -- User preferences cuisines table
 CREATE TABLE
     user_preferences_cuisines (
-        user_id integer REFERENCES users (id),
+        user_id integer REFERENCES users (id) ON DELETE CASCADE,
         cuisine_id integer REFERENCES cuisines (id),
         PRIMARY KEY (user_id, cuisine_id)
     );
@@ -122,7 +122,7 @@ CREATE TABLE
 CREATE TABLE
     weekly_schedules (
         id serial PRIMARY KEY,
-        user_id integer REFERENCES users (id),
+        user_id integer REFERENCES users (id) ON DELETE CASCADE,
         week_start_date date NOT NULL,
         cost decimal NOT NULL
     );
@@ -130,7 +130,7 @@ CREATE TABLE
 -- Scheduled recipes table
 CREATE TABLE
     scheduled_recipes (
-        schedule_id integer REFERENCES weekly_schedules (id),
+        schedule_id integer REFERENCES weekly_schedules (id) ON DELETE CASCADE,
         recipe_id integer REFERENCES recipes (id),
         cost decimal NOT NULL,
         day smallint NOT NULL,
