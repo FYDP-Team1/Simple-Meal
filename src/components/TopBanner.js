@@ -1,9 +1,26 @@
+import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Form } from "react-bootstrap";
 import styles from "./TopBanner.module.css";
 import { useNavigate } from "react-router-dom";
 
 const TopBanner = () => {
+  const [selectedAction, setSelectedAction] = useState('');
+
+  const handleSelectChange = (event) => {
+    const action = event.target.value;
+    setSelectedAction(action);
+    if (action === 'logout') {
+      handleLogout();
+    }
+  };
+
+  const handleLogout = () => {
+    // Logout logic here
+    console.log('Logging out...');
+    // For example: clear the authentication token, reset user state, and redirect to login page
+  };
+
   const navigate = useNavigate();
   return (
     <header className={styles.topBanner}>
@@ -111,8 +128,17 @@ const TopBanner = () => {
             src="/image-39@2x.png"
           />
           <div className={styles.frameContainer}>
-            <Form.Select className={styles.frameFormselect} />
-            
+          <Form.Select 
+              className={styles.frameFormselect} 
+              value={selectedAction} 
+              onChange={handleSelectChange}
+            >
+              
+              <option value=""></option>
+              <option value="home">Home</option>
+              <option value="logout">Logout</option>
+              {/* Add other options as needed */}
+            </Form.Select>
           </div>
         </div>
       </div>
