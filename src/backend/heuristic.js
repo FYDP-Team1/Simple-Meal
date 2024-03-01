@@ -53,17 +53,26 @@ const getUserPreferences = async (userId) => {
 // Function to filter recipes based on dietary restrictions
 const filterRecipes = async (restrictions) => {
   try {
-    const filteredRecipes = await db.any(
-      `SELECT DISTINCT ON (recipes.id) recipes.id, json_agg(DISTINCT recipe_cuisines.cuisine_id) AS cuisines, recipes.cost, recipes.cooking_minutes, recipes.name
-        FROM recipes
-        JOIN recipe_cuisines ON recipes.id = recipe_cuisines.recipe_id
-        LEFT JOIN recipe_restrictions ON recipes.id = recipe_restrictions.recipe_id
-        WHERE recipe_restrictions.restriction_id NOT IN ($1:list)
-        GROUP BY recipes.id
-        ORDER BY recipes.id, recipes.cost ASC`,
-      [restrictions]
-    );
-    return filteredRecipes;
+    if (restrictions.length == 1 && restrictions[0] == null) {
+      return await db.any(
+        `SELECT DISTINCT ON (recipes.id) recipes.id, json_agg(DISTINCT recipe_cuisines.cuisine_id) AS cuisines, recipes.cost, recipes.cooking_minutes, recipes.name
+          FROM recipes
+          JOIN recipe_cuisines ON recipes.id = recipe_cuisines.recipe_id
+          GROUP BY recipes.id
+          ORDER BY recipes.id, recipes.cost ASC`
+      );
+    } else {
+      return await db.any(
+        `SELECT DISTINCT ON (recipes.id) recipes.id, json_agg(DISTINCT recipe_cuisines.cuisine_id) AS cuisines, recipes.cost, recipes.cooking_minutes, recipes.name
+          FROM recipes
+          JOIN recipe_cuisines ON recipes.id = recipe_cuisines.recipe_id
+          LEFT JOIN recipe_restrictions ON recipes.id = recipe_restrictions.recipe_id
+          WHERE recipe_restrictions.restriction_id NOT IN ($1:list)
+          GROUP BY recipes.id
+          ORDER BY recipes.id, recipes.cost ASC`,
+        [restrictions]
+      );
+    }
   } catch (error) {
     console.error("Error filtering recipes:", error);
     throw error;
