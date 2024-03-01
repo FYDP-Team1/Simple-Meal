@@ -14,6 +14,19 @@ CREATE TABLE
         weekly_budget decimal DEFAULT NULL -- decimal CHECK (weekly_budget > 0)
     );
 
+-- Trigger function to update the updated_at column
+CREATE
+OR REPLACE FUNCTION update_modified_column () RETURNS TRIGGER AS $$
+BEGIN
+    NEW.updated_at = NOW();
+    RETURN NEW;
+END;
+$$ language 'plpgsql';
+
+CREATE TRIGGER update_user_modtime BEFORE
+UPDATE ON users FOR EACH ROW
+EXECUTE PROCEDURE update_modified_column ();
+
 -- Dietary restrictions table
 CREATE TABLE
     dietary_restrictions (
