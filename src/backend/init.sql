@@ -132,7 +132,8 @@ CREATE TABLE
         id serial PRIMARY KEY,
         user_id integer REFERENCES users (id),
         week_start_date date NOT NULL,
-        cost decimal NOT NULL
+        cost decimal NOT NULL,
+        UNIQUE (user_id, week_start_date)
     );
 
 -- Scheduled recipes table
@@ -142,5 +143,5 @@ CREATE TABLE
         recipe_id integer REFERENCES recipes (id),
         cost decimal NOT NULL,
         day smallint NOT NULL,
-        PRIMARY KEY (schedule_id, recipe_id)
+        PRIMARY KEY (schedule_id, recipe_id, day)
     );

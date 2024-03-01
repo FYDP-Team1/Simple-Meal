@@ -29,19 +29,21 @@ router.post("/api/createWeeklySchedule", async (req, res) => {
     // Retrieve user preferences
     const {
       meals_per_day: mealsPerDay,
+      servings_per_meal: servingsPerMeal,
       weekly_budget: weeklyBudget,
       max_cooking_minutes: maxCookingMinutes,
       restrictions,
-      userPreferredCuisines,
+      userpreferredcuisines: userPreferredCuisines,
     } = await getUserPreferences(userId);
 
     // Filter recipes based on dietary restrictions
     const recipes = await filterRecipes(restrictions);
 
     // Calculate recipe weights
-    const weighted_recipes = await calculateRecipeWeights(recipes, mealsPerDay, weeklyBudget, maxCookingMinutes, userPreferredCuisines);
+    const avgCost = weeklyBudget / 7 / mealsPerDay / servingsPerMeal;
+    const weighted_recipes = await calculateRecipeWeights(recipes, mealsPerDay, avgCost, maxCookingMinutes, userPreferredCuisines);
 
-    const weeklySchedule = await generateWeeklySchedule(weighted_recipes, mealsPerDay, userId);
+    const weeklySchedule = await generateWeeklySchedule(weighted_recipes, mealsPerDay, servingsPerMeal, userId);
     res.status(201).json({ weeklySchedule });
   } catch (error) {
     console.error(error);

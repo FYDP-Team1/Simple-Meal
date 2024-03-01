@@ -34,7 +34,7 @@ const getDayIndex = (day) => {
 const getUserPreferences = async (userId) => {
   try {
     const userData = await db.one(
-      `SELECT users.meals_per_day, users.weekly_budget, users.max_cooking_minutes, json_agg(DISTINCT user_preferences_restrictions.restriction_id) AS restrictions, json_agg(DISTINCT user_preferences_cuisines.cuisine_id) AS userPreferredCuisines
+      `SELECT users.meals_per_day, users.servings_per_meal, users.weekly_budget, users.max_cooking_minutes, json_agg(DISTINCT user_preferences_restrictions.restriction_id) AS restrictions, json_agg(DISTINCT user_preferences_cuisines.cuisine_id) AS userPreferredCuisines
         FROM users
         LEFT JOIN user_preferences_restrictions ON users.id = user_preferences_restrictions.user_id
         LEFT JOIN user_preferences_cuisines ON users.id = user_preferences_cuisines.user_id
@@ -73,34 +73,26 @@ const filterRecipes = async (restrictions) => {
 // Function to calculate recipe weights
 const calculateRecipeWeights = async (
   recipes,
-  meals_per_day,
-  weeklyBudget,
+  mealsPerDay,
+  avgCost,
   maxCookingMinutes,
   userPreferredCuisines
 ) => {
-  const avgCost = meals_per_day * weeklyBudget / 7;
-
   for (let recipe of recipes) {
     // Assign weights based on cost
-    let costWeight;
-    const costDiff = Math.abs(recipe.cost - avgCost);
-    if (costDiff < 0.1 * avgCost) {
-      costWeight = 5;
-    } else if (costDiff < 0.2 * avgCost) {
-      costWeight = 2;
-    }
+    const costWeight = Math.exp(-1 * (Math.abs(recipe.cost - avgCost) - 0.15 * avgCost) / (0.1 * avgCost));
 
     // Assign weights based on cooking minutes
     let cookingTimeWeight;
     const timeDiff = recipe.cooking_minutes - maxCookingMinutes;
     if (timeDiff > 30) {
-      cookingTimeWeight = 0;
+      cookingTimeWeight = -10;
     } else if (timeDiff > 0) {
-      cookingTimeWeight = 1;
+      cookingTimeWeight = 0;
     } else if (timeDiff < 10) {
-      cookingTimeWeight = 4;
-    } else {
       cookingTimeWeight = 3;
+    } else {
+      cookingTimeWeight = 2;
     }
 
     // Calculate cuisine weight
@@ -113,20 +105,17 @@ const calculateRecipeWeights = async (
     }
 
     // Calculate total weight for the recipe
-    const totalWeight = costWeight + cookingTimeWeight + cuisineWeight;
-
-    // Assign the total weight to the recipe
-    recipe.weight = totalWeight;
+    recipe.weight = costWeight + cookingTimeWeight + cuisineWeight;
   }
 
   // Sort recipes by weight in descending order
   recipes.sort((a, b) => b.weight - a.weight);
-
-  // Return top N recipes, where N = number of meals per week
-  if (recipes.length > 7 * meals_per_day) {
-    return recipes.slice(0, 7 * meals_per_day);
+  // Pad and the recipes array to ensure enough recipes for the week
+  while (recipes.length < 7 * mealsPerDay) {
+    recipes = recipes.concat(recipes);
   }
-  return recipes;
+  // Return top N recipes, where N = number of meals per week
+  return recipes.slice(0, 7 * mealsPerDay);
 };
 
 // Function to get cuisine ID by name
@@ -152,7 +141,7 @@ const getCurrentWeekStartDate = async () => {
 };
 
 // Function to generate weekly schedule and insert into database
-const generateWeeklySchedule = async (recipes, mealsPerDay, userId) => {
+const generateWeeklySchedule = async (recipes, mealsPerDay, servingsPerMeal, userId) => {
     const weeklySchedule = {
         Mon: [],
         Tue: [],
@@ -163,15 +152,9 @@ const generateWeeklySchedule = async (recipes, mealsPerDay, userId) => {
         Sun: [],
     };
 
-    // Pad and Truncate the recipes array to ensure only enough recipes for the week
-    while (recipes.length < 7 * mealsPerDay) {
-        recipes = recipes.concat(recipes);
-    }
-    recipes = recipes.slice(0, 7 * mealsPerDay);
-
     const weekStartDate = await getCurrentWeekStartDate();
     const daysOfWeek = Object.keys(weeklySchedule);
-    let total = 0;
+    let total = 0.0;
 
     // Sample the recipes for each day of the week
     for (const day of daysOfWeek) {
@@ -180,6 +163,7 @@ const generateWeeklySchedule = async (recipes, mealsPerDay, userId) => {
         const randomIndex = Math.floor(Math.random() * recipes.length);
         const randomRecipe = recipes[randomIndex];
         if (!recipesForDay.includes(randomRecipe)) {
+          randomRecipe.cost = Number(randomRecipe.cost) * servingsPerMeal;
           total += randomRecipe.cost;
           recipesForDay.push(randomRecipe);
           recipes.splice(randomIndex, 1); // Remove the selected recipe from the list
@@ -188,44 +172,48 @@ const generateWeeklySchedule = async (recipes, mealsPerDay, userId) => {
       weeklySchedule[day] = recipesForDay;
     }
     
-    try {
-      // Start a transaction
-      await db.tx(async (t) => {
-        for (const day of daysOfWeek) {
-          for (const recipe of weeklySchedule[day]) {
-            // Insert into weekly_schedules table
-            const { id: scheduleId } = await t.one(
-              `INSERT INTO weekly_schedules (user_id, week_start_date, cost)
-                VALUES ($1, $2, $3)
-                ON CONFLICT (user_id, week_start_date) DO NOTHING
-                RETURNING id`,
-              [userId, weekStartDate, total]
-            );
+try {
+  // Start a transaction
+  await db.tx(async (t) => {
+    // Insert into weekly_schedules table
+    const { id: scheduleId } = await t.one(
+      `INSERT INTO weekly_schedules (user_id, week_start_date, cost)
+        VALUES ($1, $2, $3)
+        ON CONFLICT (user_id, week_start_date) DO UPDATE SET cost = $3
+        RETURNING id`,
+      [userId, weekStartDate, total]
+    );
 
-            // Insert into scheduled_recipes table
-            await t.none(
-              `INSERT INTO scheduled_recipes (schedule_id, recipe_id, cost, day)
-                VALUES ($1, $2, $3, $4)
-                ON CONFLICT (schedule_id, recipe_id, day) DO NOTHING`,
-              [scheduleId, recipe.id, recipe.cost, getDayIndex(day)]
-            );
-          }
-        }
-      });
+    // Delete old scheduled recipes for the user for this week
+    await t.none(
+      `DELETE FROM scheduled_recipes
+       WHERE schedule_id = $1`,
+      [scheduleId]
+    );
 
-    } catch (error) {
-        console.error("Error inserting weekly schedule:", error);
-        throw error;
+    for (const day of daysOfWeek) {
+      for (const recipe of weeklySchedule[day]) {
+        // Insert into scheduled_recipes table
+        await t.none(
+          `INSERT INTO scheduled_recipes (schedule_id, recipe_id, cost, day)
+            VALUES ($1, $2, $3, $4)`,
+          [scheduleId, recipe.id, recipe.cost, getDayIndex(day)]
+        );
+      }
     }
-    
-    return weeklySchedule;
+  });
+} catch (error) {
+  console.error("Error inserting weekly schedule:", error);
+  throw error;
+}
+
+return weeklySchedule;
 };
 
 
 module.exports = {
   getDayIndex,
   getUserPreferences,
-  getUserPreferredCuisines,
   filterRecipes,
   calculateRecipeWeights,
   getCuisineIdByName,
