@@ -35,7 +35,7 @@ const Home = () => {
                       <div className={styles.content}>
                         <div className={styles.text}>
                           <div className={styles.text1}>
-                            Current Week Plan Spending
+                            Average Cost Per Meal
                           </div>
                         </div>
                       </div>
@@ -79,19 +79,15 @@ const Home = () => {
                         <div className={styles.content2}>
                           <div className={styles.text5}>
                             <div className={styles.text6}>
-                              Savings Compared to Eat-out
+                              Average Savings Per Meal
+                              Compared to Eat Out
                             </div>
-                          </div>
-                        </div>
-                        <div className={styles.component2Wrapper}>
-                          <div className={styles.component21}>
-                            <div className={styles.div}>?</div>
-                            <div className={styles.component2Child} />
                           </div>
                         </div>
                       </div>
                     </div>
                     <div className={styles.wrapperGroup27018Parent}>
+                    <div className={styles.content3}>
                       <div className={styles.wrapperGroup27018}>
                         <img
                           className={styles.wrapperGroup27018Child}
@@ -100,33 +96,41 @@ const Home = () => {
                           src="/group-27019.svg"
                         />
                       </div>
-                      <div className={styles.content3}>
-                        <div className={styles.text7}>
-                          <div className={styles.text8}>$30.4</div>
+                      <div className={styles.text7}>
+                        <div className={styles.text8}>$30.4</div>
+                      </div>
+                      <div className={styles.icontext1}>
+                        <div className={styles.text9}>
+                          <div className={styles.mondayFrame1}>-0.03%</div>
                         </div>
-                        <div className={styles.icontext1}>
-                          <div className={styles.text9}>
-                            <div className={styles.mondayFrame1}>-0.03%</div>
-                          </div>
-                          <div className={styles.iconset1}>
-                            <img
-                              className={styles.arrowfallIcon}
-                              loading="eager"
-                              alt=""
-                              src="/arrowfall.svg"
-                            />
-                          </div>
+                        <div className={styles.iconset1}>
+                          <img
+                            className={styles.arrowfallIcon}
+                            loading="eager"
+                            alt=""
+                            src="/arrowfall.svg"
+                          />
                         </div>
                       </div>
+                      <div className={styles.group22}>
+ 
+                    <div className={styles.component2Wrapper}>
+                      <div className={styles.component21}>
+                        <div className={styles.div}>?</div>
+                        <div className={styles.component2Child} />
+                      </div>
+                    </div>
+                    </div>
                     </div>
                   </div>
+                </div>
                   <div className={styles.widget2}>
                     <div className={styles.widgetChild}>
                       <div className={styles.contentGroup}>
                         <div className={styles.content4}>
                           <div className={styles.text10}>
                             <div className={styles.text11}>
-                              Current Grocery Item Cost
+                              Weekly Grovery List Cost
                             </div>
                           </div>
                         </div>
@@ -168,7 +172,7 @@ const Home = () => {
                         <div className={styles.content6}>
                           <div className={styles.text16}>
                             <div className={styles.text17}>
-                              Preference Budget Usage
+                              Budget Usage
                             </div>
                           </div>
                         </div>

@@ -178,7 +178,6 @@
   position: relative;
 }
 .swap {
-  height: 27px;
   line-height: 46.8px;
   font-weight: 800;
   display: inline-block;
@@ -271,7 +270,6 @@
   z-index: 1;
 }
 .div {
-  height: 27px;
   position: relative;
   line-height: 46.8px;
   font-weight: 800;
@@ -315,6 +313,7 @@
 .contentParent {
   flex: 1;
   align-items: flex-end;
+  height: 34px;
 }
 .widgetInner {
   height: 41px;
@@ -677,12 +676,13 @@
   max-width: 103%;
 }
 .frameDiv {
-  width: 343px;
+  height: 34px;
   align-items: flex-start;
-  justify-content: flex-start;
-  padding: 0;
   box-sizing: border-box;
-  max-width: 100%;
+  justify-content: flex-start;
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
 }
 .frameItem {
   width: 158px;
@@ -774,7 +774,6 @@
   align-self: stretch;
   flex-direction: row;
   align-items: flex-start;
-  padding: 0 var(--padding-9xl);
   font-size: var(--semibold-size);
 }
 .widget3 {
