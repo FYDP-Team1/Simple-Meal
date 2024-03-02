@@ -12,6 +12,7 @@ services:
     volumes:
       - .:/app
       - /app/node_modules # to avoid local node_modules being overwritten by the conatiner
+      - /app/public/recipe_images # to avoid images unpacked inside the container being accessible from the host
     environment:
       - CHOKIDAR_USEPOLLING=true
       - WDS_SOCKET_HOST=127.0.0.1

@@ -15,4 +15,4 @@ COPY . .
 # ---- Development ----
 FROM base AS development
 
-CMD ["npm", "start"]
+CMD ["./start-dev.sh"]

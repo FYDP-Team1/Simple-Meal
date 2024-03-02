@@ -1,5 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import {  useEffect, useState } from "react";
 import BudgetDetails from "../components/BudgetDetails";
 //import TopBanner from "../components/TopBanner";
 import NavBar from "../components/NavBar";
@@ -8,7 +7,6 @@ import styles from "./Home.module.css";
 import axios from "axios";
 
 const Home = () => {
-  const navigate = useNavigate();
   const [schedule, setSchedule] = useState(null);
 
   const populateSchedule = async (e) => {
