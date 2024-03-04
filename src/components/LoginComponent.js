@@ -1,19 +1,33 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./LoginComponent.module.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const LoginComponent = () => {
+  var URL = "";
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
   const navigate = useNavigate();
-
+  const DEBUG_URL = process.env.REACT_APP_DEBUG_URL;
+  const PROD_URL = process.env.REACT_APP_PROD_URL;
+  const IS_DEBUG = process.env.REACT_APP_IS_DEBUG;
+  
+  useEffect(()=>{
+    if (IS_DEBUG === 'TRUE'){
+      URL = DEBUG_URL;
+    }
+    else{
+      URL = PROD_URL;
+    }
+    
+  },[]);
+  
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
       // Make an API request to your server to authenticate the user
-      const res = await axios.post("http://localhost:3001/api/login", { username, password });
+      const res = await axios.post(`${URL}/api/login`, { username, password });
       // Handle successful login, e.g., store user token in localStorage and redirect
       console.log("User logged in:", res.data);
       if (res.status === 200){

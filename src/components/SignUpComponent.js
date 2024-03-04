@@ -4,6 +4,7 @@ import styles from "./SignUpComponent.module.css";
 import axios from "axios"; // Import Axios for making HTTP requests
 
 const SignUpComponent = () => {
+  var URL = "";
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -12,12 +13,24 @@ const SignUpComponent = () => {
   const [passwordError, setPasswordError] = useState("");
   const [confirmPasswordError, setConfirmPasswordError] = useState("");
   const [isFormValid, setIsFormValid] = useState(false);
-
+  const DEBUG_URL = process.env.REACT_APP_DEBUG_URL;
+  const PROD_URL = process.env.REACT_APP_PROD_URL;
+  const IS_DEBUG = process.env.REACT_APP_IS_DEBUG;
+  
   const resetPasswordError = () => {
     setPasswordError(null);
     setConfirmPasswordError(null);
   };
 
+  
+  useEffect(()=>{
+    if (IS_DEBUG === 'TRUE'){
+      URL = DEBUG_URL;
+    }
+    else{
+      URL = PROD_URL;
+    }
+  },[]);
 
   const onSignUpButtonClick = useCallback(async (e) => {
     e.preventDefault(); // Prevent default form submission
@@ -48,12 +61,12 @@ const SignUpComponent = () => {
     if (valid) {
       try {
         // Make a POST request to your signup endpoint on the server
-        let res = await axios.post("http://localhost:3001/api/signup", {
+        let res = await axios.post(`${URL}/api/signup`, {
           username,
           password,
         });
         console.log(res);
-        let getUserIdRes = await axios.post("http://localhost:3001/api/getUserId", {
+        let getUserIdRes = await axios.post(`${URL}/api/getUserId`, {
           username
         });
         console.log(getUserIdRes);
