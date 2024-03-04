@@ -21,7 +21,6 @@ const SignUpComponent = () => {
     setPasswordError(null);
     setConfirmPasswordError(null);
   };
-
   
   useEffect(()=>{
     if (IS_DEBUG === 'TRUE'){
