@@ -28,7 +28,9 @@ jobs:
         uses: docker/metadata-action@8e5442c4ef9f78752691e2d8f8d19755c6f78e81 # v5.5.1
         with:
           # List of Docker images to use as base name for tags
-          images: ghcr.io/${{ env.REPO }}
+          images: |
+            fydp-team1/simple-meal
+            ghcr.io/fydp-team1/simple-meal
           # List of tags as key-value pair attributes
           tags: |
             type=sha
@@ -52,8 +54,6 @@ jobs:
         with:
           # Path to the Dockerfile
           file: ./Dockerfile
-          # List of metadata for an image
-          labels: ${{ steps.meta.outputs.labels }}
           # Do not use cache when building the image
           no-cache: true
           # Push is a shorthand for --output=type=registry
