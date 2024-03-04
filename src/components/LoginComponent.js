@@ -21,17 +21,19 @@ const LoginComponent = () => {
       URL = PROD_URL;
     }
     
-  },[]);
+  });
   
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
       // Make an API request to your server to authenticate the user
       const res = await axios.post(`${URL}/api/login`, { username, password });
+      const userId = await axios.post(`${URL}/api/getUserId`, {username})
       // Handle successful login, e.g., store user token in localStorage and redirect
       console.log("User logged in:", res.data);
-      if (res.status === 200){
+      if (res.status === 200 && userId.status === 200){
         localStorage.setItem("username", username);
+        localStorage.setItem("user_id", userId.data.id);
         navigate("/home");
       }
     } catch (err) {

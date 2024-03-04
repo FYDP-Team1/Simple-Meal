@@ -16,7 +16,7 @@ const SignUpComponent = () => {
   const DEBUG_URL = process.env.REACT_APP_DEBUG_URL;
   const PROD_URL = process.env.REACT_APP_PROD_URL;
   const IS_DEBUG = process.env.REACT_APP_IS_DEBUG;
-  
+
   const resetPasswordError = () => {
     setPasswordError(null);
     setConfirmPasswordError(null);
@@ -30,7 +30,7 @@ const SignUpComponent = () => {
     else{
       URL = PROD_URL;
     }
-  },[]);
+  });
 
   const onSignUpButtonClick = useCallback(async (e) => {
     e.preventDefault(); // Prevent default form submission

@@ -17,12 +17,7 @@ const Preferences = () => {
   const [servingsPerRecipeOptions, setServingsPerRecipeOptions] = useState({
     "1 person": false,
     "2 people": true,
-    "3 people": false,
     "4 people": false,
-    "5 people": false,
-    "6 people": false,
-    "7 people": false,
-    "8 people": false,
   });
 
   useEffect(()=>{

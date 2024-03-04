@@ -20,12 +20,15 @@ const Home = () => {
     
     const res = await axios.post(`${URL}/api/createWeeklySchedule`, { userId });
     setSchedule(res.data);
+    if(!res.data.weeklySchedule?.Fri?.length){
+      navigate('/preferences');
+    }
   };
 
   useEffect(()=>{
     const userId = localStorage.getItem('user_id');
     if (userId === null){
-      navigate('./');
+      navigate('/');
     }
     if (IS_DEBUG === 'TRUE'){
       URL = DEBUG_URL;
@@ -34,6 +37,9 @@ const Home = () => {
       URL = PROD_URL;
     }
     
+  });
+
+  useEffect(()=>{
     populateSchedule();
   },[]);
 

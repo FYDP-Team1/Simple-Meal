@@ -27,8 +27,7 @@ const Preferences2 = () => {
     else{
       URL = PROD_URL;
     }
-    
-  },[]);
+  });
 
   const onSubmitClick = async (e) => {
     e.preventDefault();

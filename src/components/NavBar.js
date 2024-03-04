@@ -1,8 +1,25 @@
 import styles from "./NavBar.module.css";
-
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { Form } from "react-bootstrap";
 
 const NavBar = ({ onGroupIcon1Click, onGroupIcon3Click }) => {
   const username = localStorage.getItem("username");
+  const navigate = useNavigate();
+  const [selectedAction, setSelectedAction] = useState('');
+
+  const handleSelectChange = (event) => {
+    const action = event.target.value;
+    setSelectedAction(action);
+    if (action === 'logout') {
+      handleLogout();
+    }
+  };
+
+  const handleLogout = () => {
+    localStorage.clear();
+    navigate('/');
+  };
 
   return (
     <header className={styles.topBanner}>
@@ -70,9 +87,20 @@ const NavBar = ({ onGroupIcon1Click, onGroupIcon3Click }) => {
                 <img className={styles.vIcon} alt="" src="/vicon.svg" />
               </div>
             </div>
-            <div className={styles.weekdayFrameTrio}>
-              <div className={styles.vegan}>VEGAN</div>
-            </div>
+            <Form.Select 
+              className={styles.frameFormselect} 
+              value={selectedAction} 
+              onChange={handleSelectChange}
+            >
+              
+              <option value=""></option>
+              <option value="home">Home</option>
+              <option value="logout">Logout</option>
+              {/* Add other options as needed */}
+            </Form.Select>
+            {/* <div className={styles.weekdayFrameTrio}> */}
+              {/* <div className={styles.vegan}>VEGAN</div> */}
+            {/* </div> */}
           </div>
         </div>
       </div>
