@@ -33,7 +33,7 @@ ENV SIMPLEMEAL_DEBUG true
 CMD ["dumb-init", "node", "server.js"]
 
 # ---- Production ----
-FROM base AS production
+FROM unpack AS production
 
 ENV SIMPLEMEAL_DEBUG false
 
