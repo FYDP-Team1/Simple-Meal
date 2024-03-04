@@ -27,7 +27,7 @@ jobs:
         uses: docker/metadata-action@8e5442c4ef9f78752691e2d8f8d19755c6f78e81 # v5.5.1
         with:
           # List of Docker images to use as base name for tags
-          images: ghcr.io/FYDP-Team1/simplemeal
+          images: ghcr.io/${{ env.REPO }}
           # List of tags as key-value pair attributes
           tags: |
             type=sha
@@ -81,4 +81,4 @@ jobs:
         with:
           app-name: ${{ env.AZURE_WEBAPP_NAME }}
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-          images: 'ghcr.io/FYDP-Team1/simplemeal:${{ github.sha }}'
+          images: 'ghcr.io/${{ env.REPO }}:${{ github.sha }}'
