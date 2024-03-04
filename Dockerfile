@@ -31,3 +31,12 @@ FROM unpack AS development
 ENV SIMPLEMEAL_DEBUG true
 
 CMD ["dumb-init", "node", "server.js"]
+
+# ---- Production ----
+FROM base AS production
+
+ENV SIMPLEMEAL_DEBUG false
+
+ENV NODE_ENV production
+
+CMD ["dumb-init", "node", "server.js"]
