@@ -9,9 +9,14 @@ on:
     paths:
     - '**'
     - '.github/workflows/simplemeal-AutoDeployTrigger-62ca6a7d-3370-425b-a594-fb9a344609e4.yml'
+  pull_request:
+    types:
+      - closed
+    branches:
+      - deployment
 
   # Allow manual trigger 
-  workflow_dispatch:      
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:
