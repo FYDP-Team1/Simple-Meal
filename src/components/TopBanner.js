@@ -5,6 +5,7 @@ import styles from "./TopBanner.module.css";
 import { useNavigate } from "react-router-dom";
 
 const TopBanner = () => {
+  const navigate = useNavigate();
   const [selectedAction, setSelectedAction] = useState('');
 
   const handleSelectChange = (event) => {
@@ -16,12 +17,10 @@ const TopBanner = () => {
   };
 
   const handleLogout = () => {
-    // Logout logic here
-    console.log('Logging out...');
-    // For example: clear the authentication token, reset user state, and redirect to login page
+    localStorage.clear();
+    navigate('/');
   };
 
-  const navigate = useNavigate();
   return (
     <header className={styles.topBanner}>
       <img
