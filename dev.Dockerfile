@@ -7,7 +7,7 @@ ENV PATH /app/node_modules/.bin:$PATH
 
 COPY package*.json ./
 
-RUN npm ci
+RUN npm install
 RUN npm rebuild bcrypt --build-from-source
 
 HEALTHCHECK CMD curl --fail http://localhost:3000 || exit 1  # Healthcheck for the container
