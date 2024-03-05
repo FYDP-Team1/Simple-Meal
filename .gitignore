@@ -24,3 +24,4 @@ yarn-debug.log*
 yarn-error.log*
 
 recipe_images.tar
+src/backend/init.sql
