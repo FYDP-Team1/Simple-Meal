@@ -45,5 +45,5 @@ jobs:
           resourceGroup: simplemeal_group
           ingress: external
           targetPort: 3000
-          environmentVariables: 'REACT_APP_API_URL=https://api.simplemeal.live/ POSTGRES_USER=postgres POSTGRES_PASSWORD=secretref:pg-password POSTGRES_DB=postgres POSTGRES_HOST=simplemeal-db'
+          environmentVariables: 'REACT_APP_API_URL=https://api.simplemeal.live POSTGRES_USER=postgres POSTGRES_PASSWORD=secretref:pg-password POSTGRES_DB=postgres POSTGRES_HOST=simplemeal-db'
           imageToBuild: ghcr.io/${{ env.REPO }}:latest
