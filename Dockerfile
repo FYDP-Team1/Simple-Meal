@@ -29,5 +29,6 @@ ENV SIMPLEMEAL_DEBUG false
 ENV NODE_ENV production
 
 EXPOSE 3000
+EXPOSE 3001
 
 CMD ["./start-prod.sh"]
