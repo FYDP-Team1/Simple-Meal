@@ -13,7 +13,7 @@ on:
       - deployment
   push:
     branches:
-      - deploy_to_azure
+      - deploy-to-azure
 
 permissions:
   contents: read
