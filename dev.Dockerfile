@@ -14,14 +14,12 @@ HEALTHCHECK CMD curl --fail http://localhost:3000 || exit 1  # Healthcheck for t
 
 COPY . .
 
-# ---- Production ----
-FROM base AS production
+# ---- Development ----
+FROM base AS development
 
-ENV SIMPLEMEAL_DEBUG false
-
-ENV NODE_ENV production
+ENV SIMPLEMEAL_DEBUG true
 
 EXPOSE 3000
 EXPOSE 3001
 
-CMD ["./start-prod.sh"]
+CMD ["./start-dev.sh"]
