@@ -10,6 +10,8 @@ COPY package*.json ./
 RUN npm ci
 RUN npm rebuild bcrypt --build-from-source
 
+HEALTHCHECK CMD curl --fail http://localhost:3000 || exit 1  # Healthcheck for the container
+
 COPY . .
 
 # ---- Development ----
