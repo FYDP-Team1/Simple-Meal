@@ -5,7 +5,7 @@ services:
     container_name: simple-meal-app
     build: 
       context: .
-      target: development
+      dockerfile: dev.Dockerfile
     ports:
       - "3000:3000"
       - "3001:3001"
