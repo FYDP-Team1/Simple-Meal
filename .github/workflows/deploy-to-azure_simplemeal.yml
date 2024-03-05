@@ -6,11 +6,11 @@ env:
   AZURE_WEBAPP_NAME: simplemeal  # set this to the name of your Azure Web App
 
 on:
-  push:
+  pull_request:
+    types:
+      - closed
     branches:
       - deployment
-      - deploy-to-azure
-  workflow_dispatch:
 
 permissions:
   contents: read
