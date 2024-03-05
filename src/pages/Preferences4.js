@@ -9,25 +9,13 @@ import axios from "axios";
 
 const Preferences2 = () => {
   let navigate = useNavigate();
-  var URL = "";
 
   const [budget, setBudget] = useState(120); // Initial budget value
   useEffect(() => {
     localStorage.setItem("budget", budget);
   }, [budget]);
 
-  const DEBUG_URL = process.env.REACT_APP_DEBUG_URL;
-  const PROD_URL = process.env.REACT_APP_PROD_URL;
-  const IS_DEBUG = process.env.REACT_APP_IS_DEBUG;
-  
-  useEffect(()=>{
-    if (IS_DEBUG === 'TRUE'){
-      URL = DEBUG_URL;
-    }
-    else{
-      URL = PROD_URL;
-    }
-  });
+  const URL = process.env.REACT_APP_URL + ":"+process.env.REACT_APP_API_PORT;
 
   const onSubmitClick = async (e) => {
     e.preventDefault();
