@@ -11,7 +11,7 @@ services:
       - "3001:3001"
     volumes:
       - .:/app
-      - /app/node_modules # to avoid local node_modules being overwritten by the conatiner
+      - /app/node_modules # to avoid local node_modules being overwritten by the container
       - /app/public/recipe_images # to avoid images unpacked inside the container being accessible from the host
     environment:
       - CHOKIDAR_USEPOLLING=true
@@ -28,8 +28,10 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data/
       # Initialize the database with some tables and data
-      - ./src/backend/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./src/backend/table.sql:/docker-entrypoint-initdb.d/table.sql
       - ./src/backend/seed.sql:/docker-entrypoint-initdb.d/seed.sql
+    env_file:
+      - .env
 
 volumes:
   postgres_data:

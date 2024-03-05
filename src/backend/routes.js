@@ -197,7 +197,7 @@ router.post("/api/login", async (req, res) => {
     if (!isPasswordValid) {
       return res.status(401).json({ message: "Invalid password" });
     }
-
+    
     // Generate a JWT token for authentication
     const token = jwt.sign(
       { userId: user.id, username: user.username },

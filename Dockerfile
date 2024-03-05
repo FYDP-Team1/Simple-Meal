@@ -10,6 +10,8 @@ COPY package*.json ./
 RUN npm ci
 RUN npm rebuild bcrypt --build-from-source
 
+HEALTHCHECK CMD curl --fail http://localhost:3000 || exit 1  # Healthcheck for the container
+
 COPY . .
 
 # ---- Development ----
@@ -27,5 +29,6 @@ ENV SIMPLEMEAL_DEBUG false
 ENV NODE_ENV production
 
 EXPOSE 3000
+EXPOSE 3001
 
 CMD ["./start-prod.sh"]

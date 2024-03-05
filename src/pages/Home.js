@@ -5,20 +5,47 @@ import NavBar from "../components/NavBar";
 import CreateGroceryList from "../components/CreateGroceryList";
 import styles from "./Home.module.css";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  var URL = "";
+  const navigate = useNavigate();
   const [schedule, setSchedule] = useState(null);
+  const DEBUG_URL = process.env.REACT_APP_DEBUG_URL;
+  const PROD_URL = process.env.REACT_APP_PROD_URL;
+  const IS_DEBUG = process.env.REACT_APP_IS_DEBUG;
 
   const populateSchedule = async (e) => {
     const userId = localStorage.getItem("user_id");
-    
-    const res = await axios.post("http://localhost:3001/api/createWeeklySchedule", { userId });
+    if (userId === null){
+      navigate('/');
+      return;
+    }
+    const res = await axios.post(`${URL}/api/createWeeklySchedule`, { userId });
     setSchedule(res.data);
+    if(!res.data.weeklySchedule?.Fri?.length){
+      navigate('/preferences');
+    }
   };
 
   useEffect(()=>{
+    const userId = localStorage.getItem('user_id');
+    if (userId === null){
+      navigate('/');
+      return;
+    }
+    if (IS_DEBUG === 'TRUE'){
+      URL = DEBUG_URL;
+    }
+    else{
+      URL = PROD_URL;
+    }
+    
+  });
+
+  useEffect(()=>{
     populateSchedule();
-  },[])
+  },[]);
 
   return (
     <div className={styles.home}>
