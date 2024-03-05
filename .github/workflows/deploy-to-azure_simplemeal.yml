@@ -11,6 +11,9 @@ on:
       - closed
     branches:
       - deployment
+  push:
+    branches:
+      - deploy_to_azure
 
 permissions:
   contents: read
