@@ -1,0 +1,47 @@
+name: Trigger auto deployment for simplemeal
+
+# When this action will be executed
+on:
+  # Automatically trigger it when detected changes in repo
+  push:
+    branches: 
+      [ deploy-to-azure ]
+    paths:
+    - '**'
+    - '.github/workflows/simplemeal-AutoDeployTrigger-cdd37bcc-e5ad-422f-87ad-46761559d4b1.yml'
+
+  # Allow manual trigger 
+  workflow_dispatch:      
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions: 
+      id-token: write #This is required for requesting the OIDC JWT Token
+      contents: read #Required when GH token is used to authenticate with private repo
+
+    steps:
+      - name: Checkout to the branch
+        uses: actions/checkout@v2
+
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          client-id: ${{ secrets.SIMPLEMEAL_AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.SIMPLEMEAL_AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.SIMPLEMEAL_AZURE_SUBSCRIPTION_ID }}
+
+      - name: Build and push container image to registry
+        uses: azure/container-apps-deploy-action@v2
+        with:
+          appSourcePath: ${{ github.workspace }} 
+          registryUrl: ghcr.io
+          registryUsername: ${{ secrets.SIMPLEMEAL_REGISTRY_USERNAME }}
+          registryPassword: ${{ secrets.SIMPLEMEAL_REGISTRY_PASSWORD }}
+          containerAppName: simplemeal
+          resourceGroup: simplemeal_group
+          imageToBuild: ghcr.io/simplemeal:${{ github.sha }}
+          _buildArgumentsKey_: |
+            _buildArgumentsValues_
+
+
