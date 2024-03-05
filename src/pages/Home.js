@@ -17,7 +17,10 @@ const Home = () => {
 
   const populateSchedule = async (e) => {
     const userId = localStorage.getItem("user_id");
-    
+    if (userId === null){
+      navigate('/');
+      return;
+    }
     const res = await axios.post(`${URL}/api/createWeeklySchedule`, { userId });
     setSchedule(res.data);
     if(!res.data.weeklySchedule?.Fri?.length){
@@ -29,6 +32,7 @@ const Home = () => {
     const userId = localStorage.getItem('user_id');
     if (userId === null){
       navigate('/');
+      return;
     }
     if (IS_DEBUG === 'TRUE'){
       URL = DEBUG_URL;
