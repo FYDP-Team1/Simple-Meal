@@ -95,11 +95,12 @@ CREATE TABLE
 -- Recipe ingredients table
 CREATE TABLE
     recipe_ingredients (
+        id serial PRIMARY KEY,
         recipe_id integer REFERENCES recipes (id),
         ingredient_id integer REFERENCES ingredients (id),
         label VARCHAR NOT NULL,
         quantity DECIMAL NOT NULL,
-        PRIMARY KEY (recipe_id, ingredient_id)
+        unit VARCHAR NOT NULL
     );
 
 -- Recipe restrictions table
