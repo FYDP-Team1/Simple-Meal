@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 const Home = () => {
   const navigate = useNavigate();
   const [schedule, setSchedule] = useState(null);
-  const URL = process.env.REACT_APP_URL + ":"+process.env.REACT_APP_API_PORT;
+  const URL = process.env.REACT_APP_API_URL;
 
 
   const populateSchedule = async (e) => {

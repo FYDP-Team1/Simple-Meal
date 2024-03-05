@@ -13,7 +13,7 @@ const SignUpComponent = () => {
   const [passwordError, setPasswordError] = useState("");
   const [confirmPasswordError, setConfirmPasswordError] = useState("");
   const [isFormValid, setIsFormValid] = useState(false);
-  const URL = process.env.REACT_APP_URL + ":"+process.env.REACT_APP_API_PORT;
+  const URL = process.env.REACT_APP_API_URL;
 
   const resetPasswordError = () => {
     setPasswordError(null);

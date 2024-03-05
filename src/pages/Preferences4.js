@@ -15,7 +15,7 @@ const Preferences2 = () => {
     localStorage.setItem("budget", budget);
   }, [budget]);
 
-  const URL = process.env.REACT_APP_URL + ":"+process.env.REACT_APP_API_PORT;
+  const URL = process.env.REACT_APP_API_URL;
 
   const onSubmitClick = async (e) => {
     e.preventDefault();
