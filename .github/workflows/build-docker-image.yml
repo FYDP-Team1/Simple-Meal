@@ -1,11 +1,14 @@
 name: Build Image and Publish to GitHub Container Registry
 
 on:
+  push:
+    branches:
+      - main
   pull_request:
     types:
       - closed
     branches:
-      - deployment
+      - main
   workflow_dispatch: # Manually trigger the workflow
 
 jobs:
