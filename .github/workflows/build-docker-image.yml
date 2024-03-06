@@ -6,9 +6,7 @@ on:
       - closed
     branches:
       - deployment
-  push:
-    branches:
-      - deploy-to-azure
+  workflow_dispatch: # Manually trigger the workflow
 
 jobs:
   build:
