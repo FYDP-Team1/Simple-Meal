@@ -2,7 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const app = express();
-const port = 3001;
+const port = process.env.REACT_APP_API_PORT;
 
 // Import routes
 const routes = require("./routes"); // Adjust the path if your file structure is different

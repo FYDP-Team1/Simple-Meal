@@ -7,21 +7,19 @@ ENV PATH /app/node_modules/.bin:$PATH
 
 COPY package*.json ./
 
-RUN npm ci
+RUN npm install
 RUN npm rebuild bcrypt --build-from-source
 
 HEALTHCHECK CMD curl --fail http://localhost:3000 || exit 1  # Healthcheck for the container
 
 COPY . .
 
-# ---- Production ----
-FROM base AS production
+# ---- Development ----
+FROM base AS development
 
-ENV SIMPLEMEAL_DEBUG false
-
-ENV NODE_ENV production
+ENV SIMPLEMEAL_DEBUG true
 
 EXPOSE 3000
 EXPOSE 3001
 
-CMD ["./start-prod.sh"]
+CMD ["./start-dev.sh"]

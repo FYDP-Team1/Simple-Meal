@@ -8,12 +8,10 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const Home = () => {
-  var URL = "";
   const navigate = useNavigate();
   const [schedule, setSchedule] = useState(null);
-  const DEBUG_URL = process.env.REACT_APP_DEBUG_URL;
-  const PROD_URL = process.env.REACT_APP_PROD_URL;
-  const IS_DEBUG = process.env.REACT_APP_IS_DEBUG;
+  const URL = process.env.REACT_APP_API_URL;
+
 
   const populateSchedule = async (e) => {
     const userId = localStorage.getItem("user_id");
@@ -34,13 +32,6 @@ const Home = () => {
       navigate('/');
       return;
     }
-    if (IS_DEBUG === 'TRUE'){
-      URL = DEBUG_URL;
-    }
-    else{
-      URL = PROD_URL;
-    }
-    
   });
 
   useEffect(()=>{

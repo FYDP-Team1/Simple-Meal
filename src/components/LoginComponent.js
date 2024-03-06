@@ -4,24 +4,11 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const LoginComponent = () => {
-  var URL = "";
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
   const navigate = useNavigate();
-  const DEBUG_URL = process.env.REACT_APP_DEBUG_URL;
-  const PROD_URL = process.env.REACT_APP_PROD_URL;
-  const IS_DEBUG = process.env.REACT_APP_IS_DEBUG;
-  
-  useEffect(()=>{
-    if (IS_DEBUG === 'TRUE'){
-      URL = DEBUG_URL;
-    }
-    else{
-      URL = PROD_URL;
-    }
-    
-  });
+  const URL = process.env.REACT_APP_API_URL;
   
   const handleLogin = async (e) => {
     e.preventDefault();
