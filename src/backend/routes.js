@@ -14,11 +14,11 @@ const {
 const pgp = require("pg-promise")();
 
 const db = pgp({
-  host: "simple-meal-db",
+  host: process.env.POSTGRES_HOST,
   port: 5432,
   database: "simple_meal",
-  user: "postgres",
-  password: "Maan_2000",
+  user: process.env.POSTGRES_USER,
+  password: process.env.POSTGRES_PASSWORD,
 });
 
 // Endpoint for creating weekly schedule
