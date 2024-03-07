@@ -1,4 +1,5 @@
 const pgp = require("pg-promise")();
+require('dotenv').config();
 
 const db = pgp({
   host: process.env.POSTGRES_HOST,

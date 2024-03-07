@@ -1,0 +1,106 @@
+id: /subscriptions/c732e482-1064-42c0-9ca5-22e71891a689/resourceGroups/simplemeal_group/providers/Microsoft.App/containerapps/simplemeal
+identity:
+  type: UserAssigned
+  userAssignedIdentities:
+    ? /subscriptions/c732e482-1064-42c0-9ca5-22e71891a689/resourcegroups/simplemeal_group/providers/Microsoft.ManagedIdentity/userAssignedIdentities/managedEnvironment-simplemealgroup-8ef3simplemeal_groupOidc
+    : clientId: c67c6bc9-7113-400d-a13e-c5390fe9af23
+      principalId: 18529436-b9c1-43c9-aa75-ac36e03b391a
+location: Canada East
+name: simplemeal
+properties:
+  configuration:
+    activeRevisionsMode: Single
+    dapr: null
+    ingress:
+      allowInsecure: false
+      clientCertificateMode: null
+      corsPolicy: null
+      customDomains:
+      - bindingType: SniEnabled
+        certificateId: /subscriptions/c732e482-1064-42c0-9ca5-22e71891a689/resourceGroups/simplemeal_group/providers/Microsoft.App/managedEnvironments/managedEnvironment-simplemealgroup-8ef3/managedCertificates/simplemeal.live-managede-240305210635
+        name: simplemeal.live
+      exposedPort: 0
+      external: true
+      fqdn: simplemeal.blueriver-fc97a4d2.canadaeast.azurecontainerapps.io
+      ipSecurityRestrictions: null
+      stickySessions:
+        affinity: sticky
+      targetPort: 3000
+      additionalPortMappings:
+      - exposedPort: 22222
+        external: true
+        targetPort: 3001
+      traffic:
+      - latestRevision: true
+        weight: 100
+      transport: Auto
+    maxInactiveRevisions: null
+    registries:
+    - identity: ''
+      passwordSecretRef: ghcrio-maan-patel
+      server: ghcr.io
+      username: maan-patel
+    secrets:
+    - name: ghcrio-maan-patel
+    - name: pg-password
+    service: null
+  customDomainVerificationId: 377F049CA3715E3AAA20684BD15A88A756A74C9CA3A9376648640CE315EB4579
+  environmentId: /subscriptions/c732e482-1064-42c0-9ca5-22e71891a689/resourceGroups/simplemeal_group/providers/Microsoft.App/managedEnvironments/managedEnvironment-simplemealgroup-8ef3
+  eventStreamEndpoint: https://canadaeast.azurecontainerapps.dev/subscriptions/c732e482-1064-42c0-9ca5-22e71891a689/resourceGroups/simplemeal_group/containerApps/simplemeal/eventstream
+  latestReadyRevisionName: simplemeal--lz3lz2h
+  latestRevisionFqdn: simplemeal--lz3lz2h.blueriver-fc97a4d2.canadaeast.azurecontainerapps.io
+  latestRevisionName: simplemeal--lz3lz2h
+  managedEnvironmentId: /subscriptions/c732e482-1064-42c0-9ca5-22e71891a689/resourceGroups/simplemeal_group/providers/Microsoft.App/managedEnvironments/managedEnvironment-simplemealgroup-8ef3
+  outboundIpAddresses:
+  - 20.175.31.160
+  - 20.175.29.244
+  - 20.175.30.225
+  - 20.175.30.171
+  - 20.220.107.251
+  - 20.220.107.169
+  - 20.220.107.196
+  - 20.220.107.171
+  provisioningState: Succeeded
+  runningStatus: Running
+  template:
+    containers:
+    - env:
+      - name: REACT_APP_API_URL
+        value: https://simplemeal.live:22222
+      - name: POSTGRES_USER
+        value: postgres
+      - name: POSTGRES_PASSWORD
+        secretRef: pg-password
+      - name: POSTGRES_DB
+        value: postgres
+      - name: POSTGRES_HOST
+        value: simplemeal-db
+      image: ghcr.io/fydp-team1/simple-meal:latest
+      name: simplemeal
+      resources:
+        cpu: 1.0
+        ephemeralStorage: 2Gi
+        memory: 2Gi
+    initContainers: null
+    revisionSuffix: ''
+    scale:
+      maxReplicas: 10
+      minReplicas: 0
+      rules: null
+    serviceBinds:
+    - name: simplemeal-db-b6a8db64deb8aa0f8d878e3fc657d
+      serviceId: /subscriptions/c732e482-1064-42c0-9ca5-22e71891a689/resourceGroups/simplemeal_group/providers/Microsoft.App/containerApps/simplemeal-db
+    terminationGracePeriodSeconds: null
+    volumes: null
+  workloadProfileName: Consumption
+resourceGroup: simplemeal_group
+systemData:
+  createdAt: '2024-03-05T20:32:07.39486'
+  createdBy: ma23pate@uwaterloo.ca
+  createdByType: User
+  lastModifiedAt: '2024-03-05T23:39:00.1919443'
+  lastModifiedBy: 543b33fb-4e00-41c7-9b8b-62d588865f8b
+  lastModifiedByType: Application
+tags:
+  type: container_app
+type: Microsoft.App/containerApps
