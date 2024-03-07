@@ -89,6 +89,21 @@ router.post("/api/getUserId", async (req, res) => {
   }
 });
 
+
+router.post("/api/getRecipies", async (req, res) => {
+  const { recipieId } = req.body;
+  try {
+    const recipe = await db.any("SELECT * FROM recipe_ingredients WHERE recipe_id = $1", [
+      recipieId,
+    ]);
+    return res.status(200).json({ recipe });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+});
+
+
 // Endpoint to save user preferences and details
 router.post("/api/savePreferences", async (req, res) => {
   const currentTime = pgp.as.date(new Date());
