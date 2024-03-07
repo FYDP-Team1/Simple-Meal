@@ -882,6 +882,7 @@
   color: var(--primary-brown);
   display: flex;
   align-items: center;
+  left: 45px;
 }
 .butterChickenRiceFrame,
 .potatoRectangleParent,
@@ -906,6 +907,8 @@
   padding: var(--padding-xs) var(--padding-xs) var(--padding-lg);
   position: relative;
   gap: var(--gap-4xs);
+  width: 200px;
+  height: 290px;
 }
 .frameChild3 {
   width: 100%;
@@ -1002,6 +1005,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  width: 200px;
 }
 .frameWrapper7 {
   flex: 1;
