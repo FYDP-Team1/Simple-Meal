@@ -52,12 +52,6 @@ removing docker volume
 
 `docker volume rm simple-meal_postgres_data`
 
-OR
-
-stop the containers and remove the postgres data
-
-`docker compose down -v postgres_data`
-
 ### Getting into the Database
 
 Go to docker database container and open Terminal
