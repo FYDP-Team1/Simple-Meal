@@ -41,6 +41,8 @@ const CardForRecipie = ({ items }) => {
                       className={styles.image9Icon1}
                       alt=""
                       src={"recipe_images/" + item.id + ".jpg"}
+                      width ="300"
+                      height="300"
                     />
                   </div>
                   <div className={styles.butterChickenRiceFrame}>
