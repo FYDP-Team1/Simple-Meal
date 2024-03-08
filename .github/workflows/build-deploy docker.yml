@@ -58,6 +58,16 @@ jobs:
           # Sets the target stage to build
           target: production
 
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: none
+      packages: read
+
+    steps:
+      - name: Lowercase the repo name and username
+        run: echo "REPO=${GITHUB_REPOSITORY,,}" >>${GITHUB_ENV}
+
       - name: Deploy
         uses: darnfish/watchtower-update@v3.2
         with:
