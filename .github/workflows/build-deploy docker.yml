@@ -69,8 +69,8 @@ jobs:
       - name: Lowercase the repo name and username
         run: echo "REPO=${GITHUB_REPOSITORY,,}" >>${GITHUB_ENV}
 
-      - name: Sleep for 100 seconds
-        run: sleep 100
+      - name: Sleep
+        run: sleep 200
         shell: bash
 
       - name: Trigger a deployment
