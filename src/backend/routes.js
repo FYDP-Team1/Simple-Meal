@@ -227,4 +227,9 @@ router.post("/api/login", async (req, res) => {
   }
 });
 
+// Health check endpoint
+router.get("/api/health", (req, res) => {
+  res.status(200).json({ message: "Server is healthy" });
+});
+
 module.exports = router;
