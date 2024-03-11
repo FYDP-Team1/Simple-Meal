@@ -1096,8 +1096,8 @@
   font-family: var(--message-2);
 }
 .highlighted  {
-  height: 134px;
-  width: 150px;
+  height: 132px;
+  width: 148px;
   border-radius: var(--br-sm);
   background-color: var(--grayscale-white);
   border: 2px solid var(--dark-brown);
