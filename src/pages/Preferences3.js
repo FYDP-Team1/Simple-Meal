@@ -62,7 +62,6 @@ const Preferences = () => {
                   </Dropdown.Toggle>
 
                   <Dropdown.Menu>
-                    {/* <Dropdown.Item onClick={()=>SetTimeRange('5-10 Minutes')}> 10 Minutes</Dropdown.Item> */}
                     <Dropdown.Item onClick={()=>SetTimeRange('Under 30 Minutes')}> Under 30 Minutes</Dropdown.Item>
                     <Dropdown.Item onClick={()=>SetTimeRange('Under 60 Minutes')}> Under 60 Minutes</Dropdown.Item>
                     <Dropdown.Item onClick={()=>SetTimeRange('More than an hour')}> More than an hour</Dropdown.Item>
@@ -80,6 +79,7 @@ const Preferences = () => {
                 <button
                   className={styles.loginButtonWrapper}
                   onClick={onGroupButtonClick}
+                  disabled={!timeRange || timeRange === "Choose Time"}
                 >
                   <div className={styles.loginButton1}>
                     <div className={styles.next}>Next</div>
