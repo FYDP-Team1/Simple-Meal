@@ -73,7 +73,7 @@ const NA = () => {
           </div>
           {isExpanded[2] && (
             <div className={styles.accountOptions}>
-             no
+             Unfortunately, you cannot because it is required to build the heurisitc and recommend you recipies.
             </div>
           )}
 
@@ -91,8 +91,7 @@ const NA = () => {
           </div>
           {isExpanded[3] && (
             <div className={styles.accountOptions}>
-              {/* Expanded content for "Would I have an option to see all the recipes SimpleMeal have?" */}
-              {/* Add your content here */}
+              As of now, it is not possible, however, we do plan on adding this feature in the coming future!
             </div>
           )}
 
@@ -110,8 +109,7 @@ const NA = () => {
           </div>
           {isExpanded[4] && (
             <div className={styles.accountOptions}>
-              {/* Expanded content for "Where can I check my previous history of the budgets I inputed?" */}
-              {/* Add your content here */}
+              As of now, it is not possible, however, we do plan on adding this feature in the coming future!
             </div>
           )}
         </div>

@@ -866,7 +866,7 @@
   box-sizing: border-box;
 }
 .rectangleGroup {
-  width: 1816px;
+  width: 10816px;
   background-color: var(--hungry-yelloe);
   flex-direction: column;
   align-items: center;
@@ -883,7 +883,7 @@
   padding: 0;
 }
 .emailInputInner {
-  width: 1804px;
+  width: max-content;
   justify-content: flex-start;
   max-width: 101%;
 }
@@ -926,6 +926,7 @@
   margin-top: -2px;
 }
 .LandingPage {
+  float: left;
   width: 100%;
   position: relative;
   background-color: var(--white);
