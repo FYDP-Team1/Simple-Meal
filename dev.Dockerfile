@@ -17,8 +17,6 @@ COPY . .
 # ---- Development ----
 FROM base AS development
 
-ENV SIMPLEMEAL_DEBUG true
-
 EXPOSE 3000
 EXPOSE 3001
 
