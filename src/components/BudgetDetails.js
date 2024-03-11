@@ -13,11 +13,11 @@ const BudgetDetails = () => {
         </div>
         <div className={styles.content1}>
           <div className={styles.text2}>
-            <div className={styles.frameFrame}>$70.5</div>
+            <div className={styles.frameFrame}>$4.53</div>
           </div>
           <div className={styles.icontext}>
             <div className={styles.text3}>
-              <div className={styles.text4}>+11.01%</div>
+              <div className={styles.text4}>+12.44%</div>
             </div>
             <div className={styles.iconset}>
               <img
@@ -37,10 +37,6 @@ const BudgetDetails = () => {
                 src="/group-27019.svg"
               />
             </div>
-            <div className={styles.component2}>
-              <div className={styles.swap}>?</div>
-              <div className={styles.frame} />
-            </div>
           </div>
         </div>
       </div>
@@ -52,12 +48,6 @@ const BudgetDetails = () => {
                 <div className={styles.text6}>
                   Average Savings per Meal Compared to Eat-out
                 </div>
-              </div>
-            </div>
-            <div className={styles.component2Wrapper}>
-              <div className={styles.component21}>
-                <div className={styles.div}>?</div>
-                <div className={styles.component2Child} />
               </div>
             </div>
           </div>
@@ -73,7 +63,7 @@ const BudgetDetails = () => {
           </div>
           <div className={styles.content3}>
             <div className={styles.text7}>
-              <div className={styles.text8}>$30.4</div>
+              <div className={styles.text8}>$10.19</div>
             </div>
             <div className={styles.icontext1}>
               <div className={styles.text9}>
@@ -99,10 +89,6 @@ const BudgetDetails = () => {
                 <div className={styles.text11}>Weekly Grocery List Cost</div>
               </div>
             </div>
-            <div className={styles.component22}>
-              <div className={styles.div1}>?</div>
-              <div className={styles.component2Item} />
-            </div>
           </div>
         </div>
         <div className={styles.frameParent}>
@@ -114,11 +100,11 @@ const BudgetDetails = () => {
           />
           <div className={styles.content5}>
             <div className={styles.text12}>
-              <div className={styles.text13}>$70.5</div>
+              <div className={styles.text13}>$115</div>
             </div>
             <div className={styles.icontext2}>
               <div className={styles.text14}>
-                <div className={styles.text15}>+17.12%</div>
+                <div className={styles.text15}>+16.22%</div>
               </div>
               <div className={styles.iconset2}>
                 <img
@@ -139,10 +125,6 @@ const BudgetDetails = () => {
                 <div className={styles.text17}>Budget Usage</div>
               </div>
             </div>
-            <div className={styles.component23}>
-              <div className={styles.div2}>?</div>
-              <div className={styles.component2Inner} />
-            </div>
           </div>
         </div>
         <div className={styles.widgetInner1}>
@@ -155,7 +137,7 @@ const BudgetDetails = () => {
             />
             <div className={styles.content7}>
               <div className={styles.text18}>
-                <div className={styles.text19}>100%</div>
+                <div className={styles.text19}>99.5%</div>
               </div>
               <div className={styles.icontext3}>
                 <div className={styles.text20}>
