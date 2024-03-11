@@ -185,7 +185,6 @@ const Preferences = () => {
                       })}
                     </div>
                   </div>
-                  <div className={styles.viewAllOptions}>VIEW ALL OPTIONS</div>
                 </div>
               </div>
               <div className={styles.allOptionsView}>

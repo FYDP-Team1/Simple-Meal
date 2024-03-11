@@ -1404,12 +1404,6 @@
   color: var(--grayscale-white);
   font-family: var(--v-icon-medium);
 }
-.cuisineSelection,
-.viewAllOptions {
-  align-self: stretch;
-  display: flex;
-  align-items: center;
-}
 .cuisineSelection {
   flex-direction: column;
   justify-content: flex-start;
@@ -1417,14 +1411,6 @@
   max-width: 100%;
   font-size: var(--message-1-size);
   color: var(--color-gray-700);
-}
-.viewAllOptions {
-  height: 41px;
-  position: relative;
-  font-size: var(--message-2-size);
-  color: var(--dark-brown);
-  text-align: left;
-  flex-shrink: 0;
 }
 .cuisineInstance2,
 .cuisineInstanceWrapper {
