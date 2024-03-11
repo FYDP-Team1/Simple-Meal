@@ -153,7 +153,7 @@ const Preferences = () => {
                               <img
                                 className={styles.image40Icon}
                                 alt=""
-                                src={"/" + option.label + ".png"}
+                                src={"/" + option.value + ".png"}
                                 onClick={() => handleCuisineClick(option)}
                               />
                               <div className={styles.italianWrapper}>
