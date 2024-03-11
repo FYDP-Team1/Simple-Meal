@@ -81,19 +81,15 @@ const NavBar = ({ onGroupIcon1Click, onGroupIcon3Click }) => {
         <div className={styles.userNameImage}>
           <img className={styles.usereNameImageIcon} alt="" src="/image-39@2x.png" />
           <div className={styles.recipePair}>
-            <div className={styles.dishTriple}>
-              <div className={styles.userName}>{username}</div>
-              <div className={styles.imageDuo}>
-                <img className={styles.vIcon} alt="" src="/vicon.svg" />
-              </div>
-            </div>
-            <Form.Select 
+
+           
+              <Form.Select 
               className={styles.frameFormselect} 
               value={selectedAction} 
               onChange={handleSelectChange}
             >
               
-              <option value=""></option>
+              <option value="">{username}</option>
               <option value="home">Home</option>
               <option value="logout">Logout</option>
               {/* Add other options as needed */}
@@ -101,6 +97,8 @@ const NavBar = ({ onGroupIcon1Click, onGroupIcon3Click }) => {
             {/* <div className={styles.weekdayFrameTrio}> */}
               {/* <div className={styles.vegan}>VEGAN</div> */}
             {/* </div> */}
+
+
           </div>
         </div>
       </div>
