@@ -71,7 +71,7 @@ const CardForRecipie = ({ items }) => {
             {details &&
               details.recipe.map((det) => (
                 <div>
-                  {det?.quantity} ({det?.unit}) : {det?.label}
+                  {parseFloat(det?.quantity).toFixed(2)} ({det?.unit}) : {det?.label}
                 </div>
               ))}
           </Modal.Body>

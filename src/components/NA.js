@@ -37,7 +37,7 @@ const NA = () => {
           </div>
           {isExpanded[0] && (
             <div className={styles.accountOptions}>
-              idk
+              It works by creating a heurisitc that will be based on user preferences.
             </div>
           )}
 
