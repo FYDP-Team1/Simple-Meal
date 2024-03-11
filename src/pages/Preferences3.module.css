@@ -138,6 +138,9 @@
 .loginButtonWrapper {
   flex-direction: row;
 }
+.loginButtonWrapper:disabled .loginButton1 {
+  background-color: grey;
+}
 .loginButton1 {
   flex: 1;
   border-radius: var(--br-21xl);
