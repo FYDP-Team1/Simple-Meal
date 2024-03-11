@@ -17,15 +17,10 @@ const BudgetDetails = () => {
           </div>
           <div className={styles.icontext}>
             <div className={styles.text3}>
-              <div className={styles.text4}>+12.44%</div>
+              <div className={styles.text4}></div>
             </div>
             <div className={styles.iconset}>
-              <img
-                className={styles.arrowriseIcon}
-                loading="eager"
-                alt=""
-                src="/arrowrise.svg"
-              />
+
             </div>
           </div>
           <div className={styles.group}>
@@ -67,15 +62,10 @@ const BudgetDetails = () => {
             </div>
             <div className={styles.icontext1}>
               <div className={styles.text9}>
-                <div className={styles.mondayFrame1}>-0.03%</div>
+                <div className={styles.mondayFrame1}></div>
               </div>
               <div className={styles.iconset1}>
-                <img
-                  className={styles.arrowfallIcon}
-                  loading="eager"
-                  alt=""
-                  src="/arrowfall.svg"
-                />
+
               </div>
             </div>
           </div>
@@ -104,14 +94,10 @@ const BudgetDetails = () => {
             </div>
             <div className={styles.icontext2}>
               <div className={styles.text14}>
-                <div className={styles.text15}>+16.22%</div>
+                <div className={styles.text15}></div>
               </div>
               <div className={styles.iconset2}>
-                <img
-                  className={styles.arrowriseIcon1}
-                  alt=""
-                  src="/arrowrise.svg"
-                />
+
               </div>
             </div>
           </div>
@@ -141,14 +127,10 @@ const BudgetDetails = () => {
               </div>
               <div className={styles.icontext3}>
                 <div className={styles.text20}>
-                  <div className={styles.text21}>+6.08%</div>
+                  <div className={styles.text21}></div>
                 </div>
                 <div className={styles.iconset3}>
-                  <img
-                    className={styles.arrowriseIcon2}
-                    alt=""
-                    src="/arrowrise.svg"
-                  />
+
                 </div>
               </div>
             </div>
