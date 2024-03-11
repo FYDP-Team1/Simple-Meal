@@ -3,12 +3,7 @@ name: Build and Deploy
 on:
   push:
     branches:
-      - main
-  pull_request:
-    types:
-      - closed
-    branches:
-      - main
+      - deploy
   workflow_dispatch: # Manually trigger the workflow
 
 jobs:
