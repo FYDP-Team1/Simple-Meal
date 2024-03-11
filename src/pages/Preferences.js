@@ -26,6 +26,7 @@ const Preferences = () => {
     { value: "indian", label: "Indian" },
     { value: "japanese", label: "Japanese" },
     { value: "korean", label: "Korean" },
+    { value: "chinese", label: "Chinese" },
     { value: "mediterranean", label: "Mediterranean" },
     { value: "american", label: "American" },
     // Add more cuisines as needed
