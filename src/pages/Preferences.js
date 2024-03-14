@@ -26,6 +26,7 @@ const Preferences = () => {
     { value: "indian", label: "Indian" },
     { value: "japanese", label: "Japanese" },
     { value: "korean", label: "Korean" },
+    { value: "chinese", label: "Chinese" },
     { value: "mediterranean", label: "Mediterranean" },
     { value: "american", label: "American" },
     // Add more cuisines as needed
@@ -153,7 +154,7 @@ const Preferences = () => {
                               <img
                                 className={styles.image40Icon}
                                 alt=""
-                                src={"/" + option.label + ".png"}
+                                src={"/" + option.value + ".png"}
                                 onClick={() => handleCuisineClick(option)}
                               />
                               <div className={styles.italianWrapper}>
@@ -184,7 +185,6 @@ const Preferences = () => {
                       })}
                     </div>
                   </div>
-                  <div className={styles.viewAllOptions}>VIEW ALL OPTIONS</div>
                 </div>
               </div>
               <div className={styles.allOptionsView}>

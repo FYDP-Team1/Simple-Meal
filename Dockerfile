@@ -17,8 +17,6 @@ COPY . .
 # ---- Production ----
 FROM base AS production
 
-ENV SIMPLEMEAL_DEBUG false
-
 ENV NODE_ENV production
 
 EXPOSE 3000

@@ -1,3 +1,9 @@
+# Simple Meal
+
+## Deploying to Production
+
+Create a Pull Request from main branch to deploy branch, and merge it. Once you merge it, the GitHub Action will run to build and deploy the new version at [simplemeal.live](https://simplemeal.live/).
+
 ## Development workflow for developers
 
 Install [Docker Desktop](https://www.docker.com/products/docker-desktop/)

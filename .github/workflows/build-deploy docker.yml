@@ -3,12 +3,7 @@ name: Build and Deploy
 on:
   push:
     branches:
-      - main
-  pull_request:
-    types:
-      - closed
-    branches:
-      - main
+      - deploy
   workflow_dispatch: # Manually trigger the workflow
 
 jobs:
@@ -69,13 +64,8 @@ jobs:
       - name: Lowercase the repo name and username
         run: echo "REPO=${GITHUB_REPOSITORY,,}" >>${GITHUB_ENV}
 
-      - name: Sleep
-        run: sleep 200
-        shell: bash
-
       - name: Trigger a deployment
-        uses: darnfish/watchtower-update@v3.2
+        uses: darnfish/watchtower-update@v3.3
         with:
           url: "${{ secrets.WATCHTOWER_URL }}"
           api_token: "${{ secrets.WATCHTOWER_API_TOKEN }}"
-          images: "ghcr.io/${{ env.REPO }}:latest"
