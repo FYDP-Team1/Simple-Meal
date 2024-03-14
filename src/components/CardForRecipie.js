@@ -8,6 +8,7 @@ import axios from "axios";
 const CardForRecipie = ({ items }) => {
   const [show, setShow] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
+  const [instructions, setRecipieInstructions] = useState(null);
   const [details, setDetails] = useState(null);
   const URL = process.env.REACT_APP_API_URL;
 
@@ -20,6 +21,14 @@ const CardForRecipie = ({ items }) => {
 
   const getRecipieDetails = async (recipieId) => {
     const res = await axios.post(`${URL}/api/getRecipies`, { recipieId });
+    const res2 = await axios.post(`${URL}/api/getRecipiesInstructions`, { recipieId });
+    let steps = res2.data.recipe[0].steps;
+    // Replace single quotes with double quotes to make it valid JSON
+    let jsonStr = steps.replace(/'/g, '"');
+    // Parse the JSON string into an array
+    let steps_array = JSON.parse(jsonStr);
+    console.log(steps_array);
+    setRecipieInstructions(steps_array);
     setDetails(res.data);
   };
 
@@ -72,6 +81,14 @@ const CardForRecipie = ({ items }) => {
               details.recipe.map((det) => (
                 <div>
                   {parseFloat(det?.quantity).toFixed(2)} ({det?.unit}) : {det?.label}
+                </div>
+              ))}
+              <br></br>
+            <p><b>Steps: </b></p>
+            {instructions &&
+              instructions.map((step,index)=>(
+                <div>
+                  {index+1}: {step}
                 </div>
               ))}
           </Modal.Body>
