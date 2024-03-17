@@ -2,8 +2,9 @@ import styles from "./NavBar.module.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Form } from "react-bootstrap";
+import TopBanner3 from "../components/TopBanner3";
 
-const NavBar = ({ onGroupIcon1Click, onGroupIcon3Click }) => {
+function NavBar({ onGroupIcon1Click, onGroupIcon3Click }) {
   const username = localStorage.getItem("username");
   const navigate = useNavigate();
   const [selectedAction, setSelectedAction] = useState('');
@@ -23,9 +24,7 @@ const NavBar = ({ onGroupIcon1Click, onGroupIcon3Click }) => {
 
   return (
     <header className={styles.topBanner}>
-      <div className={styles.imageSwap}>
-        <h2 className={styles.simpleMeal}>Simple Meal</h2>
-      </div>
+      <TopBanner3 />
       <div className={styles.butterChickenRiceFrame}>
         <div className={styles.myMealPlan}>
           <div className={styles.frameParent}>
@@ -33,8 +32,7 @@ const NavBar = ({ onGroupIcon1Click, onGroupIcon3Click }) => {
               className={styles.frameChild}
               loading="eager"
               alt=""
-              src="/group-286.svg"
-            />
+              src="/group-286.svg" />
             <div className={styles.weekdayFrameQuintet} />
           </div>
           <div className={styles.frameGroup}>
@@ -48,21 +46,18 @@ const NavBar = ({ onGroupIcon1Click, onGroupIcon3Click }) => {
             loading="eager"
             alt=""
             src="/group-27032.svg"
-            onClick={onGroupIcon1Click}
-          />
+            onClick={onGroupIcon1Click} />
           <img
             className={styles.myMealPlanItem}
             loading="eager"
             alt=""
-            src="/group-27033.svg"
-          />
+            src="/group-27033.svg" />
           <img
             className={styles.myMealPlanInner}
             loading="eager"
             alt=""
             src="/group-4961.svg"
-            onClick={onGroupIcon3Click}
-          />
+            onClick={onGroupIcon3Click} />
         </div>
       </div>
       <div className={styles.mealSelectionFrame}>
@@ -70,14 +65,12 @@ const NavBar = ({ onGroupIcon1Click, onGroupIcon3Click }) => {
           className={styles.mealSelectionFrameChild}
           loading="eager"
           alt=""
-          src="/group-27043.svg"
-        />
+          src="/group-27043.svg" />
         <img
           className={styles.mealSelectionFrameItem}
           loading="eager"
           alt=""
-          src="/group-490.svg"
-        />
+          src="/group-490.svg" />
         <div className={styles.userNameImage}>
           <img className={styles.usereNameImageIcon} alt="" src="/image-39@2x.png" />
           <div className={styles.recipePair}>
@@ -87,25 +80,25 @@ const NavBar = ({ onGroupIcon1Click, onGroupIcon3Click }) => {
                 <img className={styles.vIcon} alt="" src="/vicon.svg" />
               </div>
             </div>
-            <Form.Select 
-              className={styles.frameFormselect} 
-              value={selectedAction} 
+            <Form.Select
+              className={styles.frameFormselect}
+              value={selectedAction}
               onChange={handleSelectChange}
             >
-              
+
               <option value=""></option>
               <option value="home">Home</option>
               <option value="logout">Logout</option>
               {/* Add other options as needed */}
             </Form.Select>
             {/* <div className={styles.weekdayFrameTrio}> */}
-              {/* <div className={styles.vegan}>VEGAN</div> */}
+            {/* <div className={styles.vegan}>VEGAN</div> */}
             {/* </div> */}
           </div>
         </div>
       </div>
     </header>
   );
-};
+}
 
 export default NavBar;
