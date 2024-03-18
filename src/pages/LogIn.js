@@ -10,62 +10,12 @@ const LogIn = () => {
           <div className={styles.fRAMEInner}>
             <div className={styles.frameParent}>
               <div className={styles.frameGroup}>
-                <div className={styles.frameContainer}>
-                  <div className={styles.frameWrapper}>
-                    <div className={styles.sParent}>
-                      <div className={styles.s}>S</div>
-                      <div className={styles.framesRow} />
-                      <div className={styles.framesRow1} />
-                    </div>
-                  </div>
-                  <div className={styles.subtractParent}>
-                    <img
-                      className={styles.subtractIcon}
-                      alt=""
-                      src="/subtract.svg"
-                    />
-                    <img
-                      className={styles.vectorsPairIcon}
-                      loading="eager"
-                      alt=""
-                      src="/vector-3.svg"
-                    />
-                    <img
-                      className={styles.vectorsPairIcon1}
-                      loading="eager"
-                      alt=""
-                      src="/vector-4.svg"
-                    />
-                    <img
-                      className={styles.frameChild}
-                      loading="eager"
-                      alt=""
-                      src="/star-21.svg"
-                    />
-                  </div>
-                </div>
-                <div className={styles.framesColumnWrapper}>
-                  <div className={styles.framesColumn}>
-                    <div className={styles.mealLabelWrapper}>
-                      <div className={styles.mealLabel}>
-                        <div className={styles.simple}>SIMPLE</div>
-                        <div className={styles.rectanglesRow} />
-                        <div className={styles.rectanglesRow1} />
-                      </div>
-                    </div>
-                    <div className={styles.loginFrame}>
-                      <div className={styles.facebookTwitterIconFrame}>
-                        <img
-                          className={styles.eggIcon}
-                          loading="eager"
-                          alt=""
-                          src="/egg@2x.png"
-                        />
-                        <div className={styles.meal}>MEAL</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <img
+                  className={styles.logo}
+                  loading="eager"
+                  alt=""
+                  src="/logo.png"
+                />
               </div>
               <div className={styles.copyrightSymbolFrame}>
                 <div className={styles.loginFrames}>

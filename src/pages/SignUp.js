@@ -16,13 +16,14 @@ const SignUp = () => {
                   alt=""
                   src="/egg@2x.png"
                 />
-                <h1 className={styles.simpleMeal}>
-                  <span>
-                    <span className={styles.simple}>{`Simple `}</span>
-                    <span className={styles.m}>M</span>
-                    <span className={styles.eal}>eal</span>
-                  </span>
-                </h1>
+                <div className={styles.logoGroup}>
+                  <img
+                    className={styles.logo}
+                    loading="eager"
+                    alt=""
+                    src="/logo.png"
+                  />
+                </div>
               </div>
               <div className={styles.checkboxContainer}>
                 <img

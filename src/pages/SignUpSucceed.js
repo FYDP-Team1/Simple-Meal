@@ -36,13 +36,14 @@ const SignUpSucceed = () => {
             alt=""
             src="/egg@2x.png"
           />
-          <h1 className={styles.simpleMeal}>
-            <span className={styles.simpleMealTxtContainer}>
-              <span className={styles.simple}>{`Simple `}</span>
-              <span className={styles.m}>M</span>
-              <span className={styles.eal}>eal</span>
-            </span>
-          </h1>
+          <div className={styles.logoGroup}>
+            <img
+              className={styles.logo}
+              loading="eager"
+              alt=""
+              src="/logo.png"
+            />
+          </div>
           <div className={styles.allRightsReserved}>
             © 2023 All rights reserved
           </div>

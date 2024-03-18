@@ -1,3 +1,11 @@
+.logo {
+  max-width: 100%;
+  max-height: 100%;
+  z-index: 10;
+}
+.logoGroup{
+  width: 60%;
+}
 .burgerIcon,
 .burgerIcon1,
 .eggIcon {

@@ -2,7 +2,7 @@ import styles from "./NavBar.module.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Form } from "react-bootstrap";
-import TopBanner3 from "../components/TopBanner3";
+import TopBanner2 from "../components/TopBanner2";
 
 function NavBar({ onGroupIcon1Click, onGroupIcon3Click }) {
   const username = localStorage.getItem("username");
@@ -24,7 +24,7 @@ function NavBar({ onGroupIcon1Click, onGroupIcon3Click }) {
 
   return (
     <header className={styles.topBanner}>
-      <TopBanner3 />
+      <TopBanner2 />
       <div className={styles.butterChickenRiceFrame}>
         <div className={styles.myMealPlan}>
           <div className={styles.frameParent}>
