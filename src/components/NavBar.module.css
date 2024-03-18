@@ -214,6 +214,7 @@
 }
 .topBanner {
   align-self: stretch;
+  height: 84px;
   background-color: var(--white-40);
   backdrop-filter: blur(54px);
   display: flex;
