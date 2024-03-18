@@ -30,7 +30,7 @@
   width: 20px;
   position: relative;
 }
-.createGroceryList1 {
+.MealSchedule1 {
   position: relative;
   font-size: var(--headings-h6-size);
   font-weight: 600;
@@ -1763,7 +1763,7 @@
   justify-content: flex-start;
   gap: var(--gap-9xs);
 }
-.createGroceryList,
+.MealSchedule,
 .instanceParent {
   display: flex;
   justify-content: flex-start;
@@ -1777,7 +1777,7 @@
   gap: var(--gap-3xs);
   font-size: var(--message-1-size);
 }
-.createGroceryList {
+.MealSchedule {
   align-self: stretch;
   border-radius: var(--br-11xl);
   backdrop-filter: blur(190px);

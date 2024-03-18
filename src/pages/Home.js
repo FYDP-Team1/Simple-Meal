@@ -2,7 +2,7 @@ import {  useEffect, useState } from "react";
 import BudgetDetails from "../components/BudgetDetails";
 //import TopBanner from "../components/TopBanner";
 import NavBar from "../components/NavBar";
-import CreateGroceryList from "../components/CreateGroceryList";
+import MealSchedule from "../components/MealSchedule";
 import styles from "./Home.module.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -60,7 +60,7 @@ const Home = () => {
                 <BudgetDetails />
               </div>
             </div>
-            <CreateGroceryList weeklySchedule={schedule} />
+            <MealSchedule weeklySchedule={schedule} />
           </div>
         </section>
       </main>

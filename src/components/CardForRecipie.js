@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
-import styles from "./CreateGroceryList.module.css";
+import styles from "./MealSchedule.module.css";
 import "bootstrap/dist/css/bootstrap.min.css"; // Import Bootstrap CSS
 import axios from "axios";
 

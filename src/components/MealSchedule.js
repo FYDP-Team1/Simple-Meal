@@ -1,8 +1,8 @@
 import React from "react";
-import styles from "./CreateGroceryList.module.css";
+import styles from "./MealSchedule.module.css";
 import CardForRecipie from "./CardForRecipie";
 
-const CreateGroceryList = ({ weeklySchedule }) => {
+const MealSchedule = ({ weeklySchedule }) => {
   console.log(weeklySchedule?.weeklySchedule);
   let currentDate = new Date();
   // Gets current year, month
@@ -23,17 +23,13 @@ const CreateGroceryList = ({ weeklySchedule }) => {
   });
 
   return (
-    <div className={styles.createGroceryList}>
+    <div className={styles.MealSchedule}>
       <div className={styles.textWrapper}>
         <div className={styles.text}>
           <div className={styles.monthYearDisplay}>
             <b className={styles.monthYear}>{`${month} ${year}`}</b>
             <h2 className={styles.frames}>{`<  >`}</h2>
           </div>
-          <button className={styles.loginButton}>
-            <img className={styles.groupIcon} alt="" src="/vector.svg" />
-            <div>Create Grocery List</div>
-          </button>
         </div>
       </div>
       <div className={styles.weekdaysContainer}>
@@ -47,8 +43,7 @@ const CreateGroceryList = ({ weeklySchedule }) => {
               items={
                 weeklySchedule &&
                 weeklySchedule?.weeklySchedule[
-                  day
-                    .toLocaleString("default", { weekday: "short" })
+                  day.toLocaleString("default", { weekday: "short" })
                 ]
               }
             />
@@ -59,4 +54,4 @@ const CreateGroceryList = ({ weeklySchedule }) => {
   );
 };
 
-export default CreateGroceryList;
+export default MealSchedule;
