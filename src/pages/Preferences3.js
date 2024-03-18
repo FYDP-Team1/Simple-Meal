@@ -2,7 +2,6 @@ import { useCallback, useEffect, useState } from "react";
 import TopBanner from "../components/TopBanner";
 import Dropdown from "react-bootstrap/Dropdown";
 import TimeComplexity from "../components/TimeComplexity";
-import GroupComponent from "../components/GroupComponent";
 import { useNavigate } from "react-router-dom";
 import styles from "./Preferences3.module.css";
 import "../global1.css";
@@ -68,7 +67,7 @@ const Preferences = () => {
                     <Dropdown.Item onClick={()=>SetTimeRange('More than an hour')}> More than an hour</Dropdown.Item>
                   </Dropdown.Menu>
                 </Dropdown>
-                <GroupComponent />
+                {/* <GroupComponent /> */}
               </div>
               <div className={styles.loginbuttonsGroup}>
                 <button
