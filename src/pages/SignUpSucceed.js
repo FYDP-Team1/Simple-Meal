@@ -1,5 +1,4 @@
 import { useCallback } from "react";
-import GroupComponent from "../components/SignUpComponent";
 import { useNavigate } from "react-router-dom";
 import styles from "./SignUpSucceed.module.css";
 
@@ -47,7 +46,6 @@ const SignUpSucceed = () => {
           <div className={styles.allRightsReserved}>
             © 2023 All rights reserved
           </div>
-          <GroupComponent />
           <img
             className={styles.faceBookIcon}
             loading="eager"
