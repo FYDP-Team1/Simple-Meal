@@ -1,6 +1,5 @@
 import {  useEffect, useState } from "react";
 import BudgetDetails from "../components/BudgetDetails";
-//import TopBanner from "../components/TopBanner";
 import NavBar from "../components/NavBar";
 import MealSchedule from "../components/MealSchedule";
 import styles from "./Home.module.css";
@@ -19,10 +18,17 @@ const Home = () => {
       navigate('/');
       return;
     }
-    const res = await axios.post(`${URL}/api/createWeeklySchedule`, { userId });
-    setSchedule(res.data);
-    if(!res.data.weeklySchedule?.Fri?.length){
-      navigate('/preferences');
+    try {
+      const res = await axios.post(`${URL}/api/createWeeklySchedule`, { userId });
+      setSchedule(res.data);
+      if(!res.data.weeklySchedule?.Fri?.length){
+        navigate('/preferences');
+      }
+    } catch (error) {
+      if (error.response.status === 500) {
+        navigate('/');
+        return;
+      }
     }
   };
 
