@@ -41,9 +41,11 @@ const Preferences2 = () => {
         weeklyBudget,
       });
 
-      navigate("/home");
       if (res.status === 200){
+        localStorage.clear();
+        localStorage.setItem("user_id", userId)
         console.log("Successfully Saved Preferences")
+        navigate("/home");
       }
     } catch (error) {
       console.error("Error saving preferences:", error);

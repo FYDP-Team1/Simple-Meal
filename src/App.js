@@ -9,7 +9,6 @@ import CelebratoryMoment from "./pages/CelebratoryMoment";
 import SignUpSucceed from "./pages/SignUpSucceed";
 import SignUp from "./pages/SignUp";
 import Home from "./pages/Home";
-import UpdatedHome from "./pages/UpdatedHome";
 import LogIn from './pages/LogIn';
 import Preferences from "./pages/Preferences";
 import Preferences1 from "./pages/Preferences1";
@@ -31,8 +30,6 @@ function App() {
         <Route path="/sign-up-succeed" element={<SignUpSucceed />} />
         <Route path="/sign-up" element={<SignUp />} />
         <Route path="/log-in" element={<LogIn />} />
-        <Route path="/updated-home" element={<UpdatedHome />} />
-        <Route path="/preferences-1" element={<Preferences />} />
         <Route path="/home" element={<Home />} />
       </Routes>
     </Router>

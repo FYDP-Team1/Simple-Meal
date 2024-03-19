@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import styles from "./FrameComponent2.module.css";
+import TopBanner2 from "../components/TopBanner2";
 
 const FrameComponent2 = () => {
   const navigate = useNavigate();
@@ -7,10 +8,8 @@ const FrameComponent2 = () => {
   return (
     <header className={styles.signUpLogInButtonWrapper}>
       <nav className={styles.signUpLogInButton}>
-        <div className={styles.signUpLogInButtonChild} />
-        <div className={styles.line}>
-          <h1 className={styles.simpleMeal}>Simple Meal</h1>
-        </div>
+        <TopBanner2 />
+        
         <div className={styles.text}>
           <div className={styles.tabsissuerdealTeamdefault}>
             <div className={styles.tabsissuerdealTeamdefaultChild} />

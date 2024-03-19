@@ -29,7 +29,7 @@ const Preferences1 = () => {
   ]);
 
   useEffect(()=>{
-    localStorage.setItem("dietary", selectedOptions);
+    localStorage.setItem("dietary", JSON.stringify(selectedOptions.map(m=>m.value)));
   }, [selectedOptions]);
 
   const onGroupButtonClick = useCallback(() => {

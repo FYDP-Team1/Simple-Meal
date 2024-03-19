@@ -68,7 +68,7 @@ const filterRecipes = async (restrictions) => {
           FROM recipes
           JOIN recipe_cuisines ON recipes.id = recipe_cuisines.recipe_id
           LEFT JOIN recipe_restrictions ON recipes.id = recipe_restrictions.recipe_id
-          WHERE recipe_restrictions.restriction_id NOT IN ($1:list)
+          WHERE recipe_restrictions.restriction_id IN ($1:list)
           GROUP BY recipes.id
           ORDER BY recipes.id, recipes.cost ASC`,
         [restrictions]
@@ -94,15 +94,20 @@ const calculateRecipeWeights = async (
 
     // Assign weights based on cooking minutes
     let cookingTimeWeight;
-    const timeDiff = recipe.cooking_minutes - maxCookingMinutes;
-    if (timeDiff > 30) {
-      cookingTimeWeight = -10;
-    } else if (timeDiff > 0) {
+    if (maxCookingMinutes == -1) {
+      // If user has no preference for cooking time, set weight to 0
       cookingTimeWeight = 0;
-    } else if (timeDiff < 10) {
-      cookingTimeWeight = 3;
-    } else {
-      cookingTimeWeight = 2;
+    } else{
+      const timeDiff = recipe.cooking_minutes - maxCookingMinutes;
+      if (timeDiff > 30) {
+        cookingTimeWeight = -10;
+      } else if (timeDiff > 0) {
+        cookingTimeWeight = 0;
+      } else if (timeDiff < 10) {
+        cookingTimeWeight = 3;
+      } else {
+        cookingTimeWeight = 2;
+      }
     }
 
     // Calculate cuisine weight
@@ -110,7 +115,7 @@ const calculateRecipeWeights = async (
     const recipeCuisines = recipe.cuisines;
     for (const cuisine of userPreferredCuisines) {
       if (recipeCuisines.includes(cuisine)) {
-        cuisineWeight += 5;
+        cuisineWeight += 8;
       }
     }
 
