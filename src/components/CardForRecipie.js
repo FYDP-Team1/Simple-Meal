@@ -13,17 +13,16 @@ const CardForRecipie = ({ items }) => {
   const URL = process.env.REACT_APP_API_URL;
 
   const handleClose = () => setShow(false);
-  const handleShow = (item) => {
-    const details = getRecipieDetails(item.id);
-    setIngredients(details.ingredients);
-    setInstructions(details.instructions);
+  const handleShow = async (item) => {
+    // Change mouse pointer to loading type
+    document.body.style.cursor = "wait"; 
+    const res = await axios.post(`${URL}/api/getRecipeDetails`, { recipeId: item.id });
+    setIngredients(res.data.ingredients);
+    setInstructions(res.data.instructions);
     setSelectedItem(item);
     setShow(true);
-  };
-
-  const getRecipieDetails = async (recipeId) => {
-    const res = await axios.post(`${URL}/api/getRecipeDetails`, { recipeId: recipeId });
-    return res.data;
+    // Change mouse pointer back to default
+    document.body.style.cursor = "default"; 
   };
 
   return (
