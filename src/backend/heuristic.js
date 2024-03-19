@@ -94,15 +94,20 @@ const calculateRecipeWeights = async (
 
     // Assign weights based on cooking minutes
     let cookingTimeWeight;
-    const timeDiff = recipe.cooking_minutes - maxCookingMinutes;
-    if (timeDiff > 30) {
-      cookingTimeWeight = -10;
-    } else if (timeDiff > 0) {
+    if (maxCookingMinutes == -1) {
+      // If user has no preference for cooking time, set weight to 0
       cookingTimeWeight = 0;
-    } else if (timeDiff < 10) {
-      cookingTimeWeight = 3;
-    } else {
-      cookingTimeWeight = 2;
+    } else{
+      const timeDiff = recipe.cooking_minutes - maxCookingMinutes;
+      if (timeDiff > 30) {
+        cookingTimeWeight = -10;
+      } else if (timeDiff > 0) {
+        cookingTimeWeight = 0;
+      } else if (timeDiff < 10) {
+        cookingTimeWeight = 3;
+      } else {
+        cookingTimeWeight = 2;
+      }
     }
 
     // Calculate cuisine weight
@@ -110,7 +115,7 @@ const calculateRecipeWeights = async (
     const recipeCuisines = recipe.cuisines;
     for (const cuisine of userPreferredCuisines) {
       if (recipeCuisines.includes(cuisine)) {
-        cuisineWeight += 5;
+        cuisineWeight += 8;
       }
     }
 

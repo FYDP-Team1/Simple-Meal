@@ -128,43 +128,43 @@ router.post("/api/savePreferences", async (req, res) => {
     maxCookingMinutes,
     weeklyBudget,
   } = req.body;
-  console.log(dietaryRestrictions);
   try {
-    // Assuming dietaryRestrictions is a comma-separated string like "restriction1,restriction2,restriction3"
-    const dietaryRestrictionsArray = dietaryRestrictions.split(",");
-    // Query to fetch IDs of dietary restrictions
     let restrictionIds = [];
-    await db
-      .map(
-        "SELECT id FROM dietary_restrictions WHERE name IN ($1:list)",
-        [dietaryRestrictionsArray],
-        (row) => row.id
-      )
-      .then((data) => {
-        restrictionIds = data;
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-
-    // Assuming cuisines is a comma-separated string like "cuisine1,cuisine2,cuisine3"
-    const cuisineIdsArray = cuisines.split(",");
-
-    // Query to fetch IDs of cuisines
     let cuisineIds = [];
-    await db
-      .map(
-        "SELECT id FROM cuisines WHERE name IN ($1:list)",
-        [cuisineIdsArray],
-        (row) => row.id
-      )
-      .then((data) => {
-        cuisineIds = data;
-      })
-      .catch((error) => {
-        console.log(error);
-      });
 
+    if (dietaryRestrictions != "[]") {
+      const dietaryRestrictionsArray = JSON.parse(dietaryRestrictions);
+      // Query to fetch IDs of dietary restrictions
+      await db
+        .map(
+          "SELECT id FROM dietary_restrictions WHERE name IN ($1:list)",
+          [dietaryRestrictionsArray],
+          (row) => row.id
+        )
+        .then((data) => {
+          restrictionIds = data;
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+
+    if (cuisines != "[]") {
+    const cuisineIdsArray = JSON.parse(cuisines);
+      // Query to fetch IDs of cuisines
+      await db
+        .map(
+          "SELECT id FROM cuisines WHERE name IN ($1:list)",
+          [cuisineIdsArray],
+          (row) => row.id
+        )
+        .then((data) => {
+          cuisineIds = data;
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
     // Start a transaction
     await db.tx(async (t) => {
       // Insert into user_preferences_restrictions table
