@@ -78,7 +78,7 @@ const SignUpSucceed = () => {
           alt=""
           src="/burger-1@2x.png"
         />
-        <SignUpComponent />
+    
       </div>
 
       <div className={styles.topBannerChild} />
