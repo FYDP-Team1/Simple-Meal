@@ -68,7 +68,7 @@ const filterRecipes = async (restrictions) => {
           FROM recipes
           JOIN recipe_cuisines ON recipes.id = recipe_cuisines.recipe_id
           LEFT JOIN recipe_restrictions ON recipes.id = recipe_restrictions.recipe_id
-          WHERE recipe_restrictions.restriction_id NOT IN ($1:list)
+          WHERE recipe_restrictions.restriction_id IN ($1:list)
           GROUP BY recipes.id
           ORDER BY recipes.id, recipes.cost ASC`,
         [restrictions]
