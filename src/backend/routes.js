@@ -89,26 +89,18 @@ router.post("/api/getUserId", async (req, res) => {
   }
 });
 
-router.post("/api/getRecipies", async (req, res) => {
-  const { recipieId } = req.body;
+router.post("/api/getRecipeDetails", async (req, res) => {
+  const { recipeId } = req.body;
   try {
-    const recipe = await db.any("SELECT * FROM recipe_ingredients WHERE recipe_id = $1", [
-      recipieId,
+    const ingredients = await db.any("SELECT label, quantity FROM recipe_ingredients WHERE recipe_id = $1", [
+      recipeId,
     ]);
-    return res.status(200).json({ recipe });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: "Internal server error" });
-  }
-});
-
-router.post("/api/getRecipiesInstructions", async (req, res) => {
-  const { recipieId } = req.body;
-  try {
-    const recipe = await db.any("SELECT * FROM recipes WHERE id = $1", [
-      recipieId,
+    const recipe = await db.one("SELECT steps FROM recipes WHERE id = $1", [
+      recipeId,
     ]);
-    return res.status(200).json({ recipe });
+    const steps = recipe.steps.replace(/', '/g, '", "').replace(/^\['/, '["').replace(/'\]$/, '"]');
+    const instructions = JSON.parse(steps);
+    return res.status(200).json({ ingredients, instructions });
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Internal server error" });

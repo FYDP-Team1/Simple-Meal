@@ -8,28 +8,22 @@ import axios from "axios";
 const CardForRecipie = ({ items }) => {
   const [show, setShow] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
-  const [instructions, setRecipieInstructions] = useState(null);
-  const [details, setDetails] = useState(null);
+  const [instructions, setInstructions] = useState(null);
+  const [ingredients, setIngredients] = useState(null);
   const URL = process.env.REACT_APP_API_URL;
 
   const handleClose = () => setShow(false);
   const handleShow = (item) => {
-    getRecipieDetails(item.id);
+    const details = getRecipieDetails(item.id);
+    setIngredients(details.ingredients);
+    setInstructions(details.instructions);
     setSelectedItem(item);
     setShow(true);
   };
 
-  const getRecipieDetails = async (recipieId) => {
-    const res = await axios.post(`${URL}/api/getRecipies`, { recipieId });
-    const res2 = await axios.post(`${URL}/api/getRecipiesInstructions`, { recipieId });
-    let steps = res2.data.recipe[0].steps;
-    // Replace single quotes with double quotes to make it valid JSON
-    let jsonStr = steps.replace(/'/g, '"');
-    // Parse the JSON string into an array
-    let steps_array = JSON.parse(jsonStr);
-    console.log(steps_array);
-    setRecipieInstructions(steps_array);
-    setDetails(res.data);
+  const getRecipieDetails = async (recipeId) => {
+    const res = await axios.post(`${URL}/api/getRecipeDetails`, { recipeId: recipeId });
+    return res.data;
   };
 
   return (
@@ -37,8 +31,7 @@ const CardForRecipie = ({ items }) => {
       <div className={styles.frameWrapper6}>
         <div className={styles.frameWrapper7}>
           <div className={styles.frameParent7}>
-            {items &&
-              items.map((item) => (
+            {items?.map((item) => (
                 <div
                   className={styles.potatoRectangleParent}
                   key={item.id}
@@ -75,20 +68,19 @@ const CardForRecipie = ({ items }) => {
             <Modal.Title>{selectedItem.name}</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <p><b>Price: </b> {selectedItem.cost.toFixed(2)}/meal</p>
+            <p><b>Price: </b> ${selectedItem.cost.toFixed(2)}/meal</p>
+            <p><b>Cooking Time: </b> {selectedItem.cooking_minutes.toFixed(0)} minutes</p>
             <p><b>Ingredients:</b></p>
-            {details &&
-              details.recipe.map((det) => (
-                <div>
-                  {parseFloat(det?.quantity).toFixed(2)} ({det?.unit}) : {det?.label}
+            {ingredients?.map((ingr, index) => (
+                <div key={index}>
+                  <b>{parseFloat(ingr?.quantity).toFixed(2)}</b> {ingr?.label}
                 </div>
               ))}
               <br></br>
             <p><b>Steps: </b></p>
-            {instructions &&
-              instructions.map((step,index)=>(
-                <div>
-                  {index+1}: {step}
+            {instructions?.map((step,index)=>(
+                <div key={index}>
+                  <b>{index+1}.</b> {step}
                 </div>
               ))}
           </Modal.Body>
