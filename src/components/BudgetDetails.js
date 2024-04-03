@@ -1,6 +1,6 @@
 import styles from "../pages/Home.module.css";
 
-const BudgetDetails = () => {
+const BudgetDetails = ({averageCost,totalCost}) => {
   return (
     <div className={styles.thursdayFrame}>
       <div className={styles.widget}>
@@ -13,7 +13,7 @@ const BudgetDetails = () => {
         </div>
         <div className={styles.content1}>
           <div className={styles.text2}>
-            <div className={styles.frameFrame}>$4.53</div>
+            <div className={styles.frameFrame}>${averageCost?.toFixed(2)}</div>
           </div>
           <div className={styles.icontext}>
             <div className={styles.text3}>
@@ -58,7 +58,7 @@ const BudgetDetails = () => {
           </div>
           <div className={styles.content3}>
             <div className={styles.text7}>
-              <div className={styles.text8}>$10.19</div>
+              <div className={styles.text8}>${averageCost && averageCost.toFixed(2)*2.25}</div>
             </div>
             <div className={styles.icontext1}>
               <div className={styles.text9}>
@@ -90,7 +90,7 @@ const BudgetDetails = () => {
           />
           <div className={styles.content5}>
             <div className={styles.text12}>
-              <div className={styles.text13}>$115</div>
+              <div className={styles.text13}>${totalCost?.toFixed(2)}</div>
             </div>
             <div className={styles.icontext2}>
               <div className={styles.text14}>

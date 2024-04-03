@@ -9,11 +9,14 @@ import { useNavigate } from "react-router-dom";
 const Home = () => {
   const navigate = useNavigate();
   const [schedule, setSchedule] = useState(null);
+  const [averageCost, setAverageCost] = useState(null);
+  const [totalCost, setTotalCost] = useState(null);
   const URL = process.env.REACT_APP_API_URL;
 
 
   const populateSchedule = async (e) => {
     const userId = localStorage.getItem("user_id");
+    
     if (userId === null){
       navigate('/');
       return;
@@ -24,8 +27,21 @@ const Home = () => {
       if(!res.data.weeklySchedule?.Fri?.length){
         navigate('/preferences');
       }
+      let totalCost = 0;
+      let totalCount = 0;
+  
+      for (const day in res.data.weeklySchedule) {
+        res.data.weeklySchedule[day].forEach(meal => {
+          totalCost += meal.cost;
+          totalCount++;
+        });
+      }
+      
+      const averageCost = totalCost / totalCount;
+      setAverageCost(averageCost);
+      setTotalCost(totalCost);
     } catch (error) {
-      if (error.response.status === 500) {
+      if (error?.response?.status === 500) {
         navigate('/');
         return;
       }
@@ -42,6 +58,7 @@ const Home = () => {
 
   useEffect(()=>{
     populateSchedule();
+
   },[]);
 
   return (
@@ -63,7 +80,7 @@ const Home = () => {
                     className={styles.yourBudgetDetails}
                   >{`Your Budget Details -> `}</div>
                 </div>
-                <BudgetDetails />
+                <BudgetDetails averageCost={averageCost} totalCost={totalCost}/>
               </div>
             </div>
             <MealSchedule weeklySchedule={schedule} />
